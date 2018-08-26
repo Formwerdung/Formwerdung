@@ -10,7 +10,7 @@ import { css } from 'emotion';
 import { ChevronsDown } from 'react-feather';
 
 const ServiceCard = props =>
-  <div className={css(tw('mx-1 md:w-1/2'))}>
+  <div className={css(tw('mx-1 sm:w-1/2 lg:w-1/3'))}>
     <section className={css(tw('rounded border border-grey border-solid  p-1 '), { opacity: props.disabled ? '0.5' : '1'})}>
       <h3 className={css(tw('m-0 text-sm leading-2 text-center'))}>{ props.title }</h3>
       <div className={css(tw('text-sm leading-2 text-center'))}>{ props.description }</div>

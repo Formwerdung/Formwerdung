@@ -27,12 +27,12 @@ const merge = require('lodash.merge');
 | values with some of the Tailwind defaults.
 |
 */
-const defaultConfig = require('tailwindcss/defaultConfig')();
+// const defaultConfig = require('tailwindcss/defaultConfig')();
 
 
-function lineHeightCorrection(fontSize = 1, lineHeight = 1.5) {
-  return ((fontSize * lineHeight) - fontSize) / 2;
-}
+// function lineHeightCorrection(fontSize = 1, lineHeight = 1.5) {
+//   return ((fontSize * lineHeight) - fontSize) / 2;
+// }
 
 const leadingBase = 1.5;
 // const fontBase = 1;
@@ -54,7 +54,7 @@ const verticalRhythms = {
 
 const gridContainers = {
   md: '744px',
-  lg: '966px',
+  lg: '970px',
   xl: '1164px'
 };
 
@@ -207,9 +207,9 @@ module.exports = {
   |
   */
   screens: {
-    sm: '576px',
+    sm: '640px',
     md: '768px',
-    lg: '992px',
+    lg: '1000px',
     xl: '1200px'
   },
 

@@ -37,8 +37,8 @@ class IndexPage extends React.Component {
 
           <section>
             <Container>
-              <ul className={css(tw('list-reset m-0 p-0 md:flex'))}>
-                { caseStudies.map((edge, i) => <CaseCard key={i} props={edge.node.frontmatter} />) }
+              <ul className={css(tw('list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center'))}>
+                { caseStudies.map((edge, i) => <CaseCard key={i} props={ edge.node.frontmatter } latest={i > 1} first={i === 0} />) }
               </ul>
             </Container>
           </section>

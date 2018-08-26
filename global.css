@@ -54,3 +54,42 @@ body {
 .hero__bg-image > div {
   padding-bottom: 100% !important;
 }
+
+.project-staerkle-device {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid grey;
+  box-shadow:
+  13px 0 white,
+  14px 0 grey;
+  top: 128px;
+  left: 9px;
+  padding: 32px 0;
+  width: 272px;
+  transform:
+          perspective(800px)
+          translateX(0)
+          translateY(-100px)
+          translateZ(50px)
+          rotateX(0)
+          rotateY(-15deg)
+          rotateZ(0);
+  z-index: 15;
+  margin-bottom: 30px;
+}
+
+
+.project-staerkle-screen {
+  width: 256px;
+  height: 182px;
+  background: url('src/assets/lamm.png') no-repeat;
+  background-size: cover;
+  border-radius: 0.2em;
+  border: 1px solid grey;
+  margin: auto;
+}
+
+.last-case-card {
+
+}
