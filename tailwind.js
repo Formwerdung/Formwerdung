@@ -47,6 +47,7 @@ const verticalRhythms = {
   '6': `${6 * rhythmUnit}rem`,
   '8': `${8 * rhythmUnit}rem`,
   '10': `${10 * rhythmUnit}rem`,
+  '12': `${12 * rhythmUnit}rem`,
   '16': `${16 * rhythmUnit}rem`,
   '20': `${20 * rhythmUnit}rem`,
   '36': `${36 * rhythmUnit}rem`,
@@ -54,7 +55,7 @@ const verticalRhythms = {
 
 const gridContainers = {
   md: '744px',
-  lg: '970px',
+  lg: '996px',
   xl: '1164px'
 };
 
@@ -209,7 +210,7 @@ module.exports = {
   screens: {
     sm: '640px',
     md: '768px',
-    lg: '1000px',
+    lg: '1024px',
     xl: '1200px'
   },
 

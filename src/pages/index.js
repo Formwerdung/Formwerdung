@@ -7,6 +7,7 @@
 /* global tw */
 import React from 'react';
 import Img from 'gatsby-image';
+import Cases from '../components/Cases';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
@@ -14,7 +15,7 @@ import Products from '../components/Products';
 import styled from 'react-emotion';
 import { css } from 'emotion';
 import { get } from 'lodash';
-import CaseCard from '../components/CaseCard';
+import Divider from '../components/Divider';
 
 
 const Graf = styled('p')`
@@ -28,46 +29,19 @@ class IndexPage extends React.Component {
     const portfolioImg = this.props.data.portfolio;
     const caseStudies = get(this, 'props.data.allMarkdownRemark.edges', []);
 
-    console.log(this.props.data);
-
     return (
       <Layout>
-
-          <Hero props={ imgFile } />
-
-          <section>
-            <Container>
-              <ul className={css(tw('list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center'))}>
-                { caseStudies.map((edge, i) => <CaseCard key={i} props={ edge.node.frontmatter } latest={i > 1} first={i === 0} />) }
-              </ul>
-            </Container>
-          </section>
-
-          <div className={css(tw('relative'))}>
-            <Container>
-              <p className={css(tw('px-1 py-2 text-white text-center font-semibold relative z-10 m-0'), {'text-shadow': '0 4px 4px rgba(0,0,0,0.5)'})}>
-                Mehr Arbeiten sehen?<br />
-                Zum Portfolio.
-              </p>
-            </Container>
-            <div className={css(tw('absolute pin-t w-full h-full'))}>
-              <Img sizes={ portfolioImg.sizes } position="absolute" outerWrapperClassName="hero__bg-container" className={'hero__bg-image'} />
-            </div>
-          </div>
-
-          <Products />
-
-          <div className={css(tw('relative'))}>
-            <Container>
-              <p className={css(tw('px-1 py-2 text-white text-center font-semibold relative z-10 m-0'), {'text-shadow': '0 4px 4px rgba(0,0,0,0.5)'})}>
-                Mehr Arbeiten sehen?<br />
-                Zum Portfolio.
-              </p>
-            </Container>
-            <div className={css(tw('absolute pin-t w-full h-full'))}>
-              <Img sizes={ portfolioImg.sizes } position="absolute" outerWrapperClassName="hero__bg-container" className={'hero__bg-image'} />
-            </div>
-          </div>
+        <Hero props={ imgFile } />
+        <Cases props={ caseStudies } />
+        <Divider image={ portfolioImg }
+                 lineOne={'Mehr Arbeiten sehen?'}
+                 lineTwo={'Zum Portfolio.'}
+                 route={'/portfolio/'} />
+        <Products />
+        <Divider image={ portfolioImg }
+                 lineOne={'Mehr Infos zum Angebot?'}
+                 lineTwo={'Zur Übersicht.'}
+                 route={'/angebot/'} />
 
           <section>
             <Container>

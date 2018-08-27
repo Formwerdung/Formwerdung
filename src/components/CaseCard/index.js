@@ -10,7 +10,7 @@ import config from '../../../tailwind';
 import { css } from 'emotion';
 import { values } from 'lodash';
 
-const mq = values(config.screens).map(
+export const mq = values(config.screens).map(
   bp => `@media (min-width: ${bp})`
 );
 
@@ -21,7 +21,11 @@ const firstLi = {
 };
 
 const middleLi = {
+  [mq[0]]: {
+    'text-align': 'right',
+  },
   [mq[2]]: {
+    'text-align': 'center',
     'border-right': `1px solid ${config.colors['grey-light']}`,
   },
 };
@@ -37,13 +41,25 @@ const latestLi = {
   }
 };
 
+const middleContainer = {
+  [mq[0]]: {
+    'margin-right': '0',
+    'margin-left': 'auto',
+  }, [mq[2]]: {
+    'margin-right': 'auto'
+  },
+};
+
 const latestContainer = {
   'max-width': '320px',
   [mq[0]]: {
     'max-width': '640px',
   },
   [mq[2]]: {
+    'text-align': 'right',
     'max-width': '320px',
+    'margin-right': '0',
+    'margin-left': 'auto',
   },
 };
 
@@ -61,14 +77,14 @@ const latestBlurb = {
 };
 
 const CaseCard = props =>
-  <li className={css(tw('flex-1 block sm:w-1/2 lg:w-1/3'),
+  <li className={css(tw('flex-1 block sm:w-1/2 lg:w-1/3 text-center sm:text-left'),
                  props.first ? firstLi : {},
                  !(props.first || props.latest) ? middleLi : {},
                  props.latest ? latestLi : { 'border-bottom': `1px solid ${config.colors['grey-light']}` })}>
-    <div className={css(tw('sm:flex sm:flex-wrap lg:static'),
-                    !(props.first || props.latest) ? { [mq[0]]: { 'margin-left': 'auto' }, [mq[2]]: { 'margin-left': '0' } } : {},
+    <div className={css(tw('mx-auto sm:ml-0 sm:flex sm:flex-wrap lg:static'),
+                    !(props.first || props.latest) ? middleContainer : {},
                     props.latest ? latestContainer : { 'max-width': '320px' })}>
-      <div>
+      <div className={css(tw('flex-1'))}>
         <div className={css(tw('p-1'))}>
           <p className={css(tw('m-0'))}>Fallstudie</p>
           <h2 className={css(tw('m-0 leading-none'))}>{ props.props.title }</h2>
