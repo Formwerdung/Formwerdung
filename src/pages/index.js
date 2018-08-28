@@ -6,14 +6,12 @@
 
 /* global tw */
 import React from 'react';
-import Img from 'gatsby-image';
 import Cases from '../components/Cases';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Products from '../components/Products';
 import styled from 'react-emotion';
-import { css } from 'emotion';
 import { get } from 'lodash';
 import Divider from '../components/Divider';
 
