@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-const objectFitImages = require('object-fit-images');
+import objectFitImages from 'object-fit-images';
 
-exports.onInitialClientRender = () => objectFitImages();
+export const onInitialClientRender = () => {
+  objectFitImages();
+};

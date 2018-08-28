@@ -6,6 +6,7 @@
 
 /* global tw */
 import React from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Container from '../Container';
 import Nav from '../Nav';
 import NavItem from '../NavItem';
@@ -18,7 +19,9 @@ const PrimaryNav = () =>
   <Nav>
     <NavItem to={'/angebot/'}>Angebot</NavItem>
     <NavItem to={'/portfolio/'}>Portfolio</NavItem>
-    <NavItem to={'/contact/'}>Kontakt</NavItem>
+    <li className={css(tw('pl-1 my-auto'))}>
+      <AnchorLink href="#contact" className={css(tw('text-blue'))}>Kontakt</AnchorLink>
+    </li>
   </Nav>;
 
 const Banner = () =>
