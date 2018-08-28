@@ -97,10 +97,9 @@ class Contact extends React.Component {
         { this.state.success &&
           <div>Success</div>
         }
-        { this.state.success &&
-        <div>Success</div>
+        { this.state.error &&
+          <div>Error</div>
         }
-        <div>Error</div>
       </section>
     );
   }
