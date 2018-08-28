@@ -16,19 +16,37 @@ const encode = (data) => {
 
 class Contact extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { error: false, success: false };
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   /* Here’s the juicy bit for posting the form submission */
   handleSubmit = e => {
     e.preventDefault();
 
+    const form = e.target;
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state,
+      })
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-
+      .then(() => {
+        this.setState({ success: true });
+        // alert("Success!");
+      })
+      .catch(error => {
+        this.setState({ error: true });
+        // console.log(error);
+      });
   };
 
   // handleChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -50,31 +68,39 @@ class Contact extends React.Component {
           <p hidden>
             <label>
               Don’t fill this out:{" "}
-              <input name="bot-field" />
+              <input name="bot-field" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
               Your name:<br />
-              <input type="text" name="name" />
+              <input type="text" name="name" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
               Your email:<br />
-              <input type="email" name="email" />
+              <input type="email" name="email" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <label>
               Message:<br />
-              <textarea name="message" />
+              <textarea name="message" onChange={this.handleChange} />
             </label>
           </p>
           <p>
             <button type="submit">Send</button>
+            <input type="reset" value="Clear" />
           </p>
         </form>
+        { this.state.success &&
+          <div>Success</div>
+        }
+        { this.state.success &&
+        <div>Success</div>
+        }
+        <div>Error</div>
       </section>
     );
   }
