@@ -19,11 +19,11 @@ const Layout = ({ children }) => (
       <Nav />
     </Banner>
     <main className={css(tw('shadow relative pb-8'))}>
-      <div className={css(tw('mt-3'))}>
+      <div className={css(tw('mt-3 mb-8'))}>
         {children}
       </div>
+      <Contact />
     </main>
-    <Contact />
     <Colophon />
   </div>
 );

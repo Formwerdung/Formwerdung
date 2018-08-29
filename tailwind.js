@@ -80,7 +80,16 @@ const gridContainers = {
 const colors = {
   black: '#080401',
   white: '#fffefc',
-  blue: '#1e456e',
+  blue: '#1565c0', // '#1e456e'
+  'blue-dark': '#11519a',
+  green: '#3cec96',
+  red: '#e2252a',
+
+  'border-light': 'rgba(8,4,1,.2)',
+  'border': 'rgba(2,1,0,.36)',
+
+  'black-transparent': 'rgba(0, 0, 0, 0.6)',
+  'off-white': '#fafaf9',
 
   grey: '#9babb4',
   'grey-lighter': '#f3f7f9',
@@ -102,7 +111,7 @@ const colors = {
   'red-darkest': '#420806',
   'red-darker': '#6a1b19',
   'red-dark': '#cc1f1a',
-  red: '#e3342f',
+
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
@@ -126,7 +135,7 @@ const colors = {
   'green-darkest': '#032d19',
   'green-darker': '#0b4228',
   'green-dark': '#1f9d55',
-  green: '#38c172',
+
   'green-light': '#51d88a',
   'green-lighter': '#a2f5bf',
   'green-lightest': '#e3fcec',
@@ -141,7 +150,7 @@ const colors = {
 
   'blue-darkest': '#05233b',
   'blue-darker': '#103d60',
-  'blue-dark': '#2779bd',
+
 
   'blue-light': '#6cb2eb',
   'blue-lighter': '#bcdefa',
@@ -576,6 +585,9 @@ module.exports = {
   maxWidth: merge(gridContainers, {
     full: '100%',
     hack: '200px', // for broken logo link flex layout
+    hero: '350px',
+    'hero-md': '449px',
+    'contact': '35rem',
   }),
 
 
