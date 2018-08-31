@@ -20,7 +20,7 @@ const PrimaryNav = () =>
     <NavItem to={'/angebot/'}>Angebot</NavItem>
     <NavItem to={'/portfolio/'}>Portfolio</NavItem>
     <li className={css(tw('pl-1 my-auto'))}>
-      <AnchorLink href="#contact" className={css(tw('text-blue'))}>Kontakt</AnchorLink>
+      <AnchorLink href="#contact" className={css(tw('text-blue hover:text-black transition-color'))}>Kontakt</AnchorLink>
     </li>
   </Nav>;
 

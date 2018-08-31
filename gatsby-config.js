@@ -6,6 +6,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
+    `gatsby-remark-copy-linked-files`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1080,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -25,6 +32,13 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/blog-posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio-items`,
+        path: `${__dirname}/src/pages/portfolio`,
       },
     },
   ]

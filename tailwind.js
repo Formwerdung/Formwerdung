@@ -54,9 +54,9 @@ const verticalRhythms = {
 };
 
 const gridContainers = {
-  md: '744px',
-  lg: '996px',
-  xl: '1164px'
+  md: '768px',
+  lg: '1024px',
+  xl: '1310px'
 };
 
 
@@ -220,7 +220,7 @@ module.exports = {
     sm: '640px',
     md: '768px',
     lg: '1024px',
-    xl: '1200px'
+    xl: '1310px'
   },
 
 
@@ -585,6 +585,10 @@ module.exports = {
   maxWidth: merge(gridContainers, {
     full: '100%',
     hack: '200px', // for broken logo link flex layout
+    card: '320px',
+    'card-2': '640px',
+    'card-3': '960px',
+    'card-4': '1280px',
     hero: '350px',
     'hero-md': '449px',
     'contact': '35rem',

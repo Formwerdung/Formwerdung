@@ -9,15 +9,12 @@ import React from 'react';
 import Banner from '../Banner';
 import Contact from '../Contact';
 import Colophon from '../Colophon';
-import Nav from '../Nav';
 import { css } from 'emotion';
 import '../../../global.css';
 
 const Layout = ({ children }) => (
   <div className={css(tw('font-sans'))}>
-    <Banner>
-      <Nav />
-    </Banner>
+    <Banner />
     <main className={css(tw('shadow relative pb-8'))}>
       <div className={css(tw('mt-3 mb-8'))}>
         {children}
