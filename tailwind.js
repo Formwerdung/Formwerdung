@@ -60,8 +60,6 @@ const gridContainers = {
 };
 
 
-
-
 /*
 |-------------------------------------------------------------------------------
 | Colors                                    https://tailwindcss.com/docs/colors

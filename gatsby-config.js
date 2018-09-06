@@ -23,21 +23,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `case-studies`,
-        path: `${__dirname}/src/pages/case-studies`,
+        name: `case-study`,
+        path: `${__dirname}/src/pages/case-study`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/blog-posts`,
+        name: `blog`,
+        path: `${__dirname}/src/pages/blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `portfolio-items`,
+        name: `portfolio`,
         path: `${__dirname}/src/pages/portfolio`,
       },
     },

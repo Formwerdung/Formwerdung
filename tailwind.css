@@ -39,6 +39,12 @@
   @apply px-1 py-1 h-4 text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white;
 }
 
+.border-left {
+  @apply border-solid border-t-0 border-r-0 border-l border-b-0 border-t-0
+}
+
+
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

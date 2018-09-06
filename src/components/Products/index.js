@@ -15,45 +15,55 @@ const Products = () =>
   <section>
     <Container>
       <h2 className={css(tw('m-0 p-1 pt-8'))}>Produkte</h2>
-      <ul className={css(tw('list-reset m-0 p-0 md:flex md:-mr-2 md:flex-wrap'))}>
+      <ul className={css(tw('list-reset m-0 p-0 sm:flex md:-mr-2 sm:flex-wrap'))}>
         <ProductCard type={'Package'}
-                     title={'Auftritt Klein'}
-                     forWhom={'Für Restaurants, Startups, Marketingseiten, kleine Portfolios'}
+                     title={'Amplify'}
+                     forWhom={'Ein Päckchen mit allem, was man wirklich braucht. Zum Beispiel für Restaurants, Startups, Marketingseiten oder kleine Portfolios.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
                      ]}
-                     price={'2400 CHF'}>
+                     link={'/angebot/klein/'}
+                     price={'2400 CHF'}
+                     index={'first'}>
           <Package className={css(tw('w-2 h-2'))} />
         </ProductCard>
         <ProductCard type={'Package'}
-                     title={'Auftritt Gross'}
-                     forWhom={'Für Restaurants, Startups, Marketingseiten, kleine Portfolios'}
+                     title={'Magazine'}
+                     forWhom={'Für Neugkeiten und regelmässiges Posting, wie man es von Blogs, Online-Journalismus oder grösseren Portfolios kennt.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
                      ]}
-                     price={'3600 CHF'}>
+                     link={'/angebot/gross/'}
+                     price={'3600 CHF'}
+                     index={'even'}
+                     number={'second'}>
           <Package className={css(tw('w-2 h-2'))} />
         </ProductCard>
         <ProductCard type={'Pflege'}
                      title={'Deluxe Hosting'}
-                     forWhom={'Für Restaurants, Startups, Marketingseiten, kleine Portfolios'}
+                     forWhom={'Hosting für den Mittelstand! Best-in-class und sorgenfrei. Mit Content Delivery Network, Continuous Integration und regelmässigen Updates.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
                      ]}
-                     price={'1800 CHF / Jahr'}>
+                     link={'/angebot/hosting/'}
+                     price={'1800 CHF / Jahr'}
+                     number={'third'}>
           <HardDrive className={css(tw('w-2 h-2'))} />
         </ProductCard>
         <ProductCard type={'Cut and Paste'}
                      title={'Custom Services'}
-                     forWhom={'Für Restaurants, Startups, Marketingseiten, kleine Portfolios'}
+                     forWhom={'Gerne bieten wir unsere Services auch massgeschneidert an. So können Sie uns für eine feste Anzahl von Stunden buchen, ' +
+                     'um ihr Projekt zu unterstützten. Für grössere Projekte bieten wir dabei gerne auch individuelle Offerten an.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
                      ]}
-                     price={'125 CHF / Stunde'}>
+                     price={'150 CHF / Stunde'}
+                     index={'even'}
+                     number={'fourth'}>
           <Scissors className={css(tw('w-2 h-2'))} />
         </ProductCard>
       </ul>

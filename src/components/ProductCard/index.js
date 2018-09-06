@@ -7,33 +7,67 @@
 /* global tw */
 import React from 'react';
 import { Link } from 'gatsby';
+import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card';
 import { css } from 'emotion';
+import { mq } from '../../assets/style';
 
-const ProductCard = props =>
-  <li className={css(tw('md:w-1/2 lg:w-1/3 xl:w-1/4 md:pr-2 md:pb-2 border-grey-light border-solid border-t border-r-0 border-l-0 border-b-0 md:border-t-0'))}>
-    <section className={css(tw('md:rounded overflow-hidden md:shadow-lg p-0'))}>
+export default props =>
+  <li className={css(tw('sm:w-1/2 lg:w-1/3 border-grey-light border-solid border-t border-r-0 border-l-0 border-b-0 sm:border-r'),
+    props.index === 'even' ? evenStyling : {},
+    props.number === 'second' ? secondStyling : {},
+    props.number === 'third' ? thirdStyling : {},
+    props.number === 'fourth' ? fourthStyling : {})}>
+    <Link to={props.link}
+          className={css(tw('text-black block hover:opacity-75 transition relative pb-4 h-full'),
+            props.number === 'fourth' ? fourthStylingSection : {})}>
+      <section className={css(tw('md:rounded overflow-hidden p-0'))}>
 
-      <div className={css(tw('bg-black text-white p-1'))}>
-        <p className={css(tw('m-0 flex justify-between'))}><span>{props.type}</span> {props.children}</p>
-        <h3 className={css(tw('m-0 leading-2'))}>{props.title}</h3>
-      </div>
+        <CardWrapper>
+          <CardType className={css(tw('flex justify-between'))}><span>{props.type}</span> {props.children}</CardType>
+          <h3 className={css(tw('m-0 leading-2'))}>{props.title}</h3>
+        </CardWrapper>
 
-      <div className={css(tw('bg-blue-lightest p-1'))}>
-        <p className={css(tw('m-0'))}>{props.forWhom}</p>
-      </div>
+        <CardWrapper>
+          <p className={css(tw('pt-0 max-w-hero'))}>{props.forWhom}</p>
+        </CardWrapper>
 
-      <div className={css(tw('p-1'))}>
-        <h4 className={css(tw('m-0 text-sm leading-2'))}>Features</h4>
-        <ul className={css(tw('p-0 pl-1 text-sm leading-2'))}>
-          { props.features.map((string, i) => <li key={i}>{ string }</li>) }
-        </ul>
-      </div>
-
-      <p className={css(tw('m-0 p-1 border-grey-light border-solid md:border-t border-r-0 border-l-0 border-b-0 border-t-0 font-semibold bg-blue-lightest'))}>
-        { props.price }
-      </p>
-      <Link to={'/angebot/klein/'}>Mehr dazu</Link>
-    </section>
+        <CardFooter>
+          <p className={css(tw('m-0 p-1 font-semibold text-right'))}>
+            { props.price }
+          </p>
+          <CardConverter>Mehr dazu</CardConverter>
+        </CardFooter>
+      </section>
+    </Link>
   </li>;
 
-export default ProductCard;
+
+const evenStyling = {
+  [mq[0]]: {
+    'border-right-width': '0',
+  },
+};
+
+const secondStyling = {
+  [mq[1]]: {
+    'border-right-width': '1px',
+  },
+};
+
+const thirdStyling = {
+  [mq[1]]: {
+    'border-right-width': '0',
+  },
+};
+
+const fourthStyling = {
+  [mq[2]]: {
+    flex: '1',
+  },
+};
+
+const fourthStylingSection = {
+  [mq[2]]: {
+    width: '33.3333333%',
+  },
+};
