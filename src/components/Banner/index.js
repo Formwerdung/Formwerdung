@@ -6,10 +6,8 @@
 
 /* global tw */
 import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Container from '../Container';
-import Nav from '../Nav';
-import NavItem from '../NavItem';
+import { AnchorItem, NavItem, Nav } from '../Nav';
 import { Link } from 'gatsby';
 import { css } from 'emotion';
 import logoSmall from './formwerdung-logo-small.svg';
@@ -19,16 +17,14 @@ const PrimaryNav = () =>
   <Nav>
     <NavItem to={'/angebot/'}>Angebot</NavItem>
     <NavItem to={'/portfolio/'}>Portfolio</NavItem>
-    <li className={css(tw('pl-1 my-auto'))}>
-      <AnchorLink href="#contact" className={css(tw('text-blue hover:text-black transition-color'))}>Kontakt</AnchorLink>
-    </li>
+    <AnchorItem to={'#contact'}>Kontakt</AnchorItem>
   </Nav>;
 
 const Banner = () =>
   <header className={css(tw('bg-white shadow w-full h-3 fixed pin-t z-20'))}>
     <Container>
-      <div className={css(tw('h-full py-xs flex justify-between px-1'))}>
-        <Link to={'/'} className={css(tw('max-w-hack'))}>
+      <div className={css(tw('h-full flex justify-between px-1'))}>
+        <Link to={'/'} className={css(tw('py-xs max-w-hack'))}>
           <img src={logoSmall} alt={'The Formwerdung Logo'} className={css(tw('h-full md:hidden block'))} />
           <img src={logoLarge} alt={'The Formwerdung Logo'} className={css(tw('h-full hidden md:block'))} />
         </Link>
