@@ -27,13 +27,13 @@ module.exports = {
         path: `${__dirname}/src/pages/case-study`,
       },
     },
-    {
+    /*{
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
         path: `${__dirname}/src/pages/blog`,
       },
-    },
+    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
