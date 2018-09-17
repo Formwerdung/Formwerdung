@@ -40,7 +40,7 @@
 }
 
 .border-left {
-@apply border-solid border-t-0 border-r-0 border-l border-b-0 border-t-0
+    @apply border-solid border-t-0 border-r-0 border-l border-b-0 border-t-0
 }
 
 .screen-image-right {
@@ -126,4 +126,8 @@
  */
 .text-shadow {
   text-shadow: 0 4px 4px rgba(0,0,0,0.5);
+}
+
+a {
+
 }

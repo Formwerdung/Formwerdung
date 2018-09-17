@@ -43,7 +43,7 @@ const Products = () =>
         </ProductCard>
         <ProductCard type={'Pflege'}
                      title={'Deluxe Hosting'}
-                     forWhom={'Hosting für den Mittelstand! Best-in-class und sorgenfrei. Mit Content Delivery Network, Continuous Integration und regelmässigen Updates.'}
+                     forWhom={'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und regelmässigen Updates.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
