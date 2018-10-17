@@ -76,6 +76,15 @@
   margin-bottom: 30px;
 }
 
+.device-left .gatsby-image-wrapper,
+.device-right .gatsby-image-wrapper {
+  width: 256px;
+  height: 182px;
+  border-radius: 0.2em;
+  border: 1px solid grey;
+  margin: auto;
+}
+
 .device-left {
   position: relative;
   background: white;

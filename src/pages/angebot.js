@@ -15,30 +15,28 @@ import Graf from '../components/Graf';
 
 const OfferPage = props => (
   <Layout>
-
-      <div className={css(tw('relative'))}>
-        <OfferNav props={ props.data.file } />
-        <Container>
+    <div className={css(tw('relative'))}>
+      <OfferNav props={ props.data.file } />
+      <Container>
         <div className={css(tw(''))}>
           <div className={css(tw('px-1 md:w-3/5 xl:w-1/2 bg-white'))}>
             <h1 className={css(tw('pt-1 pb-1 m-0 leading-3'))}>Angebot</h1>
-              <Graf>
-                Hier finden sie eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an,
-                die sich auf die technische Umsetzung beziehen. Dazu gehören inhaltliche Konzepte (inklusive Optimierung für
-                Suchmaschinen), Design und Programmierung.
-              </Graf>
-
+            <Graf>
+              Hier finden sie eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an,
+              die für die technische Umsetzung relevant sind. Dazu gehören inhaltliche Konzepte (inklusive Optimierung für
+              Suchmaschinen), Design und Programmierung.
+            </Graf>
             <Graf>
               Gerne bieten wir unsere Leistungen auch modular an. Auf der Basis eines unverbindlichen persönlichen Gesprächs
               können wir Ihnen detaillierte Offerten für volle Kostenkontrolle bieten.
             </Graf>
             <Graf>
-              Für weitere Services arbeiten wir gerne mit unserem breiten Netzwerk von Partnern zusammen.
+              Wir Für diese und weitere Services arbeiten wir gerne mit unserem breiten Netzwerk von Partnern zusammen.
             </Graf>
           </div>
 
-          <div className={css(tw('m-1 md:w-4/5 md:ml-1/5 lg:w-3/5 lg:ml-2/5 lg:mt-8 xl:w-1/2 xl:ml-1/2 xl:mt-2 bg-blue-lightest shadow-lg rounded'))}>
-            <h2 className={css(tw('m-0 py-1 mb-1 text-center leading-3 bg-blue text-white rounded-t'), {'text-shadow': '0 4px 4px rgba(0,0,0,0.5)'})}>Alle unsere Dienste</h2>
+          <div className={css(tw('m-1 md:w-4/5 md:ml-1/5 lg:w-3/5 lg:ml-2/5 lg:mt-8 xl:w-1/2 xl:ml-1/2 xl:mt-2'))}>
+            <h2 className={css(tw('m-0 py-1 mb-1 text-center leading-3'))}>Alle unsere Dienste</h2>
             <div className={css(tw('md:flex'))}>
               <ServiceCard title={'Kontaktaufnahme'}
                            description={'Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.'} />
@@ -70,9 +68,8 @@ const OfferPage = props => (
 
           </div>
         </div>
-        </Container>
-      </div>
-
+      </Container>
+    </div>
   </Layout>
 );
 

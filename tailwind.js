@@ -590,6 +590,8 @@ module.exports = {
     hero: '350px',
     'hero-md': '449px',
     'contact': '35rem',
+    'tab': '74px',
+    'reset': 'none',
   }),
 
 

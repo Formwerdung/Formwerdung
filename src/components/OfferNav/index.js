@@ -11,8 +11,15 @@ import { Link } from 'gatsby';
 import { css } from 'emotion';
 import Container from '../Container';
 
+const offerNavItemStyle = {
+  'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
+  'text-overflow': 'ellipsis',
+  'white-space': 'nowrap',
+  'overflow': 'hidden',
+};
+
 const OfferNavItem = props =>
-  <li className={css(tw('my-auto'))}>
+  <li className={css(tw('my-auto flex-shrink max-w-tab md:max-w-reset overflow-hidden'))}>
     <Link to={props.to}
           activeStyle={{
             color: '#080401',
@@ -23,23 +30,20 @@ const OfferNavItem = props =>
             'text-shadow': 'none',
           }}
           exact={props.exact}
-          className={css(tw('no-underline text-white hover:text-blue-lightest transition-color px-1 pt-1 p-1 rounded rounded-b-none block '), {'text-shadow': '0 4px 4px rgba(0,0,0,0.5)'})}>
+          className={css(tw('no-underline text-white hover:text-blue transition-color px-1 pt-1 p-1 rounded rounded-b-none block '), offerNavItemStyle)}>
       {props.children}
     </Link>
   </li>;
 
 const OfferNav = ({ props }) =>
   <div className={css(tw('relative'))}>
-
     <nav className={css(tw('h-full relative z-10'))}>
       <Container>
       <ul className={css(tw('list-reset m-0 flex h-full justify-start pt-4 md:pt-8 px-1'))}>
-
         <OfferNavItem exact to={'/angebot/'}>Übersicht</OfferNavItem>
-        <OfferNavItem to={'/angebot/klein/'}>Klein</OfferNavItem>
-        <OfferNavItem to={'/angebot/gross/'}>Gross</OfferNavItem>
+        <OfferNavItem to={'/angebot/klein/'}>Amplify</OfferNavItem>
+        <OfferNavItem to={'/angebot/gross/'}>Magazine</OfferNavItem>
         <OfferNavItem to={'/angebot/hosting/'}>Hosting</OfferNavItem>
-
       </ul>
       </Container>
     </nav>

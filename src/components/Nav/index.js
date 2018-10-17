@@ -9,6 +9,7 @@ import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { css } from 'emotion';
+import config from '../../../tailwind';
 
 export const AnchorItem = props =>
   <li className={css(tw('h-full pl-1 my-auto'))}>
@@ -22,7 +23,7 @@ export const NavItem = props =>
   <li className={css(tw('h-full px-1 border-solid border-grey-light border border-l-0 border-t-0 border-b-0'))}>
     <Link to={props.to}
           activeStyle={{
-            color: '#080401'
+            color: config.colors['blue-dark']
           }}
           exact={props.exact}
           className={css(tw('leading-3 no-underline text-black hover:text-blue-dark transition-color'))}>
