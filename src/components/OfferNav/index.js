@@ -19,7 +19,7 @@ const offerNavItemStyle = {
 };
 
 const OfferNavItem = props =>
-  <li className={css(tw('my-auto flex-shrink max-w-tab md:max-w-reset overflow-hidden'))}>
+  <li className={css(tw('my-auto flex-shrink max-w-tab sm:max-w-reset overflow-hidden'))}>
     <Link to={props.to}
           activeStyle={{
             color: '#080401',
@@ -39,7 +39,7 @@ const OfferNav = ({ props }) =>
   <div className={css(tw('relative'))}>
     <nav className={css(tw('h-full relative z-10'))}>
       <Container>
-      <ul className={css(tw('list-reset m-0 flex h-full justify-start pt-4 md:pt-8 px-1'))}>
+      <ul className={css(tw('list-reset m-0 flex h-full justify-start pt-8 sm:pt-10 xl:pt-12 px-1'))}>
         <OfferNavItem exact to={'/angebot/'}>Übersicht</OfferNavItem>
         <OfferNavItem to={'/angebot/klein/'}>Amplify</OfferNavItem>
         <OfferNavItem to={'/angebot/gross/'}>Magazine</OfferNavItem>
@@ -47,7 +47,7 @@ const OfferNav = ({ props }) =>
       </ul>
       </Container>
     </nav>
-    <div className={css(tw('absolute pin-t w-full h-full shadow-inner'))}>
+    <div className={css(tw('absolute pin-t w-full h-full shadow-inner bg-black-transparent'))}>
       <Img sizes={ props.sizes } position="absolute" outerWrapperClassName="hero__bg-container" className={'hero__bg-image'} />
     </div>
   </div>;

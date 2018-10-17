@@ -20,7 +20,7 @@ const OfferPage = props => (
       <Container>
         <div className={css(tw(''))}>
           <div className={css(tw('px-1 md:w-3/5 xl:w-1/2 bg-white'))}>
-            <h1 className={css(tw('pt-1 pb-1 m-0 leading-3'))}>Angebot</h1>
+            <h1 className={css(tw('pt-1 md:pt-2 pb-1 m-0 leading-3'))}>Angebot</h1>
             <Graf>
               Hier finden sie eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an,
               die für die technische Umsetzung relevant sind. Dazu gehören inhaltliche Konzepte (inklusive Optimierung für
@@ -35,34 +35,27 @@ const OfferPage = props => (
             </Graf>
           </div>
 
-          <div className={css(tw('m-1 md:w-4/5 md:ml-1/5 lg:w-3/5 lg:ml-2/5 lg:mt-8 xl:w-1/2 xl:ml-1/2 xl:mt-2'))}>
+          <div className={css(tw('md:w-4/5 md:ml-1/5 lg:w-3/5 lg:ml-2/5 lg:mt-8 xl:w-1/2 xl:ml-1/2 xl:mt-2'))}>
             <h2 className={css(tw('m-0 py-1 mb-1 text-center leading-3'))}>Alle unsere Dienste</h2>
-            <div className={css(tw('md:flex'))}>
-              <ServiceCard title={'Kontaktaufnahme'}
-                           description={'Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.'} />
-              <ServiceCard title={'Inhaltliche Konzepte'}
-                           description={'Wir erstellen in persönlicher Kooperation mit dem Kunden Ausrichtung und Umfang der Inhalte.'} />
-            </div>
-            <div className={css(tw('md:flex'))}>
-              <ServiceCard title={'Online-Strategie'}
-                           description={'Nicht angeboten. Auf Wunsch holen wir unsere Social Media und Marketing-Partner mit ins Boot.'}
-                           disabled />
-              <ServiceCard title={'Content'}
-                           description={'Nicht angeboten. Auf Wunsch engagieren wir Fotograph_innen und Texter_innen aus unserem Netzwerk.'}
-                           disabled />
-            </div>
-            <div className={css(tw('md:flex'))}>
-              <ServiceCard title={'Design (statisch)'}
-                           description={'Wir designen ihre Website für ihren individuellen Inhalte.'} />
-              <ServiceCard title={'Design (prototyping)'}
-                           description={'Wir erstellen Prototypen ihrer Website, um Ihnen vorab das Nutzererlebnis zeigen zu können.'} />
-            </div>
-            <div className={css(tw('md:flex'))}>
-              <ServiceCard title={'Programmierung'}
-                           description={'Wir setzen die Designs und Prototypen in die Tat um.'} />
-              <ServiceCard title={'Hosting'}
-                           description={'Wir hosten ihre Webseite bei unseren Infrastrukturpartnern und übernehmen Updates.'} />
-            </div>
+
+            <ServiceCard title={'Kontaktaufnahme'}
+                         description={'Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.'} />
+            <ServiceCard title={'Inhaltliche Konzepte'}
+                         description={'Wir erstellen in persönlicher Kooperation mit dem Kunden Ausrichtung und Umfang der Inhalte.'} />
+            <ServiceCard title={'Online-Strategie'}
+                         description={'Nicht angeboten. Auf Wunsch holen wir unsere Social Media und Marketing-Partner mit ins Boot.'}
+                         disabled />
+            <ServiceCard title={'Content'}
+                         description={'Nicht angeboten. Auf Wunsch engagieren wir Fotograph_innen und Texter_innen aus unserem Netzwerk.'}
+                         disabled />
+            <ServiceCard title={'Design (statisch)'}
+                         description={'Wir designen ihre Website für ihren individuellen Inhalte.'} />
+            <ServiceCard title={'Design (prototyping)'}
+                         description={'Wir erstellen Prototypen ihrer Website, um Ihnen vorab das Nutzererlebnis zeigen zu können.'} />
+            <ServiceCard title={'Programmierung'}
+                         description={'Wir setzen die Designs und Prototypen in die Tat um.'} />
+            <ServiceCard title={'Hosting'}
+                         description={'Wir hosten ihre Webseite bei unseren Infrastrukturpartnern und übernehmen Updates.'} />
             <ServiceCard title={'Pflege'}
                          description={'Auf Wunsch begleiten wir ihre Webseite weiter im Bezug auf ihre Optimierung für Suchmaschinen.'} />
 

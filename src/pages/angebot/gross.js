@@ -13,12 +13,14 @@ import { css } from 'emotion';
 
 export default props =>
   <Layout>
-    <Container>
+    <div className={css(tw('relative'))}>
       <OfferNav props={ props.data.file } />
-      <div className={css(tw('px-1'))}>
-        Gross
-      </div>
-    </Container>
+      <Container>
+        <div className={css(tw('px-1'))}>
+          Gross
+        </div>
+      </Container>
+    </div>
   </Layout>;
 
 export const query = graphql`
