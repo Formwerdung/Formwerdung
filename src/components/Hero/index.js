@@ -18,7 +18,7 @@ const Hero = ({ props }) => (
           Alles fürs Web
         </h1>
         <p className={css(tw('pb-1 text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md'))}>
-          Formwerdung gestaltet und entwickelt exklusiv für online.
+          Formwerdung gestaltet und entwickelt exklusiv für das World Wide Web.
           Wir sind auf <em>responsive Design</em> spezialisiert, das auch bei komplexen Interfaces keine Abstriche machen muss.
         </p>
       </div>

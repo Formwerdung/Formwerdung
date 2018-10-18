@@ -54,7 +54,8 @@ export const query = graphql`
       } 
     }
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(case-study)/"}}
+      filter: {fileAbsolutePath: { regex: "/(case-study)/" }},
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
         node {
@@ -66,6 +67,14 @@ export const query = graphql`
           frontmatter {
             title
             callToAction
+            image {
+              publicURL
+              childImageSharp {
+                sizes(maxWidth: 320) {
+                  srcSet
+                }
+              }
+            }
           }
         }
       }

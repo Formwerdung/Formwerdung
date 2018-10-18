@@ -11,29 +11,31 @@ import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card';
 import config from '../../../tailwind';
 import { css } from 'emotion';
 import { mq } from '../../assets/style';
+import Img from 'gatsby-image';
 
-const CaseCard = props =>
+const CaseCard = ({ props, first, latest, order }) =>
   <li className={css(tw('flex-1 lg:flex-none block sm:w-1/2 lg:w-1/3 text-center sm:text-left '),
-                 props.first ? firstLi : {},
-                 !(props.first || props.latest) ? middleLi : {},
-                 props.latest ? latestLi : { 'border-bottom': `1px solid ${config.colors['grey-light']}` })}>
-    <Link to={`${props.props.fields.collection}${props.props.fields.slug}`}
+                 first ? firstLi : {},
+                 !(first || props.latest) ? middleLi : {},
+                 latest ? latestLi : { 'border-bottom': `1px solid ${config.colors['grey-light']}` })}>
+    <Link to={`${props.fields.collection}${props.fields.slug}`}
           className={css(tw('text-black block hover:opacity-75 transition relative pb-8 h-full'))}>
       <div className={css(tw('mx-auto sm:ml-0 sm:flex sm:flex-wrap lg:static'),
-                      !(props.first || props.latest) ? middleContainer : {},
-                      props.latest ? latestContainer : { 'max-width': '320px' })}>
+                      !(first || latest) ? middleContainer : {},
+                      latest ? latestContainer : { 'max-width': '320px' })}>
         <div className={css(tw('flex-1'))}>
           <CardWrapper>
             <CardType>Fallstudie</CardType>
-            <h2 className={css(tw('m-0 leading-none'))}>{ props.props.frontmatter.title }</h2>
+            <h2 className={css(tw('m-0 leading-none'))}>{ props.frontmatter.title }</h2>
           </CardWrapper>
-          <div className="project-staerkle-device">
-            <div className="project-staerkle-screen" />
+          <div className={`device-${order%2 ? 'left' : 'right'}`}>
+            <Img sizes={ props.frontmatter.image.childImageSharp.sizes }
+                 className={css(tw('screen-image-right'))} />
           </div>
         </div>
-        <CardWrapper className={css(props.latest ? latestBlurb : {})}>{ props.props.frontmatter.callToAction }</CardWrapper>
+        <CardWrapper className={css(latest ? latestBlurb : {})}>{ props.frontmatter.callToAction }</CardWrapper>
         <CardFooter>
-          <CardConverter>Weiterlesen</CardConverter>
+          <CardConverter>Lesen</CardConverter>
         </CardFooter>
       </div>
     </Link>

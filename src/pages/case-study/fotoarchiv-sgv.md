@@ -1,7 +1,8 @@
 ---
 title: Fotoarchiv der SGV
 callToAction: Wie wir die Fotosammlung der Schweizerischen Gesellschaft für Volkskunde allen zugänglich gemacht haben.
-data: 1
+order: 1
+image: "../portfolio/sgv.png"
 ---
 <h1>Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde</h2>
 <p className={'leading-lg-2 text-3xl pb-lg-2 md:w-2/3'}>Die Vergangenheit bewahren. Für alle.</p>

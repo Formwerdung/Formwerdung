@@ -14,7 +14,7 @@ const Cases = ({ props }) =>
   <section>
     <Container>
       <ul className={css(tw('list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center'))}>
-        { props.map((edge, i) => <CaseCard key={i} props={ edge.node } latest={i > 1} first={i === 0} />) }
+        { props.map((edge, i) => <CaseCard key={i} props={ edge.node } latest={i > 1} first={i === 0} order={i} />) }
       </ul>
     </Container>
   </section>;

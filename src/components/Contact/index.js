@@ -25,7 +25,6 @@ const Dialog = ({ title, description, dismissHandler, bgColor }) =>
     <p>{ description }</p>
   </section>;
 
-
 class Contact extends React.Component {
 
   constructor(props) {
@@ -73,7 +72,7 @@ class Contact extends React.Component {
       <section id={'contact'}>
         <Container>
           <div className={css(tw('max-w-contact'))}>
-            <h2 className={css(tw('m-0 px-1 pt-1 leading-3'))}>Kontaktieren Sie uns!</h2>
+            <h2 className={css(tw('m-0 px-1 leading-3'))}>Kontaktieren Sie uns!</h2>
             <p className={css(tw('px-1 pt-0 pb-1'))}>Wir freuen uns, von Ihnen zu hören. Senden Sie uns eine Email, um ein unverbindliches Treffen zu verabreden.</p>
             { this.state.success &&
               <Dialog title={'Senden erfolgreich'}
@@ -111,7 +110,7 @@ class Contact extends React.Component {
                          className={css(tw('text-input hover:border-border focus:outline-none focus:border-blue'))} />
                 </label>
               </p>
-              <p>
+              <p className={css(tw('pt-2'))}>
                 <label className={css(tw('font-semibold'))}>
                   Email<br />
                   <input type="email"
@@ -120,7 +119,7 @@ class Contact extends React.Component {
                          className={css(tw('text-input hover:border-border focus:outline-none focus:border-blue'))} />
                 </label>
               </p>
-              <p>
+              <p className={css(tw('pt-2'))}>
                 <label className={css(tw('font-semibold'))}>
                   Was möchten Sie besprechen?<br />
                   <textarea name="message"
@@ -129,18 +128,20 @@ class Contact extends React.Component {
                             className={css(tw('text-input hover:border-border focus:outline-none focus:border-blue h-12'))} />
                 </label>
               </p>
-              <div className={css(tw('flex pt-3 justify-end'))}>
+              <div className={css(tw('flex pt-2 justify-end'))}>
                 <input type="submit" value={'Senden'}
                        className={css(tw('rounded bg-blue text-white p-1 text-md h-4 leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1 border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark'))} />
                 <input type="reset" value="Löschen"
                        className={css(tw('rounded p-1 h-4 text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark'))}/>
               </div>
             </form>
-            <p className={css(tw('mt-3 px-1 border-t border-l-0 border-b-0 border-r-0 border-solid border-border-light text-right'))}>
-              Wenn Sie das Formular nicht ausfüllen möchten, können Sie uns auch gerne ein Email an <Obfuscate
-                email="mail@formwerdung.ch"
-                headers={{ subject: 'Anfrage von formwerdung.ch' }}
-                className={css(tw('text-blue hover:text-black'))} /> senden.
+            <p className={css(tw('mt-1 pt-1 px-1 border-t border-l-0 border-b-0 border-r-0 border-solid border-border-light text-right'))}>
+              <div className={css(tw('md:w-4/5 ml-auto'))}>
+                Wenn Sie das Formular nicht ausfüllen möchten, können Sie uns auch gerne ein Email an <Obfuscate
+                  email="mail@formwerdung.ch"
+                  headers={{ subject: 'Anfrage von formwerdung.ch' }}
+                  className={css(tw('text-blue hover:text-black'))} /> senden.
+              </div>
             </p>
           </div>
         </Container>

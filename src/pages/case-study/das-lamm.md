@@ -1,7 +1,8 @@
 ---
 title: Das Lamm
-callToAction: Ambitioniertes Design und WordPress als CMS
-data: 2
+callToAction: Ambitioniertes Design und WordPress als CMS für das nachhaltigste Magazin der Schweiz.
+order: 2
+image: "../portfolio/lamm.png"
 ---
 Kritische Fragen zu Nachhaltigkeitsthemen.
 

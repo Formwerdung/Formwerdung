@@ -11,26 +11,27 @@ import Container from '../components/Container';
 import Layout from '../components/Layout';
 import { css } from 'emotion';
 
+const PortfolioCard = ({ key, props }) =>
+  <section className={css(tw('sm:w-1/2 lg:w-1/3 xl:w-1/4 border border-l-0 border-t-0 border-border border-solid'))}>
+    <div className={css(tw('mx-auto max-w-card'))}>
+      <div className={`device-${key%2 ? 'left' : 'right'}`}>
+        <Img sizes={ props.frontmatter.image.childImageSharp.sizes }
+             className={css(tw('screen-image-right'))} />
+      </div>
+      <div className={css(tw('p-1'))}>
+        <h2 className={css(tw('text-md leading-2'))}>{ props.frontmatter.title }</h2>
+        <div dangerouslySetInnerHTML={{ __html: props.html }} />
+      </div>
+    </div>
+  </section>;
+
 const PortfolioPage = props =>
   <Layout>
     <Container>
       <h1 className={css(tw('pt-8'))}>Portfolio</h1>
       <p>Eine breite Auswahl unserer Arbeiten.</p>
       <div className={css(tw('pt-8 sm:flex sm:flex-wrap'))}>
-      { props.data.allMarkdownRemark.edges.map((edge, i) =>
-        <section key={i} className={css(tw('sm:w-1/2 lg:w-1/3 xl:w-1/4 border border-l-0 border-t-0 border-border border-solid'))}>
-          <div className={css(tw('mx-auto max-w-card'))}>
-            <div className={`device-${i%2 ? 'left' : 'right'}`}>
-              <Img sizes={ edge.node.frontmatter.image.childImageSharp.sizes }
-                   className={css(tw('screen-image-right'))} />
-            </div>
-            <div className={css(tw('p-1'))}>
-              <h2 className={css(tw('text-md leading-2'))}>{ edge.node.frontmatter.title }</h2>
-              <div dangerouslySetInnerHTML={{ __html: edge.node.html }} />
-            </div>
-          </div>
-        </section>
-      )}
+      { props.data.allMarkdownRemark.edges.map((edge, i) => <PortfolioCard key={i} props={edge.node} />)}
       </div>
     </Container>
   </Layout>;

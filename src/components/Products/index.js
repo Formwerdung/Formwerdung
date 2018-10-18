@@ -14,7 +14,7 @@ import { HardDrive, Package, Scissors } from 'react-feather';
 const Products = () =>
   <section>
     <Container>
-      <h2 className={css(tw('m-0 p-1 pt-8'))}>Produkte</h2>
+      <h2 className={css(tw('m-0 p-1 pt-3'))}>Produkte</h2>
       <ul className={css(tw('list-reset m-0 p-0 sm:flex md:-mr-2 sm:flex-wrap'))}>
         <ProductCard type={'Package'}
                      title={'Amplify'}
@@ -43,7 +43,7 @@ const Products = () =>
         </ProductCard>
         <ProductCard type={'Pflege'}
                      title={'Deluxe Hosting'}
-                     forWhom={'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und regelmässigen Updates.'}
+                     forWhom={'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Sicherheitsupdates.'}
                      features={[
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
@@ -61,7 +61,7 @@ const Products = () =>
                        'Zwei preliminäre, individuelle Designs zur Auswahl',
                        'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
                      ]}
-                     price={'150 CHF / Stunde'}
+                     price={'125 CHF / Stunde'}
                      index={'even'}
                      number={'fourth'}>
           <Scissors className={css(tw('w-2 h-2'))} />

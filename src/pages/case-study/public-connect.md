@@ -1,7 +1,8 @@
 ---
 title: Public Connect
-callToAction: Begrenzter Einsatz für die technisch anspruchsvollsten Aspekte
-data: 2
+callToAction: Ein gelungener Consulting-Einsatz für die technisch anspruchsvollsten Aspekte eines Redesigns. 
+order: 3
+image: "../portfolio/public-connect.png"
 ---
 <h1>Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde</h2>
 <p className={'leading-lg-2 text-3xl pb-lg-2 md:w-2/3'}>Die Vergangenheit bewahren. Für alle.</p>
