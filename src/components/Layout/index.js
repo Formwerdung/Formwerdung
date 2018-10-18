@@ -1,28 +1,21 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import { css } from 'emotion'
+import tw from 'tailwind.macro'
 
-/* global tw */
-import React from 'react';
-import Banner from '../Banner';
-import Contact from '../Contact';
-import Colophon from '../Colophon';
-import { css } from 'emotion';
-import '../../../global.css';
+import './global.css'
+import Banner from '../Banner'
+import Contact from '../Contact'
+import Colophon from '../Colophon'
 
 const Layout = ({ children }) => (
-  <div className={css(tw('font-sans'))}>
+  <div className={css(tw`font-sans`)}>
     <Banner />
-    <main className={css(tw('shadow relative pb-8'))}>
-      <div className={css(tw('mt-3 mb-3'))}>
-        {children}
-      </div>
+    <main className={css(tw`shadow relative pb-8`)}>
+      <div className={css(tw`mt-3 mb-3`)}>{children}</div>
       <Contact />
     </main>
     <Colophon />
   </div>
-);
+)
 
-export default Layout;
+export default Layout

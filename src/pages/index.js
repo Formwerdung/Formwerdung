@@ -1,37 +1,40 @@
-import React from 'react';
-import Cases from '../components/Cases';
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
-import Products from '../components/Products';
-import { get } from 'lodash';
-import Divider from '../components/Divider';
+import React from 'react'
+import Cases from '../components/Cases'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
+import Products from '../components/Products'
+import { get } from 'lodash'
+import Divider from '../components/Divider'
 
 class IndexPage extends React.Component {
-
   render() {
-    const imgFile = this.props.data.file;
-    const portfolioImg = this.props.data.portfolio;
-    const caseStudies = get(this, 'props.data.allMarkdownRemark.edges', []);
+    const imgFile = this.props.data.file
+    const portfolioImg = this.props.data.portfolio
+    const caseStudies = get(this, 'props.data.allMarkdownRemark.edges', [])
 
     return (
       <Layout>
-        <Hero props={ imgFile } />
-        <Cases props={ caseStudies } />
-        <Divider image={ portfolioImg }
-                 lineOne={'Mehr Arbeiten sehen?'}
-                 lineTwo={'Zum Portfolio.'}
-                 route={'/portfolio/'} />
+        <Hero props={imgFile} />
+        <Cases props={caseStudies} />
+        <Divider
+          image={portfolioImg}
+          lineOne={'Mehr Arbeiten sehen?'}
+          lineTwo={'Zum Portfolio.'}
+          route={'/portfolio/'}
+        />
         <Products />
-        <Divider image={ portfolioImg }
-                 lineOne={'Mehr Infos zum Angebot?'}
-                 lineTwo={'Zur Übersicht.'}
-                 route={'/angebot/'} />
+        <Divider
+          image={portfolioImg}
+          lineOne={'Mehr Infos zum Angebot?'}
+          lineTwo={'Zur Übersicht.'}
+          route={'/angebot/'}
+        />
       </Layout>
     )
   }
 }
 
-export default IndexPage;
+export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
@@ -42,7 +45,7 @@ export const query = graphql`
         traceSVG: { background: "#fff", color: "#f8fafc" }
       ) {
         ...GatsbyImageSharpSizes
-      } 
+      }
     }
     portfolio: imageSharp(id: { regex: "/portfolio/" }) {
       sizes(
@@ -51,10 +54,10 @@ export const query = graphql`
         traceSVG: { background: "#fff", color: "#f8fafc" }
       ) {
         ...GatsbyImageSharpSizes
-      } 
+      }
     }
     allMarkdownRemark(
-      filter: {fileAbsolutePath: { regex: "/(case-study)/" }},
+      filter: { fileAbsolutePath: { regex: "/(case-study)/" } }
       sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
@@ -79,5 +82,5 @@ export const query = graphql`
         }
       }
     }
-  } 
-`;
+  }
+`

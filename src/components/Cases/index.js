@@ -1,22 +1,28 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import styled from 'react-emotion'
+import tw from 'tailwind.macro'
 
-/* global tw */
-import React from 'react';
-import CaseCard from '../CaseCard';
-import Container from '../Container';
-import { css } from 'emotion';
+import CaseCard from '../CaseCard'
+import Container from '../Container'
 
-const Cases = ({ props }) =>
+const CaseList = styled('ul')`
+  ${tw`list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center`};
+`
+
+export default ({ props }) => (
   <section>
     <Container>
-      <ul className={css(tw('list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center'))}>
-        { props.map((edge, i) => <CaseCard key={i} props={ edge.node } latest={i > 1} first={i === 0} order={i} />) }
-      </ul>
+      <CaseList>
+        {props.map((edge, i) => (
+          <CaseCard
+            key={i}
+            props={edge.node}
+            latest={i > 1}
+            first={i === 0}
+            order={i}
+          />
+        ))}
+      </CaseList>
     </Container>
-  </section>;
-
-export default Cases;
+  </section>
+)

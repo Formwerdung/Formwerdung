@@ -1,27 +1,22 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import { graphql } from 'gatsby'
+import { css } from 'emotion'
+import tw from 'tailwind.macro'
 
-/* global tw */
-import React from 'react';
-import Container from '../../components/Container';
-import Layout from '../../components/Layout';
-import OfferNav from '../../components/OfferNav';
-import { css } from 'emotion';
+import Container from '../../components/Container'
+import Layout from '../../components/Layout'
+import OfferNav from '../../components/OfferNav'
 
-export default props =>
+export default props => (
   <Layout>
-    <div className={css(tw('relative'))}>
-      <OfferNav props={ props.data.file } />
+    <div className={css(tw`relative`)}>
+      <OfferNav props={props.data.file} />
       <Container>
-        <div className={css(tw('px-1'))}>
-          Hosting
-        </div>
+        <div className={css(tw`px-1`)}>Hosting</div>
       </Container>
     </div>
-  </Layout>;
+  </Layout>
+)
 
 export const query = graphql`
   query OfferHostingQuery {
@@ -32,7 +27,7 @@ export const query = graphql`
         traceSVG: { background: "#fff", color: "#f8fafc" }
       ) {
         ...GatsbyImageSharpSizes
-      } 
+      }
     }
   }
-`;
+`

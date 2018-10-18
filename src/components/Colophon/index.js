@@ -1,28 +1,34 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import styled from 'react-emotion'
+import tw from 'tailwind.macro'
 
-/* global tw */
-import React from 'react';
-import Container from '../Container';
-import { NavItem, Nav } from '../Nav';
-import { css } from 'emotion';
+import Container from '../Container'
+import { Nav, NavItem } from '../Nav'
 
-const Colophon = () =>
-  <footer className={css(tw('bg-grey-lighter h-3 overflow-hidden'))}>
+const Colophon = styled('footer')`
+  ${tw`bg-grey-lighter h-3 overflow-hidden`};
+`
+
+const ColophonWrapper = styled('div')`
+  ${tw`md:flex md:justify-between px-1`};
+`
+
+const ColophonCopyright = styled('div')`
+  ${tw`leading-3`};
+`
+
+export default () => (
+  <Colophon>
     <Container>
-      <div className={css(tw('md:flex md:justify-between px-1'))}>
-        <div className={css(tw('leading-3'))}>&copy; 2018 Formwerdung</div>
+      <ColophonWrapper>
+        <ColophonCopyright>&copy; 2018 Formwerdung</ColophonCopyright>
         <div>
           <Nav>
             <NavItem to={'/about/'}>About</NavItem>
             <NavItem to={'/imprint/'}>Impressum</NavItem>
           </Nav>
         </div>
-      </div>
+      </ColophonWrapper>
     </Container>
-  </footer>;
-
-export default Colophon;
+  </Colophon>
+)

@@ -1,0 +1,77 @@
+html {
+  font-size: 1em;
+  /* height: 100%; */
+}
+
+@media (min-width: 768px) {
+
+  html {
+    font-size: 1.125em;
+  }
+}
+
+@media (min-width: 992px) {
+
+  html {
+    font-size: 1.25em;
+  }
+}
+
+body {
+  color: #080401;
+  background-image: linear-gradient(to top, #0ff 0, rgba(255,255,255,0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 0.75rem;
+  margin: 0;
+  line-height: 1.5;
+  /* height: 100%; */
+  background: #fffefc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.hero__bg-container {
+  height: 100%;
+}
+
+.hero__bg-image {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+}
+
+.hero__bg-image img {
+  font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; /* IE Polyfill */
+}
+
+.hero__bg-image > div {
+  padding-bottom: 100% !important;
+}
+
+.device-left .gatsby-image-wrapper,
+.device-right .gatsby-image-wrapper {
+  width: 256px;
+  height: 182px;
+  border-radius: 0.2em;
+  border: 1px solid grey;
+  margin: auto;
+}

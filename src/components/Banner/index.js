@@ -1,36 +1,50 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'react-emotion'
+import tw from 'tailwind.macro'
 
-/* global tw */
-import React from 'react';
-import Container from '../Container';
-import { AnchorItem, NavItem, Nav } from '../Nav';
-import { Link } from 'gatsby';
-import { css } from 'emotion';
-import logoSmall from './formwerdung-logo-small.svg';
-import logoLarge from './formwerdung-logo-large.svg';
+import Container from '../Container'
+import { AnchorItem, NavItem, Nav } from '../Nav'
+import logoSmall from './formwerdung-logo-small.svg'
+import logoLarge from './formwerdung-logo-large.svg'
 
-const PrimaryNav = () =>
+const Banner = styled('header')`
+  ${tw`shadow w-full h-3 fixed pin-t z-20 bg-white`};
+`
+const BannerWrapper = styled('div')`
+  ${tw`h-full flex justify-between px-1`};
+`
+
+const BannerLink = styled(Link)`
+  ${tw`py-xs max-w-hack`};
+`
+
+const BannerLogoSmall = styled('img')`
+  ${tw`h-full md:hidden block`};
+`
+
+const BannerLogoLarge = styled('img')`
+  ${tw`h-full hidden md:block`};
+`
+
+const BannerNav = () => (
   <Nav>
     <NavItem to={'/angebot/'}>Angebot</NavItem>
     <NavItem to={'/portfolio/'}>Portfolio</NavItem>
     <AnchorItem to={'#contact'}>Kontakt</AnchorItem>
-  </Nav>;
+  </Nav>
+)
 
-const Banner = () =>
-  <header className={css(tw('bg-white shadow w-full h-3 fixed pin-t z-20'))}>
+export default () => (
+  <Banner>
     <Container>
-      <div className={css(tw('h-full flex justify-between px-1'))}>
-        <Link to={'/'} className={css(tw('py-xs max-w-hack'))}>
-          <img src={logoSmall} alt={'The Formwerdung Logo'} className={css(tw('h-full md:hidden block'))} />
-          <img src={logoLarge} alt={'The Formwerdung Logo'} className={css(tw('h-full hidden md:block'))} />
-        </Link>
-        <PrimaryNav />
-      </div>
+      <BannerWrapper>
+        <BannerLink to={'/'}>
+          <BannerLogoSmall src={logoSmall} alt={'The Formwerdung Logo'} />
+          <BannerLogoLarge src={logoLarge} alt={'The Formwerdung Logo'} />
+        </BannerLink>
+        <BannerNav />
+      </BannerWrapper>
     </Container>
-  </header>;
-
-export default Banner;
+  </Banner>
+)

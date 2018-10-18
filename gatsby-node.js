@@ -1,22 +1,15 @@
-const { createFilePath } = require('gatsby-source-filesystem');
-const path = require(`path`);
-const _ = require('lodash');
-
-exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }) => {
-  setBabelPlugin({ name: 'babel-plugin-tailwind' });
-};
+const { createFilePath } = require('gatsby-source-filesystem')
+const path = require(`path`)
+const _ = require('lodash')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
+  const { createNodeField } = actions
 
   // Ensures we are processing only markdown files
   if (_.get(node, 'internal.type') === `MarkdownRemark`) {
 
-    const fileNode = getNode(node.parent);
-    console.log(`\n`, fileNode.relativePath);
-
     // Get the parent node
-    const parent = getNode(_.get(node, "parent"));
+    const parent = getNode(_.get(node, "parent"))
 
     // Create a field on this node for the "collection" of the parent
     // NOTE: This is necessary so we can filter `allMarkdownRemark` by
@@ -26,19 +19,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: 'collection',
       value: _.get(parent, "sourceInstanceName")
-    });
+    })
 
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     })
   }
-};
+}
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     graphql(`
@@ -67,10 +60,10 @@ exports.createPages = ({ graphql, actions }) => {
               // in page queries as GraphQL variables.
               slug: node.fields.slug,
             },
-          });
+          })
         }
-      });
-      resolve();
+      })
+      resolve()
     })
   })
-};
+}

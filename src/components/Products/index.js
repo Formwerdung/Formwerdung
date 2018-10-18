@@ -1,73 +1,97 @@
-/*
- * NOTE: The Babel plugin will automatically process the `tw()` function, which
- * means we don’t actually need to import it. ESLint will complain about this,
- * however, so we need to add `tw` as a global variable.
- */
+import React from 'react'
+import { css } from 'emotion'
+import styled from 'react-emotion'
+import tw from 'tailwind.macro'
+import { HardDrive, Package, Scissors } from 'react-feather'
 
-/* global tw */
-import React from 'react';
-import Container from '../Container';
-import ProductCard from '../ProductCard';
-import { css } from 'emotion';
-import { HardDrive, Package, Scissors } from 'react-feather';
+import Container from '../Container'
+import ProductCard from '../ProductCard'
 
-const Products = () =>
+const iconStyles = css`w-2 h-2`
+
+const ProductTitle = styled('h2')`
+  ${tw`m-0 p-1 pt-3`};
+`
+
+const ProductList = styled('ul')`
+  ${tw`list-reset m-0 p-0 sm:flex md:-mr-2 sm:flex-wrap`};
+`
+
+const Products = () => (
   <section>
     <Container>
-      <h2 className={css(tw('m-0 p-1 pt-3'))}>Produkte</h2>
-      <ul className={css(tw('list-reset m-0 p-0 sm:flex md:-mr-2 sm:flex-wrap'))}>
-        <ProductCard type={'Package'}
-                     title={'Amplify'}
-                     forWhom={'Ein Päckchen mit allem, was man wirklich braucht. Zum Beispiel für Restaurants, Startups, Marketingseiten oder kleine Portfolios.'}
-                     features={[
-                       'Zwei preliminäre, individuelle Designs zur Auswahl',
-                       'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
-                     ]}
-                     link={'/angebot/klein/'}
-                     price={'2400 CHF'}
-                     index={'first'}>
-          <Package className={css(tw('w-2 h-2'))} />
+      <ProductTitle>Produkte</ProductTitle>
+      <ProductList>
+        <ProductCard
+          type={'Package'}
+          title={'Amplify'}
+          forWhom={
+            'Ein Päckchen mit allem, was man wirklich braucht. Zum Beispiel für Restaurants, Startups, Marketingseiten oder kleine Portfolios.'
+          }
+          features={[
+            'Zwei preliminäre, individuelle Designs zur Auswahl',
+            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
+          ]}
+          link={'/angebot/klein/'}
+          price={'2400 CHF'}
+          index={'first'}
+        >
+          <Package className={iconStyles} />
         </ProductCard>
-        <ProductCard type={'Package'}
-                     title={'Magazine'}
-                     forWhom={'Für Neugkeiten und regelmässiges Posting, wie man es von Blogs, Online-Journalismus oder grösseren Portfolios kennt.'}
-                     features={[
-                       'Zwei preliminäre, individuelle Designs zur Auswahl',
-                       'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
-                     ]}
-                     link={'/angebot/gross/'}
-                     price={'3600 CHF'}
-                     index={'even'}
-                     number={'second'}>
-          <Package className={css(tw('w-2 h-2'))} />
+        <ProductCard
+          type={'Package'}
+          title={'Magazine'}
+          forWhom={
+            'Für Neugkeiten und regelmässiges Posting, wie man es von Blogs, Online-Journalismus oder grösseren Portfolios kennt.'
+          }
+          features={[
+            'Zwei preliminäre, individuelle Designs zur Auswahl',
+            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
+          ]}
+          link={'/angebot/gross/'}
+          price={'3600 CHF'}
+          index={'even'}
+          number={'second'}
+        >
+          <Package className={iconStyles} />
         </ProductCard>
-        <ProductCard type={'Pflege'}
-                     title={'Deluxe Hosting'}
-                     forWhom={'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Sicherheitsupdates.'}
-                     features={[
-                       'Zwei preliminäre, individuelle Designs zur Auswahl',
-                       'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
-                     ]}
-                     link={'/angebot/hosting/'}
-                     price={'1800 CHF / Jahr'}
-                     number={'third'}>
-          <HardDrive className={css(tw('w-2 h-2'))} />
+        <ProductCard
+          type={'Pflege'}
+          title={'Deluxe Hosting'}
+          forWhom={
+            'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Sicherheitsupdates.'
+          }
+          features={[
+            'Zwei preliminäre, individuelle Designs zur Auswahl',
+            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
+          ]}
+          link={'/angebot/hosting/'}
+          price={'1800 CHF / Jahr'}
+          number={'third'}
+        >
+          <HardDrive className={iconStyles} />
         </ProductCard>
-        <ProductCard type={'Cut and Paste'}
-                     title={'Custom Services'}
-                     forWhom={'Gerne bieten wir unsere Services auch massgeschneidert an. So können Sie uns für eine feste Anzahl von Stunden buchen, ' +
-                     'um ihr Projekt zu unterstützten. Für grössere Projekte bieten wir dabei gerne auch individuelle Offerten an.'}
-                     features={[
-                       'Zwei preliminäre, individuelle Designs zur Auswahl',
-                       'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte'
-                     ]}
-                     price={'125 CHF / Stunde'}
-                     index={'even'}
-                     number={'fourth'}>
-          <Scissors className={css(tw('w-2 h-2'))} />
+        <ProductCard
+          type={'Cut and Paste'}
+          title={'Custom Services'}
+          forWhom={
+            'Gerne bieten wir unsere Services auch massgeschneidert an. So können Sie uns für eine feste Anzahl von Stunden buchen, ' +
+            'um ihr Projekt zu unterstützten. Für grössere Projekte bieten wir dabei gerne auch individuelle Offerten an.'
+          }
+          features={[
+            'Zwei preliminäre, individuelle Designs zur Auswahl',
+            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
+          ]}
+          link={'angebot'}
+          price={'125 CHF / Stunde'}
+          index={'even'}
+          number={'fourth'}
+        >
+          <Scissors className={iconStyles} />
         </ProductCard>
-      </ul>
+      </ProductList>
     </Container>
-  </section>;
+  </section>
+)
 
-export default Products;
+export default Products
