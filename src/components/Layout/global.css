@@ -46,32 +46,3 @@ p {
   margin: 0;
 }
 
-.hero__bg-container {
-  height: 100%;
-}
-
-.hero__bg-image {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  height: 100%;
-}
-
-.hero__bg-image img {
-  font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; /* IE Polyfill */
-}
-
-.hero__bg-image > div {
-  padding-bottom: 100% !important;
-}
-
-.device-left .gatsby-image-wrapper,
-.device-right .gatsby-image-wrapper {
-  width: 256px;
-  height: 182px;
-  border-radius: 0.2em;
-  border: 1px solid grey;
-  margin: auto;
-}

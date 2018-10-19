@@ -1,5 +1,7 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -35,7 +37,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1080,
+              maxWidth: 1920,
             },
           },
           {
@@ -50,8 +52,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,

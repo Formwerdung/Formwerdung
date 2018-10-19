@@ -5,6 +5,7 @@ import tw from 'tailwind.macro'
 
 import Container from '../components/Container'
 import Layout from '../components/Layout'
+import { deviceLeft, deviceRight, screenImage } from '../utils/style'
 
 const PortfolioCard = ({ order, props }) => (
   <section
@@ -13,10 +14,10 @@ const PortfolioCard = ({ order, props }) => (
     )}
   >
     <div className={css(tw`mx-auto max-w-card`)}>
-      <div className={`device-${order % 2 ? 'left' : 'right'}`}>
+      <div className={order % 2 ? deviceLeft : deviceRight}>
         <Img
-          sizes={props.frontmatter.image.childImageSharp.sizes}
-          className={css(tw`screen-image-right`)}
+          fluid={props.frontmatter.image.childImageSharp.fluid}
+          className={screenImage}
         />
       </div>
       <div className={css(tw`p-1`)}>
@@ -59,8 +60,8 @@ export const query = graphql`
             image {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 320) {
-                  srcSet
+                fluid(maxWidth: 320) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

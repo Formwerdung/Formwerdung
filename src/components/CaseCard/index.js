@@ -41,7 +41,7 @@ const CaseCard = ({ props, first, latest, order }) => (
           </CardWrapper>
           <div className={order % 2 ? deviceLeft : deviceRight}>
             <Img
-              sizes={props.frontmatter.image.childImageSharp.sizes}
+              fluid={props.frontmatter.image.childImageSharp.fluid}
               className={screenImage}
             />
           </div>

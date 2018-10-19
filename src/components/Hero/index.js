@@ -11,7 +11,7 @@ export const HeroTitle = ({ children }) => (
   <h1 className={css(heroTitle, textShadow)}>{children}</h1>
 )
 
-const Hero = ({ props }) => (
+const Hero = ({ fluid }) => (
   <section className={css(tw`relative`)}>
     <Container>
       <div className={css(tw`px-1`)}>
@@ -28,7 +28,7 @@ const Hero = ({ props }) => (
       </div>
     </Container>
     <ImageContainer>
-      <Image sizes={props.sizes} />
+      <Image fluid={fluid} />
     </ImageContainer>
   </section>
 )

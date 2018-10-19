@@ -22,7 +22,7 @@ export const SubTitle = styled('h2')`
   ${tw`leading-3 text-2xl`};
 `
 
-export default props => (
+export default ({ data }) => (
   <Layout>
     <figure className={css(tw`relative m-0`)}>
       <Container>
@@ -31,7 +31,7 @@ export default props => (
         </ImageContentWrapper>
       </Container>
       <ImageContainer>
-        <Image sizes={props.data.file.sizes} />
+        <Image fluid={data.image.fluid} />
       </ImageContainer>
     </figure>
     <Container>
@@ -122,10 +122,10 @@ export default props => (
 )
 
 export const query = graphql`
-  query ImprintQuery {
-    file: imageSharp(id: { regex: "/hero/" }) {
-      sizes(maxWidth: 1920, quality: 90) {
-        ...GatsbyImageSharpSizes
+  {
+    image: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+      fluid(maxWidth: 1920, quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }

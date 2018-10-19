@@ -19,6 +19,18 @@ export const textInput = tw`px-1 py-1 h-4 text-md leading-none w-full appearance
 
 export const mq = values(config.screens).map(bp => `@media (min-width: ${bp})`)
 
+export const fullscreenImage = css`
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  & img {
+    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; /* IE Polyfill */
+  }
+`
+
 export const screenImage = css`
   width: 256px;
   height: 161px;

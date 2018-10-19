@@ -35,7 +35,7 @@ const DividerIcon = styled(ArrowRightCircle)`
   ${tw`h-8 md:h-12 py-3 md:py-5 stroke-current text-white relative z-10 transition-all`};
 `
 
-const Divider = ({ image, lineOne, lineTwo, route }) => (
+const Divider = ({ fluid, lineOne, lineTwo, route }) => (
   <Link to={route} className={linkStyles}>
     <DividerWrapper>
       <Container>
@@ -49,7 +49,7 @@ const Divider = ({ image, lineOne, lineTwo, route }) => (
         </DividerTextWrapper>
       </Container>
       <ImageContainer>
-        <Image sizes={image.sizes} />
+        <Image fluid={fluid} />
       </ImageContainer>
     </DividerWrapper>
   </Link>

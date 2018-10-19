@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
@@ -9,10 +8,10 @@ import OfferNav from '../components/OfferNav'
 import ServiceCard from '../components/ServiceCard'
 import Graf from '../components/Graf'
 
-const OfferPage = props => (
+export default () => (
   <Layout>
     <div className={css(tw`relative`)}>
-      <OfferNav props={props.data.file} />
+      <OfferNav />
       <Container>
         <div>
           <div className={css(tw`px-1 md:w-3/5 xl:w-1/2 bg-white`)}>
@@ -108,19 +107,3 @@ const OfferPage = props => (
     </div>
   </Layout>
 )
-
-export default OfferPage
-
-export const query = graphql`
-  query OfferQuery {
-    file: imageSharp(id: { regex: "/hero/" }) {
-      sizes(
-        maxWidth: 1920
-        quality: 90
-        traceSVG: { background: "#fff", color: "#f8fafc" }
-      ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
-`

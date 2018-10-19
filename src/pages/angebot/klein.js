@@ -7,10 +7,10 @@ import Container from '../../components/Container'
 import Layout from '../../components/Layout'
 import OfferNav from '../../components/OfferNav'
 
-const OfferSmallPage = props => (
+export default () => (
   <Layout>
     <div className={css(tw`relative`)}>
-      <OfferNav props={props.data.file} />
+      <OfferNav />
       <Container>
         <div className={css(tw`px-1`)}>
           <h1 className={css(tw`pt-1 m-0 leading-3`)}>
@@ -75,19 +75,3 @@ const OfferSmallPage = props => (
     </div>
   </Layout>
 )
-
-export default OfferSmallPage
-
-export const query = graphql`
-  query OfferSmallQuery {
-    file: imageSharp(id: { regex: "/hero/" }) {
-      sizes(
-        maxWidth: 1920
-        quality: 90
-        traceSVG: { background: "#fff", color: "#f8fafc" }
-      ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
-`

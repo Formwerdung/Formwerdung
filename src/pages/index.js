@@ -1,30 +1,32 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import { get } from 'lodash'
+
 import Cases from '../components/Cases'
+import Divider from '../components/Divider'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import Products from '../components/Products'
-import { get } from 'lodash'
-import Divider from '../components/Divider'
 
 class IndexPage extends React.Component {
   render() {
-    const imgFile = this.props.data.file
-    const portfolioImg = this.props.data.portfolio
+    const heroFluid = this.props.data.hero.fluid
+    const portfolioFluid = this.props.data.portfolio.fluid
     const caseStudies = get(this, 'props.data.allMarkdownRemark.edges', [])
 
     return (
       <Layout>
-        <Hero props={imgFile} />
+        <Hero fluid={heroFluid} />
         <Cases props={caseStudies} />
         <Divider
-          image={portfolioImg}
+          fluid={portfolioFluid}
           lineOne={'Mehr Arbeiten sehen?'}
           lineTwo={'Zum Portfolio.'}
           route={'/portfolio/'}
         />
         <Products />
         <Divider
-          image={portfolioImg}
+          fluid={portfolioFluid}
           lineOne={'Mehr Infos zum Angebot?'}
           lineTwo={'Zur Übersicht.'}
           route={'/angebot/'}
@@ -37,23 +39,15 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const query = graphql`
-  query IndexQuery {
-    file: imageSharp(id: { regex: "/hero/" }) {
-      sizes(
-        maxWidth: 1920
-        quality: 90
-        traceSVG: { background: "#fff", color: "#f8fafc" }
-      ) {
-        ...GatsbyImageSharpSizes
+  {
+    hero: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+      fluid(maxWidth: 1920, quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
-    portfolio: imageSharp(id: { regex: "/portfolio/" }) {
-      sizes(
-        maxWidth: 1920
-        quality: 90
-        traceSVG: { background: "#fff", color: "#f8fafc" }
-      ) {
-        ...GatsbyImageSharpSizes
+    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolio/" } }) {
+      fluid(maxWidth: 1920, quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
     allMarkdownRemark(
@@ -73,8 +67,8 @@ export const query = graphql`
             image {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 320) {
-                  srcSet
+                fluid(maxWidth: 320) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

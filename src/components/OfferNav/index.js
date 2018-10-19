@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
@@ -39,30 +39,43 @@ const OfferNavItem = props => (
   </li>
 )
 
-export default ({ props }) => (
-  <div className={css(tw`relative`)}>
-    <nav className={css(tw`h-full relative z-10`)}>
-      <Container>
-        <ul
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        image: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+          fluid(maxWidth: 1920, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    `}
+    render={data => (
+      <div className={css(tw`relative`)}>
+        <nav className={css(tw`h-full relative z-10`)}>
+          <Container>
+            <ul
+              className={css(
+                tw`list-reset m-0 flex h-full justify-start pt-8 sm:pt-10 xl:pt-12 px-1`
+              )}
+            >
+              <OfferNavItem exact={'true'} to={'/angebot/'}>
+                Übersicht
+              </OfferNavItem>
+              <OfferNavItem to={'/angebot/klein/'}>Amplify</OfferNavItem>
+              <OfferNavItem to={'/angebot/gross/'}>Magazine</OfferNavItem>
+              <OfferNavItem to={'/angebot/hosting/'}>Hosting</OfferNavItem>
+            </ul>
+          </Container>
+        </nav>
+        <div
           className={css(
-            tw`list-reset m-0 flex h-full justify-start pt-8 sm:pt-10 xl:pt-12 px-1`
+            tw`absolute pin-t w-full h-full shadow-inner bg-black-transparent`
           )}
         >
-          <OfferNavItem exact={'true'} to={'/angebot/'}>
-            Übersicht
-          </OfferNavItem>
-          <OfferNavItem to={'/angebot/klein/'}>Amplify</OfferNavItem>
-          <OfferNavItem to={'/angebot/gross/'}>Magazine</OfferNavItem>
-          <OfferNavItem to={'/angebot/hosting/'}>Hosting</OfferNavItem>
-        </ul>
-      </Container>
-    </nav>
-    <div
-      className={css(
-        tw`absolute pin-t w-full h-full shadow-inner bg-black-transparent`
-      )}
-    >
-      <Image sizes={props.sizes} />
-    </div>
-  </div>
+          <Image fluid={data.image.fluid} />
+        </div>
+      </div>
+    )}
+  />
 )

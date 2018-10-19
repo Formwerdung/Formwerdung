@@ -6,27 +6,13 @@ import Container from '../../components/Container'
 import Layout from '../../components/Layout'
 import OfferNav from '../../components/OfferNav'
 
-export default props => (
+export default () => (
   <Layout>
     <div className={css(tw`relative`)}>
-      <OfferNav props={props.data.file} />
+      <OfferNav />
       <Container>
         <div className={css(tw`px-1`)}>Gross</div>
       </Container>
     </div>
   </Layout>
 )
-
-export const query = graphql`
-  query OfferLargeQuery {
-    file: imageSharp(id: { regex: "/hero/" }) {
-      sizes(
-        maxWidth: 1920
-        quality: 90
-        traceSVG: { background: "#fff", color: "#f8fafc" }
-      ) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
-`
