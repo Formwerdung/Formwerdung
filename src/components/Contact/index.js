@@ -7,6 +7,7 @@ import tw from 'tailwind.macro'
 
 import config from '../../../tailwind'
 import Container from '../Container'
+import { textInput, transition } from '../../utils/style'
 
 const encode = data => {
   return Object.keys(data)
@@ -30,17 +31,13 @@ const Dialog = ({ title, description, dismissHandler, bgColor }) => (
   </section>
 )
 
-const contactInput = css(tw`text-input hover:border-border focus:outline-none focus:border-blue`)
+const contactInput = tw`hover:border-border focus:outline-none focus:border-blue`
 
-const contactTextArea = css(tw`text-input hover:border-border focus:outline-none focus:border-blue h-12`)
+const contactTextArea = tw`h-12`
 
-const contactSubmit = css(
-  tw`rounded bg-blue text-white p-1 text-md h-4 leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1 border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
-)
+const contactSubmit = tw`rounded bg-blue text-white p-1 text-md h-4 leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1 border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
 
-const contactReset = css(
-  tw`rounded p-1 h-4 text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
-)
+const contactReset = tw`rounded bg-white p-1 h-4 text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
 
 const contactColophonObfuscate = css(tw`text-blue hover:text-black`)
 
@@ -188,7 +185,7 @@ class Contact extends React.Component {
                     type="text"
                     name="name"
                     onChange={this.handleChange}
-                    className={contactInput}
+                    className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
               </p>
@@ -200,7 +197,7 @@ class Contact extends React.Component {
                     type="email"
                     name="email"
                     onChange={this.handleChange}
-                    className={contactInput}
+                    className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
               </ContactBox>
@@ -212,7 +209,7 @@ class Contact extends React.Component {
                     name="message"
                     id="message"
                     onChange={this.handleChange}
-                    className={contactTextArea}
+                    className={css(textInput, contactInput, contactTextArea)}
                   />
                 </ContactLabel>
               </ContactBox>
@@ -220,9 +217,9 @@ class Contact extends React.Component {
                 <input
                   type="submit"
                   value={'Senden'}
-                  className={contactSubmit}
+                  className={css(contactSubmit, transition)}
                 />
-                <input type="reset" value="Löschen" className={contactReset} />
+                <input type="reset" value="Löschen" className={css(contactReset, transition)} />
               </ContactFlexBox>
             </form>
             <ContactColophon>

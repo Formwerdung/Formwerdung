@@ -1,20 +1,19 @@
 import React from 'react'
 import { css } from 'emotion'
+import styled from 'react-emotion'
 import tw from 'tailwind.macro'
 
 import Container, { Image, ImageContainer } from '../Container'
+
+export const HeroTitle = styled('h1')`
+  ${tw`text-3xl leading-4 pt-8 sm:pt-10 xl:pt-12 text-white text-shadow relative z-10 m-0`}
+`
 
 const Hero = ({ props }) => (
   <section className={css(tw`relative`)}>
     <Container>
       <div className={css(tw`px-1`)}>
-        <h1
-          className={css(
-            tw`text-3xl leading-4 pt-8 sm:pt-10 xl:pt-12 text-white text-shadow relative z-10 m-0`
-          )}
-        >
-          Alles fürs Web
-        </h1>
+        <HeroTitle>Alles fürs Web</HeroTitle>
         <p
           className={css(
             tw`pb-1 text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md`

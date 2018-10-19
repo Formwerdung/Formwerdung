@@ -20,24 +20,26 @@ export const AnchorItem = props => (
   </AnchorListItem>
 )
 
+const navItemBorder = tw`border-grey-light border border-l-0 border-t-0 border-b-0 border-solid`
+
 const NavListItem = styled('li')`
-  ${tw`h-full px-1 border-solid border-grey-light border border-l-0 border-t-0 border-b-0`};
+  ${tw`h-full px-1`};
 `
 
 const NavLink = styled(Link)`
   ${tw`leading-3 no-underline text-black hover:text-blue-dark transition-color`};
 `
 
-export const NavItem = props => (
-  <NavListItem>
+export const NavItem = ({ border, children, exact, to }) => (
+  <NavListItem className={css(border ? navItemBorder : {})}>
     <NavLink
-      to={props.to}
+      to={to}
       activeStyle={{
         color: config.colors['blue-dark'],
       }}
-      exact={props.exact}
+      exact={exact}
     >
-      {props.children}
+      {children}
     </NavLink>
   </NavListItem>
 )

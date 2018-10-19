@@ -1,8 +1,15 @@
 import { values } from 'lodash'
 import config from '../../tailwind'
 import { css } from 'emotion'
+import tw from 'tailwind.macro'
+
+export const transition = { transition: 'all .15s ease' }
+
+export const transitionColor = { transition: 'color .15s ease' }
 
 export const borderLeft = { 'border-left': `1px solid ${config.colors['grey-light']}`}
+
+export const textInput = tw`px-1 py-1 h-4 text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white`
 
 export const mq = values(config.screens).map(bp => `@media (min-width: ${bp})`)
 

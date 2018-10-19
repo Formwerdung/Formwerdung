@@ -24,8 +24,7 @@ export default () => (
         <ColophonCopyright>&copy; 2018 Formwerdung</ColophonCopyright>
         <div>
           <Nav>
-            <NavItem to={'/about/'}>About</NavItem>
-            <NavItem to={'/imprint/'}>Impressum</NavItem>
+            <NavItem to={'/impressum/'}>Impressum</NavItem>
           </Nav>
         </div>
       </ColophonWrapper>
