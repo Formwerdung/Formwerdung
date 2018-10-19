@@ -24,9 +24,9 @@ const OfferNavItem = props => (
         color: '#080401',
         background: '#fffefc',
         position: 'relative',
-        'zIndex': '10',
-        'boxShadow': '0 -2px 2px 0 rgba(0,0,0,0.10)',
-        'textShadow': 'none',
+        zIndex: '10',
+        boxShadow: '0 -2px 2px 0 rgba(0,0,0,0.10)',
+        textShadow: 'none',
       }}
       exact={props.exact}
       className={css(
@@ -66,4 +66,3 @@ export default ({ props }) => (
     </div>
   </div>
 )
-

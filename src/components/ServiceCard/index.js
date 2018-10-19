@@ -19,9 +19,7 @@ export default props => (
     </section>
     <div>
       <ChevronsDown
-        className={css(
-          tw`mx-auto block w-4 h-4 p-1 stroke-current text-grey`
-        )}
+        className={css(tw`mx-auto block w-4 h-4 p-1 stroke-current text-grey`)}
       />
     </div>
   </div>

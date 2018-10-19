@@ -29,8 +29,12 @@ const BannerLogoLarge = styled('img')`
 
 const BannerNav = () => (
   <Nav>
-    <NavItem to={'/angebot/'} border>Angebot</NavItem>
-    <NavItem to={'/portfolio/'} border>Portfolio</NavItem>
+    <NavItem to={'/angebot/'} border>
+      Angebot
+    </NavItem>
+    <NavItem to={'/portfolio/'} border>
+      Portfolio
+    </NavItem>
     <AnchorItem to={'#contact'}>Kontakt</AnchorItem>
   </Nav>
 )

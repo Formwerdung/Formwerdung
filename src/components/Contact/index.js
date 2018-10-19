@@ -8,6 +8,7 @@ import tw from 'tailwind.macro'
 import config from '../../../tailwind'
 import Container from '../Container'
 import { textInput, transition } from '../../utils/style'
+import { SubTitle } from '../../pages/impressum'
 
 const encode = data => {
   return Object.keys(data)
@@ -17,7 +18,9 @@ const encode = data => {
 
 const dialogSection = css(tw`p-1 relative`)
 
-const dialogIcon = css(tw`absolute pin-t pin-r p-1 w-4 h-4 cursor-pointer hover:text-white stroke-current transition`)
+const dialogIcon = css(
+  tw`absolute pin-t pin-r p-1 w-4 h-4 cursor-pointer hover:text-white stroke-current transition`
+)
 
 const DialogTitle = styled('h3')`
   ${tw`m-0 leading-2`};
@@ -45,8 +48,8 @@ const ContactWrapper = styled('div')`
   ${tw`max-w-contact`};
 `
 
-const ContactTitle = styled('h2')`
-  ${tw`m-0 px-1 leading-3`};
+const ContactTitle = styled(SubTitle)`
+  ${tw`px-1`};
 `
 
 const ContactGraf = styled('p')`
@@ -74,7 +77,6 @@ const ContactColophonGraf = styled('p')`
 `
 
 class Contact extends React.Component {
-
   _isMounted = false
 
   constructor(props) {
@@ -83,16 +85,14 @@ class Contact extends React.Component {
   }
 
   dismiss(message) {
-
     if (this._isMounted) {
-      this.setState({ [ message ]: false })
+      this.setState({ [message]: false })
     }
   }
 
   handleChange(e) {
-
     if (this._isMounted) {
-      this.setState({ [ e.target.name ]: e.target.value })
+      this.setState({ [e.target.name]: e.target.value })
     }
   }
 
@@ -110,13 +110,11 @@ class Contact extends React.Component {
       }),
     })
       .then(() => {
-
         if (this._isMounted) {
           this.setState({ success: true })
         }
       })
       .catch(() => {
-
         if (this._isMounted) {
           this.setState({ error: true })
         }
@@ -219,7 +217,11 @@ class Contact extends React.Component {
                   value={'Senden'}
                   className={css(contactSubmit, transition)}
                 />
-                <input type="reset" value="Löschen" className={css(contactReset, transition)} />
+                <input
+                  type="reset"
+                  value="Löschen"
+                  className={css(contactReset, transition)}
+                />
               </ContactFlexBox>
             </form>
             <ContactColophon>

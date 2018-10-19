@@ -7,7 +7,13 @@ export const transition = { transition: 'all .15s ease' }
 
 export const transitionColor = { transition: 'color .15s ease' }
 
-export const borderLeft = { 'border-left': `1px solid ${config.colors['grey-light']}`}
+export const borderLeft = {
+  'border-left': `1px solid ${config.colors['grey-light']}`,
+}
+
+export const textShadow = {
+  'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
+}
 
 export const textInput = tw`px-1 py-1 h-4 text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white`
 
