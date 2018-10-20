@@ -7,6 +7,8 @@ import Layout from '../components/Layout'
 import OfferNav from '../components/OfferNav'
 import ServiceCard from '../components/ServiceCard'
 import Graf from '../components/Graf'
+import { SubTitle } from './impressum'
+import { Timeline } from '../components/Timeline'
 
 export default () => (
   <Layout>
@@ -35,6 +37,40 @@ export default () => (
               breiten Netzwerk von Partnern zusammen.
             </Graf>
           </div>
+
+          <section className={css(tw`px-1`)}>
+            <SubTitle>Dienste</SubTitle>
+            <Timeline>
+              <section>
+                <h3>
+                  Kontaktaufnahme
+                </h3>
+                <div>
+                  Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.
+                </div>
+              </section>
+            </Timeline>
+
+            <div>
+              <section
+                className={css(tw`rounded border border-grey border-solid  p-1 `)}
+              >
+                <h3 className={css(tw`m-0 text-sm leading-2 text-center`)}>
+                  Kontaktaufnahme
+                </h3>
+                <div className={css(tw`text-sm leading-2 text-center`)}>
+                  Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.
+                </div>
+              </section>
+            </div>
+
+            <ServiceCard
+              title={'Kontaktaufnahme'}
+              description={
+                'Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.'
+              }
+            />
+          </section>
 
           <div
             className={css(

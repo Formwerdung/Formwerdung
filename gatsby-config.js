@@ -1,7 +1,5 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -52,9 +50,12 @@ module.exports = {
         ],
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     /* `gatsby-plugin-feed`, */
     {
       resolve: `gatsby-plugin-manifest`,
