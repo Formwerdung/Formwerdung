@@ -49,6 +49,14 @@ export default () => (
                   Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.
                 </div>
               </section>
+              <section>
+                <h3>
+                  Kontaktaufnahme
+                </h3>
+                <div>
+                  Nehmen Sie mit uns Kontakt auf, um ein unverbindliches Treffen zu vereinbaren.
+                </div>
+              </section>
             </Timeline>
 
             <div>

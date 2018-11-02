@@ -5,7 +5,7 @@ const config = {
   mediaWidthSmall: 700,
   activeColor: '#a88a00',
   color: 'black',
-  twoSidedOverlap: 80, // negative overlap between items if two-sided
+  twoSidedOverlap: 0, // negative overlap between items if two-sided
   animations: true,
   addEvenPropToChildren: false,
 

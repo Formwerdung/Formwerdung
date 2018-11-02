@@ -1,4 +1,10 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Formwerdung | Web Design und Development aus der Schweiz',
+    author: 'Formwerdung',
+    description: 'Web Design und Development aus der Schweiz.',
+    siteUrl: 'https://formwerdung.ch',
+  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -81,11 +87,11 @@ module.exports = {
         trackingId: "UA-83438388-1",
       },
     },
-    {
+    /* {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: "GTM-MNG2RR9",
       },
-    },
+    }, */
   ]
 };

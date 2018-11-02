@@ -4,12 +4,13 @@ import { css } from 'emotion'
 
 import Entry from './entry'
 import defaultConfig from './config'
+import { mq } from '../../utils/style'
 
 export default class Timeline extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { twoSided: true }
-    this.onTwoSidedChange = this.onTwoSidedChange.bind(this)
+    // this.state = { twoSided: true }
+    // this.onTwoSidedChange = this.onTwoSidedChange.bind(this)
     this.componentWillReceiveProps(props)
   }
 
@@ -25,46 +26,25 @@ export default class Timeline extends React.Component {
     }
   }
 
-  componentWillMount() {
-    const { mediaWidthSmall } = this.mergedConfig
-    if (window && window.matchMedia) {
-      this.mqTwoSided = window.matchMedia(`(min-width: ${mediaWidthSmall}px)`)
-      this.mqTwoSided.addListener(this.onTwoSidedChange)
-      this.onTwoSidedChange(this.mqTwoSided)
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.mqTwoSided) {
-      this.mqTwoSided.removeListener(this.onTwoSidedChange)
-    }
-  }
-
-  onTwoSidedChange(mq) {
-    this.setState({ twoSided: mq.matches })
-  }
-
   render() {
     const { children } = this.props
-    const { color, twoSidedOverlap } = this.mergedConfig
-    const twoSided = this.state.twoSided
+    const { color } = this.mergedConfig
     let i = 0
 
     const styles = css`
       text-align: center;
-      padding-bottom: ${twoSided && twoSidedOverlap + "px"};
       color: ${color};
       overflow: hidden;
     
-      ${this.mqTwoSidedString} {
-        margin-bottom: ${twoSidedOverlap + "px"};
+      ${mq[1]} {
+        padding-bottom: 2.25rem;
       }
     `
 
     return (
       <div className={css(styles)}>
         {React.Children.map(children, c =>
-          <Entry even={i++ % 2 === 0 && twoSided} config={this.mergedConfig}
+          <Entry even={i++ % 2 === 0} config={this.mergedConfig}
             icon={c.props.icon}>
             {c}
           </Entry>
