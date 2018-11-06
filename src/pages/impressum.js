@@ -43,9 +43,11 @@ export default ({ data }) => (
             <br />
             Marin Aeschbach
             <br />
-            Nordstrasse 116
+            Atelier Gerold
             <br />
-            8037 Zürich
+            Geroldstrasse 31/33
+            <br />
+            8005 Zürich
           </address>
         </Graf>
         <Graf>Das Formwerdung Logo wurde designed von Zoé Blanc.</Graf>
