@@ -6,15 +6,15 @@ import Container from '../Container'
 import { Nav, NavItem } from '../Nav'
 
 const Colophon = styled('footer')`
-  ${tw`bg-grey-lighter h-3 overflow-hidden`};
+  ${tw`bg-grey-lighter h-3x overflow-hidden`};
 `
 
 const ColophonWrapper = styled('div')`
-  ${tw`md:flex md:justify-between px-1`};
+  ${tw`md:flex md:justify-between px-1x`};
 `
 
 const ColophonCopyright = styled('div')`
-  ${tw`leading-3`};
+  ${tw`leading-3x`};
 `
 
 export default () => (

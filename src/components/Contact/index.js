@@ -36,11 +36,11 @@ const Dialog = ({ title, description, dismissHandler, bgColor }) => (
 
 const contactInput = tw`hover:border-border focus:outline-none focus:border-blue`
 
-const contactTextArea = tw`h-12`
+const contactTextArea = tw`h-12x`
 
-const contactSubmit = tw`rounded bg-blue text-white p-1 text-md h-4 leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1 border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
+const contactSubmit = tw`rounded bg-blue text-white p-1x text-md h-4x leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1x border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
 
-const contactReset = tw`rounded bg-white p-1 h-4 text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
+const contactReset = tw`rounded bg-white p-1x h-4x text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
 
 const contactColophonObfuscate = css(tw`text-blue hover:text-black`)
 
@@ -49,11 +49,11 @@ const ContactWrapper = styled('div')`
 `
 
 const ContactTitle = styled(SubTitle)`
-  ${tw`px-1`};
+  ${tw`px-1x`};
 `
 
 const ContactGraf = styled('p')`
-  ${tw`px-1 pt-0 pb-1`};
+  ${tw`px-1x pt-0 pb-1x`};
 `
 
 const ContactLabel = styled('label')`
@@ -61,7 +61,7 @@ const ContactLabel = styled('label')`
 `
 
 const ContactBox = styled('p')`
-  ${tw`pt-2`};
+  ${tw`pt-2x`};
 `
 
 const ContactFlexBox = styled(ContactBox)`
@@ -69,7 +69,7 @@ const ContactFlexBox = styled(ContactBox)`
 `
 
 const ContactColophon = styled('div')`
-  ${tw`mt-1 pt-1 px-1 border-t border-l-0 border-b-0 border-r-0 border-solid border-border-light text-right`};
+  ${tw`mt-1x pt-1x px-1x border-t border-l-0 border-b-0 border-r-0 border-solid border-border-light text-right`};
 `
 
 const ContactColophonGraf = styled('p')`
@@ -145,7 +145,7 @@ class Contact extends React.Component {
                 description={
                   'Vielen Dank für Ihre Kontaktaufnahme! Wir melden uns sobald wie möglich bei Ihnen.'
                 }
-                dismissHandler={e => this.dismiss('success')}
+                dismissHandler={() => this.dismiss('success')}
                 bgColor={config.colors.green}
               />
             )}
@@ -155,7 +155,7 @@ class Contact extends React.Component {
                 description={
                   'Leider ist die Übermittlung des Formulars fehlgeschlagen. Versuchen Sie es doch bitte noch einmal.'
                 }
-                dismissHandler={e => this.dismiss('error')}
+                dismissHandler={() => this.dismiss('error')}
                 bgColor={config.colors.red}
               />
             )}
@@ -165,7 +165,7 @@ class Contact extends React.Component {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={this.handleSubmit}
-              className={css(tw`p-1`)}
+              className={css(tw`p-1x`)}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
               <input type="hidden" name="form-name" value="contact" />

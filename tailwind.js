@@ -38,19 +38,22 @@ const leadingBase = 1.5;
 // const fontBase = 1;
 const rhythmUnit = 0.75; // leadingBase / 2;
 
+const multiply = (i = 1) => `${i * rhythmUnit}rem`;
+
 const verticalRhythms = {
+  'm3x': `-${3 * rhythmUnit}rem`,
   'half': `${rhythmUnit / 2}rem`,
-  '1': `${rhythmUnit}rem`,
-  '2': `${2 * rhythmUnit}rem`,
-  '3': `${3 * rhythmUnit}rem`,
-  '4': `${4 * rhythmUnit}rem`,
-  '6': `${6 * rhythmUnit}rem`,
-  '8': `${8 * rhythmUnit}rem`,
-  '10': `${10 * rhythmUnit}rem`,
-  '12': `${12 * rhythmUnit}rem`,
-  '16': `${16 * rhythmUnit}rem`,
-  '20': `${20 * rhythmUnit}rem`,
-  '36': `${36 * rhythmUnit}rem`,
+  '1x': `${rhythmUnit}rem`,
+  '2x': `${2 * rhythmUnit}rem`,
+  '3x': `${3 * rhythmUnit}rem`,
+  '4x': `${4 * rhythmUnit}rem`,
+  '6x': `${6 * rhythmUnit}rem`,
+  '8x': `${8 * rhythmUnit}rem`,
+  '10x': `${10 * rhythmUnit}rem`,
+  '12x': `${12 * rhythmUnit}rem`,
+  '16x': `${16 * rhythmUnit}rem`,
+  '20x': `${20 * rhythmUnit}rem`,
+  '36x': `${36 * rhythmUnit}rem`,
 };
 
 const gridContainers = {
@@ -83,10 +86,17 @@ const colors = {
   green: '#3cec96',
   red: '#e2252a',
 
+  // separators
+  'grey-light': '#dae4e9',
+
+  // form borders
   'border-light': 'rgba(8,4,1,.2)',
+  // hover
   'border': 'rgba(2,1,0,.36)',
 
   'black-transparent': 'rgba(0, 0, 0, .6)',
+
+  // form fill
   'off-white': '#fafaf9',
 
   grey: '#9babb4',
@@ -101,7 +111,7 @@ const colors = {
   'grey-darker': '#596a73',
   'grey-dark': '#70818a',
 
-  'grey-light': '#dae4e9',
+
 
   'grey-lightest': '#fafcfc',
 

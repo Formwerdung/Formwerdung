@@ -7,11 +7,11 @@ import tw from 'tailwind.macro'
 import config from '../../../tailwind'
 
 const AnchorLinkStyled = styled(AnchorLink)`
-  ${tw`leading-3 text-black hover:text-blue-dark transition-color`};
+  ${tw`leading-3x text-black hover:text-blue-dark transition-color`};
 `
 
 const AnchorListItem = styled('li')`
-  ${tw`h-full pl-1 my-auto`};
+  ${tw`h-full pl-1x my-auto`};
 `
 
 export const AnchorItem = props => (
@@ -23,11 +23,11 @@ export const AnchorItem = props => (
 const navItemBorder = tw`border-grey-light border border-l-0 border-t-0 border-b-0 border-solid`
 
 const NavListItem = styled('li')`
-  ${tw`h-full px-1`};
+  ${tw`h-full px-1x`};
 `
 
 const NavLink = styled(Link)`
-  ${tw`leading-3 no-underline text-black hover:text-blue-dark transition-color`};
+  ${tw`leading-3x no-underline text-black hover:text-blue-dark transition-color`};
 `
 
 export const NavItem = ({ border, children, exact, to }) => (

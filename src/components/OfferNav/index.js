@@ -30,7 +30,7 @@ const OfferNavItem = props => (
       }}
       exact={props.exact}
       className={css(
-        tw`no-underline text-white hover:text-blue transition-color px-1 pt-1 p-1 rounded rounded-bl-none rounded-br-none block`,
+        tw`no-underline text-white hover:text-blue transition-color p-1x rounded rounded-bl-none rounded-br-none block`,
         offerNavItemStyle
       )}
     >
@@ -56,7 +56,7 @@ export default () => (
           <Container>
             <ul
               className={css(
-                tw`list-reset m-0 flex h-full justify-start pt-8 sm:pt-10 xl:pt-12 px-1`
+                tw`list-reset m-0 flex h-full justify-start pt-8x sm:pt-10x xl:pt-12x px-1x`
               )}
             >
               <OfferNavItem exact={'true'} to={'/angebot/'}>

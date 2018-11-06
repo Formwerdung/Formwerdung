@@ -10,11 +10,11 @@ import ProductCard from '../ProductCard'
 const iconStyles = css`w-2 h-2`
 
 const ProductTitle = styled('h2')`
-  ${tw`m-0 p-1 pt-3`};
+  ${tw`m-0 p-1x pt-3x`};
 `
 
 const ProductList = styled('ul')`
-  ${tw`list-reset m-0 p-0 sm:flex md:-mr-2 sm:flex-wrap`};
+  ${tw`list-reset m-0 p-0 sm:flex md:-mr-2x sm:flex-wrap`};
 `
 
 const Products = () => (

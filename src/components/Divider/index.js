@@ -28,11 +28,11 @@ const DividerTextWrapper = styled('div')`
 `
 
 const DividerText = styled('p')`
-  ${tw`px-1 py-2 md:py-4 text-white text-right font-semibold relative z-10 m-0 transition-all text-shadow`};
+  ${tw`px-1x py-2x md:py-4x text-white text-right font-semibold relative z-10 m-0 transition-all text-shadow`};
 `
 
 const DividerIcon = styled(ArrowRightCircle)`
-  ${tw`h-8 md:h-12 py-3 md:py-5 stroke-current text-white relative z-10 transition-all`};
+  ${tw`h-8x md:h-12x py-3x md:py-5x stroke-current text-white relative z-10 transition-all`};
 `
 
 const Divider = ({ fluid, lineOne, lineTwo, route }) => (

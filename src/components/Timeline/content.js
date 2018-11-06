@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
+
+import config from '../../../tailwind'
 import { mq } from '../../utils/style'
 
 export default class Content extends React.Component {
@@ -9,20 +11,15 @@ export default class Content extends React.Component {
   }
 
   render() {
-    const { children, even, config } = this.props
-
-    const { circleWidth, mediaWidthMed, paddingToItem, paddingToItemSmall,
-      itemWidth, itemWidthMed, animations, lineWidth, evenItemOffset,
-      offsetHidden, triangleWidth, triangleOffset, triangleHeight,
-      activeColor, mediaWidthSmall, smallItemWidthPadding, itemPadding }
-      = config
+    const { children, even } = this.props
 
     const styleContent = css`
       position: relative;
       bottom: 0;
       width: 15rem;
-      padding: ${itemPadding + "px"};
-      background: ${activeColor};
+      padding: 16px;
+      background: ${config.colors['off-white']};
+      border: 1px solid ${config.colors['border-light']};
     `
 
     // width: 15rem + 2.25rem = 18units
@@ -40,23 +37,49 @@ export default class Content extends React.Component {
 
     const stylesTriangle = css`
       position: absolute;
-      bottom: ${triangleOffset + "px"};
+      bottom: ${config.width['2x']};
       width: 0;
       height: 0;
       border-style: solid;
     `
 
     const stylesTriangleLeft = css`
-      right: ${`-${triangleWidth - 1}px`};
+      right: -23px;
       left: auto;
-      border-width: ${`${triangleHeight}px 0 ${triangleHeight}px ${triangleWidth}px`};
-      border-color: ${`transparent transparent transparent ${activeColor}`};
+      border-width: ${config.height['1x']} 0 ${config.height['1x']} ${config.width['2x']};
+      border-color: transparent transparent transparent ${config.colors['off-white']};
+      
+      :before {
+        border-width: calc(${config.height['1x']} + 2px) 0 calc(${config.height['1x']} + 2px) calc(${config.height['2x']} + 2px);
+        border-style: solid;
+        border-color: transparent transparent transparent ${config.colors['border-light']};
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: " ";
+        left: -${config.height['2x']};
+        top: calc(-${config.height['1x']} - 2px);
+        z-index: -1;
+      }
     `
 
     const stylesTriangleRight = css`
-      left: ${`-${triangleWidth - 1}px`};
-      border-width: ${`${triangleHeight}px ${triangleWidth}px ${triangleHeight}px 0`};
-      border-color: ${`transparent ${activeColor} transparent transparent`};
+      left: -23px;
+      border-width: ${config.height['1x']} ${config.width['2x']} ${config.height['1x']} 0;
+      border-color: transparent ${config.colors['off-white']} transparent transparent;
+      
+      :before {
+        border-width: calc(${config.height['1x']} + 2px) calc(${config.height['2x']} + 2px) calc(${config.height['1x']} + 2px) 0;
+        border-style: solid;
+        border-color: transparent ${config.colors['border-light']} transparent transparent;
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: " ";
+        left: -1px;
+        top: calc(-${config.height['1x']} - 2px);
+        z-index: -1;
+      }
     `
 
     const stylesTriangleEven = css`
@@ -69,19 +92,11 @@ export default class Content extends React.Component {
 
     const stylesTriangleOdd = stylesTriangleRight;
 
-    let propsToAdd = {}
-    if (config.addEvenPropToChildren) {
-      propsToAdd = {
-        ...propsToAdd,
-        even,
-      }
-    }
-
     return (
       <div className={css(styleContent, even ? stylesContentEven : stylesContentOdd)}>
         <span className={css(stylesTriangle, even ? stylesTriangleEven : stylesTriangleOdd)} />
         <div ref={c => this.children = c}>
-          {React.cloneElement(children, propsToAdd)}
+          {React.cloneElement(children)}
         </div>
       </div>
     )
@@ -91,5 +106,4 @@ export default class Content extends React.Component {
 Content.propTypes = {
   children: PropTypes.node.isRequired,
   even: PropTypes.bool.isRequired,
-  config: PropTypes.object.isRequired,
 }

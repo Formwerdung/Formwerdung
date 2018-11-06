@@ -9,10 +9,10 @@ import logoSmall from './formwerdung-logo-small.svg'
 import logoLarge from './formwerdung-logo-large.svg'
 
 const Banner = styled('header')`
-  ${tw`shadow w-full h-3 fixed pin-t z-20 bg-white`};
+  ${tw`shadow w-full h-3x fixed pin-t z-20 bg-white`};
 `
 const BannerWrapper = styled('div')`
-  ${tw`h-full flex justify-between px-1`};
+  ${tw`h-full flex justify-between px-1x`};
 `
 
 const BannerLink = styled(Link)`

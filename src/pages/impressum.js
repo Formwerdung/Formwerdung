@@ -11,11 +11,11 @@ import { HeroTitle } from '../components/Hero'
 import Graf from '../components/Graf'
 
 const ImageContentWrapper = styled('div')`
-  ${tw`px-1`};
+  ${tw`px-1x`};
 `
 
 const TextContainer = styled('div')`
-  ${tw`px-1 md:w-3/5 xl:w-1/2 pt-1 md:pt-2`};
+  ${tw`px-1x md:w-3/5 xl:w-1/2 pt-1x md:pt-2x`};
 `
 
 export const SubTitle = styled('h2')`
@@ -38,7 +38,7 @@ export default ({ data }) => (
       <TextContainer>
         <SubTitle>Kontakt</SubTitle>
         <Graf>
-          <address className={css(tw`pb-1`)}>
+          <address className={css(tw`pb-1x`)}>
             Formwerdung
             <br />
             Marin Aeschbach
@@ -50,7 +50,7 @@ export default ({ data }) => (
         </Graf>
         <Graf>Das Formwerdung Logo wurde designed von Zoé Blanc.</Graf>
 
-        <SubTitle className={css(tw`pt-2`)}>
+        <SubTitle className={css(tw`pt-2x`)}>
           Haftungsausschluss und Copyright
         </SubTitle>
         <Graf>
@@ -62,7 +62,7 @@ export default ({ data }) => (
           vorherige schriftliche Zustimmung ist nicht gestattet.
         </Graf>
 
-        <SubTitle className={css(tw`pt-2`)}>Datenschutz</SubTitle>
+        <SubTitle className={css(tw`pt-2x`)}>Datenschutz</SubTitle>
         <Graf>
           Diese Webseite verwendet Cookies. Das sind winzige
           Text­in­for­ma­tionen, die über den Browser als Datei gespei­chert

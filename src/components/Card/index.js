@@ -16,19 +16,19 @@ export const CardType = styled('p')`
 `
 
 export const CardWrapper = styled('div')`
-  ${tw`p-1`};
+  ${tw`p-1x`};
 `
 
 export const CardConverter = ({ children }) => (
   <CardWrapper className={css(tw`block flex`, borderLeft)}>
     <span
-      className={css(tw`pr-1`, `a:hover & { color: ${config.colors['blue']} }`)}
+      className={css(tw`pr-1x`, `a:hover & { color: ${config.colors['blue']} }`)}
     >
       {children}
     </span>
     <ArrowRightCircle
       className={css(
-        tw`h-2 stroke-current hover:text-blue relative z-10 transition-all`,
+        tw`h-2x stroke-current hover:text-blue relative z-10 transition-all`,
         `a:hover & { color: ${config.colors['blue']} }`
       )}
     />

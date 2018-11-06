@@ -20,8 +20,8 @@ const PortfolioCard = ({ order, props }) => (
           className={screenImage}
         />
       </div>
-      <div className={css(tw`p-1`)}>
-        <h2 className={css(tw`text-md leading-2`)}>
+      <div className={css(tw`p-1x`)}>
+        <h2 className={css(tw`text-md leading-2x`)}>
           {props.frontmatter.title}
         </h2>
         <div dangerouslySetInnerHTML={{ __html: props.html }} />
@@ -33,9 +33,9 @@ const PortfolioCard = ({ order, props }) => (
 const PortfolioPage = props => (
   <Layout>
     <Container>
-      <h1 className={css(tw`pt-8`)}>Portfolio</h1>
+      <h1 className={css(tw`pt-8x`)}>Portfolio</h1>
       <p>Eine breite Auswahl unserer Arbeiten.</p>
-      <div className={css(tw`pt-8 sm:flex sm:flex-wrap`)}>
+      <div className={css(tw`pt-8x sm:flex sm:flex-wrap`)}>
         {props.data.allMarkdownRemark.edges.map((edge, i) => (
           <PortfolioCard key={i} props={edge.node} order={i} />
         ))}

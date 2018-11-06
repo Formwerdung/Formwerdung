@@ -15,7 +15,7 @@ export const textShadow = {
   'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
 }
 
-export const textInput = tw`px-1 py-1 h-4 text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white`
+export const textInput = tw`px-1x py-1x h-4x text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white`
 
 export const mq = values(config.screens).map(bp => `@media (min-width: ${bp})`)
 

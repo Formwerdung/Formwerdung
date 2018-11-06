@@ -39,7 +39,7 @@ const fourthStylingSection = {
   },
 }
 
-const linkStyles = tw`text-black block hover:opacity-75 transition relative pb-4 h-full`
+const linkStyles = tw`text-black block hover:opacity-75 transition relative pb-4x h-full`
 
 const ProductCardSection = styled('section')`
   ${tw`md:rounded overflow-hidden p-0`};
@@ -58,7 +58,7 @@ const ProductCardGraf = styled('p')`
 `
 
 const ProductCardColophon = styled('p')`
-  ${tw`m-0 p-1 font-semibold text-right`};
+  ${tw`m-0 p-1x font-semibold text-right`};
 `
 
 export default props => (

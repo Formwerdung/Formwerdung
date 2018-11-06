@@ -36,7 +36,7 @@
  * @import "components/forms";
  */
 .text-input {
-  @apply px-1 py-1 h-4 text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white;
+  @apply px-1x py-1x h-4x text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white;
 }
 
 .border-left {

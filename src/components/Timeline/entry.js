@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 
+import config from '../../../tailwind'
 import Content from './content'
+import { mq } from '../../utils/style'
 
 export default class Entry extends React.Component {
   constructor(props) {
@@ -12,19 +14,16 @@ export default class Entry extends React.Component {
   render() {
     const { children, icon, ...props } = this.props
 
-    const { lineWidth, circleWidth, paddingTop, lineColor, activeColor,
-      mediaWidthSmall, twoSidedOverlap, animations } = this.props.config
-
     const stylesBase = css`
       list-style-type: none;
       position: relative;
-      width: ${lineWidth + "px"};
-      margin: ${`0 auto -2.25rem auto`};
-      padding-top: ${paddingTop + "px"};
-      background: ${lineColor};
+      width: 1px;
+      padding-top: ${config.padding['4x']};
+      background: ${config.colors['border-light']};
+      margin: 0 auto 0 ${config.margin['1x']};
     
-      ${`@media screen and (max-width: ${mediaWidthSmall}px)`} {
-        margin: 0 auto 0 20px;
+      ${mq[0]} {
+        margin: 0 auto ${config.margin['m3x']} auto;
       }
     
       @media print {
@@ -36,15 +35,14 @@ export default class Entry extends React.Component {
 
     const stylesCircle = css`
       position: absolute;
-      bottom: 0;
+      bottom: ${config.width['2x']};
       transform: translateX(-50%);
-      width: ${circleWidth + "px"};
-      height: ${circleWidth + "px"};
+      width: ${config.width['2x']};
+      height: ${config.height['2x']};
       border-radius: 50%;
-      transition: ${animations ? "background .5s ease-in-out" : null};
       z-index: 1;
       background: white;
-      border: 1px solid ${activeColor};
+      border: 1px solid ${config.colors['border-light']};
     `
 
     const stylesCircleInner = css`
@@ -73,7 +71,6 @@ export default class Entry extends React.Component {
 Entry.propTypes = {
   children: PropTypes.node.isRequired,
   even: PropTypes.bool.isRequired,
-  config: PropTypes.object.isRequired,
   icon: PropTypes.node,
 }
 

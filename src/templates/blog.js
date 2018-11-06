@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 
 export default ({ data }) => (
   <Layout>
-    <p className={css(tw`mt-4`)}>Blog Post</p>
+    <p className={css(tw`mt-4x`)}>Blog Post</p>
     <h1>{data.markdownRemark.frontmatter.titel}</h1>
   </Layout>
 )

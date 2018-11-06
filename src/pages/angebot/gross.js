@@ -11,7 +11,7 @@ export default () => (
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>
-        <div className={css(tw`px-1`)}>Gross</div>
+        <div className={css(tw`px-1x`)}>Gross</div>
       </Container>
     </div>
   </Layout>

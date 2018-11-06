@@ -22,7 +22,7 @@ const CaseCard = ({ props, first, latest, order }) => (
     <Link
       to={`${props.fields.collection}${props.fields.slug}`}
       className={css(
-        tw`text-black block hover:opacity-75 transition relative pb-8 h-full`
+        tw`text-black block hover:opacity-75 transition relative pb-8x h-full`
       )}
     >
       <div
