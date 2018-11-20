@@ -22,7 +22,7 @@ export const CardWrapper = styled('div')`
 export const CardConverter = ({ children }) => (
   <CardWrapper className={css(tw`block flex`, borderLeft)}>
     <span
-      className={css(tw`pr-1x`, `a:hover & { color: ${config.colors['blue']} }`)}
+      className={css(tw`pr-half`, `a:hover & { color: ${config.colors['blue']} }`)}
     >
       {children}
     </span>

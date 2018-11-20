@@ -16,15 +16,18 @@ const evenStyling = {
 }
 
 const secondStyling = {
-  [mq[1]]: {
+  [mq[2]]: {
     'border-right-width': '1px',
   },
 }
 
 const thirdStyling = {
   [mq[1]]: {
-    'border-right-width': '0',
+    'border-right-width': '1px',
   },
+  [mq[2]]: {
+    'border-right-width': '0',
+  }
 }
 
 const fourthStyling = {
@@ -35,7 +38,7 @@ const fourthStyling = {
 
 const fourthStylingSection = {
   [mq[2]]: {
-    width: '33.3333333%',
+    width: '33.3333333333%',
   },
 }
 
@@ -90,7 +93,7 @@ export default props => (
         </CardWrapper>
         <CardFooter>
           <ProductCardColophon>{props.price}</ProductCardColophon>
-          <CardConverter>Mehr dazu</CardConverter>
+          <CardConverter>Mehr</CardConverter>
         </CardFooter>
       </ProductCardSection>
     </Link>

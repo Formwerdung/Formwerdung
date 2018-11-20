@@ -34,6 +34,11 @@ body {
 
 a {
   text-decoration: none;
+  color: #11519a;
+}
+
+a:hover {
+  color: #080401;
 }
 
 h1,
