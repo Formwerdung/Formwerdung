@@ -1,26 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from 'emotion'
-import styled from 'react-emotion'
 import tw from 'tailwind.macro'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Layout from '../components/Layout'
 import Container, { Image, ImageContainer } from '../components/Container'
 import { HeroTitle } from '../components/Hero'
-import Graf from '../components/Graf'
-
-const ImageContentWrapper = styled('div')`
-  ${tw`px-1x`};
-`
-
-const TextContainer = styled('div')`
-  ${tw`px-1x md:w-3/5 xl:w-1/2 pt-1x md:pt-2x`};
-`
-
-export const SubTitle = styled('h2')`
-  ${tw`leading-3 text-2xl`};
-`
+import { ImageContentWrapper } from '../components/Images'
+import { Graf, SubTitle, TextContainer } from '../components/Type'
 
 export default ({ data }) => (
   <Layout>

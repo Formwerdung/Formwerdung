@@ -5,8 +5,7 @@ import tw from 'tailwind.macro'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
 import OfferNav from '../components/OfferNav'
-import Graf from '../components/Graf'
-import { SubTitle } from './impressum'
+import { Graf, SubTitle } from '../components/Type'
 import { Timeline } from '../components/Timeline'
 
 export default () => (

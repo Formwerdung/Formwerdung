@@ -8,7 +8,7 @@ import tw from 'tailwind.macro'
 import config from '../../../tailwind'
 import Container from '../Container'
 import { textInput, transition } from '../../utils/style'
-import { SubTitle } from '../../pages/impressum'
+import { SubTitle } from '../Type/index'
 
 const encode = data => {
   return Object.keys(data)

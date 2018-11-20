@@ -1,18 +1,78 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
-import Container from '../components/Container'
+import Container, { Image, ImageContainer } from '../components/Container'
 import Layout from '../components/Layout'
-import { deviceLeft, deviceRight, screenImage } from '../utils/style'
+import { deviceLeft, deviceRight, mq, screenImage } from '../utils/style'
+import { HeroTitle } from '../components/Hero'
+import { ImageContentWrapper } from '../components/Images'
+import { Graf, TextContainer } from '../components/Type';
+import config from '../../tailwind';
+
+const sectionStyles = tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 py-1x`
+
+const oddStyling = css`
+  ${mq[0]} {
+    border-bottom: 1px solid ${config.colors['grey-light']};
+  }
+`;
+
+const evenStyling = css`
+  ${mq[0]} {
+    border-right: 1px solid ${config.colors['grey-light']};
+  }
+`;
+
+const secondOfThreeStyling = css`
+  ${mq[1]} {
+    border-right: 1px solid ${config.colors['grey-light']};
+  }
+`;
+
+const thirdOfThreeStyling = css`
+  ${mq[1]} {
+    border-right: none;
+  }
+`;
+
+const lastStylingLG = css`
+  ${mq[1]} {
+    border-bottom: none;
+  }
+`;
+
+const borderWhenFourStyling = css`
+  ${mq[2]} {
+    border-right: 1px solid ${config.colors['grey-light']};
+  }
+`;
+
+const noBorderWhenFour = css`
+  ${mq[2]} {
+    border-right: none;
+  }
+`;
+
 
 const PortfolioCard = ({ order, props }) => (
-  <section
-    className={css(
-      tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 border border-l-0 border-t-0 border-border border-solid`
-    )}
-  >
+  <li className={css(
+    sectionStyles,
+    oddStyling,
+    order % 2 ? {} : evenStyling,
+    order % 3 === 0 ? secondOfThreeStyling : {},
+    order % 3 === 1 ? secondOfThreeStyling : {},
+    order % 3 === 2 ? thirdOfThreeStyling : {},
+    order % 4 === 0 ? borderWhenFourStyling : {},
+    order % 4 === 1 ? borderWhenFourStyling : {},
+    order % 4 === 2 ? borderWhenFourStyling : {},
+    order % 4 === 3 ? noBorderWhenFour : {},
+    order === 12 ? thirdOfThreeStyling : {},
+    order === 12 ? lastStylingLG : {},
+  )}>
+  <section>
     <div className={css(tw`mx-auto max-w-card`)}>
       <div className={order % 2 ? deviceLeft : deviceRight}>
         <Img
@@ -28,17 +88,31 @@ const PortfolioCard = ({ order, props }) => (
       </div>
     </div>
   </section>
+  </li>
 )
 
 const PortfolioPage = props => (
   <Layout>
+    <figure className={css(tw`relative m-0`)}>
+      <Container>
+        <ImageContentWrapper>
+          <HeroTitle>Portfolio</HeroTitle>
+        </ImageContentWrapper>
+      </Container>
+      <ImageContainer>
+        <Image fluid={props.data.hero.fluid} />
+      </ImageContainer>
+    </figure>
     <Container>
-      <h1 className={css(tw`pt-8x`)}>Portfolio</h1>
-      <p>Eine breite Auswahl unserer Arbeiten.</p>
-      <div className={css(tw`pt-8x sm:flex sm:flex-wrap`)}>
-        {props.data.allMarkdownRemark.edges.map((edge, i) => (
-          <PortfolioCard key={i} props={edge.node} order={i} />
-        ))}
+      <TextContainer>
+        <Graf>Schaffen Sie sich einen Überblick über unser Schaffen mit dieser breiten Auswahl von Arbeiten.</Graf>
+      </TextContainer>
+      <div className={css(tw`pt-8x`)}>
+        <ul className={css(tw`list-reset sm:flex sm:flex-wrap`)}>
+          {props.data.allMarkdownRemark.edges.map((edge, i) => (
+            <PortfolioCard key={i} props={edge.node} order={i} />
+          ))}
+        </ul>
       </div>
     </Container>
   </Layout>
@@ -67,6 +141,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    hero: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+      fluid(maxWidth: 1920, quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
