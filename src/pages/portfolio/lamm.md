@@ -1,7 +1,9 @@
 ---
 title: 'Das Lamm'
 tech: 'WordPress, LESS, jQuery'
+order: 8
 image: './lamm.png'
+url: 'https://daslamm.ch'
 ---
 
-A clever WordPress site running in a horizontal direction
+*Custom Theme* und *Plugins* für den Workflow des nachhaltigsten Magazins der Schweiz. Design von [Simone Züger](https://www.simonezueger.ch).

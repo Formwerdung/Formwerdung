@@ -35,13 +35,7 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
-.text-input {
-  @apply px-1x py-1x h-4x text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white;
-}
 
-.border-left {
-  @apply border-solid border-t-0 border-r-0 border-l border-b-0 border-t-0
-}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
@@ -67,7 +61,4 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-.text-shadow {
-  text-shadow: 0 4px 4px rgba(0,0,0,0.5);
-}
 

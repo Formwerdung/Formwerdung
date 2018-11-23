@@ -6,7 +6,7 @@ import tw from 'tailwind.macro'
 
 import Container, { Image, ImageContainer } from '../components/Container'
 import Layout from '../components/Layout'
-import { deviceLeft, deviceRight, mq, screenImage } from '../utils/style'
+import { borderTop, deviceLeft, deviceRight, mq, screenImage } from '../utils/style'
 import { HeroTitle } from '../components/Hero'
 import { ImageContentWrapper } from '../components/Images'
 import { Graf, TextContainer } from '../components/Type';
@@ -27,31 +27,31 @@ const evenStyling = css`
 `;
 
 const secondOfThreeStyling = css`
-  ${mq[1]} {
+  ${mq[2]} {
     border-right: 1px solid ${config.colors['grey-light']};
   }
 `;
 
 const thirdOfThreeStyling = css`
-  ${mq[1]} {
+  ${mq[2]} {
     border-right: none;
   }
 `;
 
 const lastStylingLG = css`
-  ${mq[1]} {
+  ${mq[2]} {
     border-bottom: none;
   }
 `;
 
 const borderWhenFourStyling = css`
-  ${mq[2]} {
+  ${mq[3]} {
     border-right: 1px solid ${config.colors['grey-light']};
   }
 `;
 
 const noBorderWhenFour = css`
-  ${mq[2]} {
+  ${mq[3]} {
     border-right: none;
   }
 `;
@@ -72,22 +72,27 @@ const PortfolioCard = ({ order, props }) => (
     order === 12 ? thirdOfThreeStyling : {},
     order === 12 ? lastStylingLG : {},
   )}>
-  <section>
-    <div className={css(tw`mx-auto max-w-card`)}>
-      <div className={order % 2 ? deviceLeft : deviceRight}>
-        <Img
-          fluid={props.frontmatter.image.childImageSharp.fluid}
-          className={screenImage}
-        />
-      </div>
-      <div className={css(tw`p-1x`)}>
-        <h2 className={css(tw`text-md leading-2x`)}>
-          {props.frontmatter.title}
-        </h2>
-        <div dangerouslySetInnerHTML={{ __html: props.html }} />
-      </div>
-    </div>
-  </section>
+    <a href={props.frontmatter.url}
+       target={"_blank"}
+       rel={"noopener, noreferrer"}>
+      <section>
+        <div className={css(tw`mx-auto max-w-card`)}>
+          <div className={order % 2 ? deviceLeft : deviceRight}>
+            <Img
+              fluid={props.frontmatter.image.childImageSharp.fluid}
+              className={screenImage}
+            />
+          </div>
+          <div className={css(tw`p-1x`)}>
+            <h2 className={css(tw`text-md leading-2x text-black hover:text-black`)}>
+              {props.frontmatter.title}
+            </h2>
+            <div className={css(tw`text-black hover:text-black`)}
+                 dangerouslySetInnerHTML={{ __html: props.html }} />
+          </div>
+        </div>
+      </section>
+    </a>
   </li>
 )
 
@@ -107,8 +112,8 @@ const PortfolioPage = props => (
       <TextContainer>
         <Graf>Schaffen Sie sich einen Überblick über unser Schaffen mit dieser breiten Auswahl von Arbeiten.</Graf>
       </TextContainer>
-      <div className={css(tw`pt-8x`)}>
-        <ul className={css(tw`list-reset sm:flex sm:flex-wrap`)}>
+      <div className={css(tw`pt-4x pb-8x`)}>
+        <ul className={css(tw`list-reset sm:flex sm:flex-wrap m-0`)}>
           {props.data.allMarkdownRemark.edges.map((edge, i) => (
             <PortfolioCard key={i} props={edge.node} order={i} />
           ))}
@@ -124,6 +129,7 @@ export const query = graphql`
   query PortfolioQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(portfolio)/" } }
+      sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {
         node {
@@ -131,6 +137,8 @@ export const query = graphql`
           html
           frontmatter {
             title
+            tech
+            url
             image {
               publicURL
               childImageSharp {

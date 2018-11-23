@@ -1,7 +1,9 @@
 ---
 title: 'Schellenursli'
 tech: 'WordPress, LESS, jQuery'
+order: 5
 image: './schellenursli.png'
+url: 'http://schellenursli.com/'
 ---
 
-A clever WordPress site running in a horizontal direction
+Offizielle Marketing-Seite für Xavier Koller's Verfilmung des *Schellenursli*.

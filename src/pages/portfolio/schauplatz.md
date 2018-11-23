@@ -2,6 +2,8 @@
 title: 'Schauplatz International'
 tech: 'WordPress, LESS, jQuery'
 image: './schauplatz.png'
+order: 1
+url: 'https://schauplatzinternational.net/'
 ---
 
-A clever WordPress site running in a horizontal direction
+Für das internationale Theater. Eine clevere WordPress-Seite, die horizontal läuft. *Designed by [Hee + Coboi](http://www.hee-coboi.ch/)*.

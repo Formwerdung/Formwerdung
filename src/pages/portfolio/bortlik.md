@@ -1,7 +1,9 @@
 ---
 title: 'Wolfgang Bortlik'
 tech: 'WordPress, LESS, jQuery'
+order: 2
 image: './bortlik.png'
+url: 'http://wolfgangbortlik.ch/'
 ---
 
-A clever WordPress site running in a horizontal direction
+Klassische Anwendung von WordPress-Features für die offizielle Homepage des deutschen Autors.

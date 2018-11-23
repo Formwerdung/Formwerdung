@@ -11,6 +11,10 @@ export const borderLeft = {
   'border-left': `1px solid ${config.colors['grey-light']}`,
 }
 
+export const borderTop = {
+  'border-top': `1px solid ${config.colors['grey-light']}`,
+}
+
 export const textShadow = {
   'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
 }
@@ -54,6 +58,11 @@ export const deviceLeft = css`
     translateZ(50px) rotateX(0) rotateY(15deg) rotateZ(0);
   z-index: 15;
   margin-bottom: 30px;
+`
+
+export const deviceLeftHover = css`
+  border-color: red;
+  box-shadow: -13px 0 white, -14px 0 red;
 `
 
 export const deviceRight = css`

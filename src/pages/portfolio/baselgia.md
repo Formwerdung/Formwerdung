@@ -1,7 +1,9 @@
 ---
 title: 'Guido Baselgia'
-tech: 'WordPress, LESS, jQuery'
+tech: 'WordPress, SASS, jQuery'
+order: 6
 image: './baselgia.png'
+url: 'http://baselgia.ch/'
 ---
 
-A clever WordPress site running in a horizontal direction
+Ein extensives Portfolio für eine Karriere in der Fotographie, inklusive Blick ins Archiv.

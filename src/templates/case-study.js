@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
