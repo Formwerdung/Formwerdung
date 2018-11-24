@@ -5,7 +5,9 @@ order: 3
 image: '../portfolio/public-connect.png'
 ---
 
-<h1>Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde</h2>
+
+Bau des Isotope-basierten JavaScript-Rückgrats hinter dem neuen Portfolio von Public Connect. Design [FormBaur](https://www.formbaur.ch/).
+
 <p className={'leading-lg-2 text-3xl pb-lg-2 md:w-2/3'}>Die Vergangenheit bewahren. Für alle.</p>
 <p className={'leading-lg-1 text-xl md:w-2/3 pb-lg-1'}>
   Für das Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde (SGV) durfte ich ein <em>front-end</em> entwerfen und umsetzen. Das vorrangige Ziel dabei: Benutzerfreundlichkeit, damit das  Archiv auch wirklich allen offen steht.

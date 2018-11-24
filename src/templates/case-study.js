@@ -6,6 +6,13 @@ import tw from 'tailwind.macro'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 
+const paragraph = css`
+
+  p {
+    margin-bottom: 0.75rem;
+  }
+`
+
 export default ({ data }) => (
   <Layout>
     <Container>
@@ -19,7 +26,7 @@ export default ({ data }) => (
     <Container>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        className={css(tw`p-1x pt-0 md:w-4/5 lg:w-3/5 xl:w-1/2`)}
+        className={css(tw`p-1x pt-0 md:w-4/5 lg:w-3/5 xl:w-1/2`, paragraph)}
       />
     </Container>
   </Layout>
