@@ -1,28 +1,30 @@
 import React from 'react'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
-import { ChevronsDown } from 'react-feather'
 
 import Container from '../../components/Container'
 import Layout from '../../components/Layout'
 import OfferNav from '../../components/OfferNav'
+import { Graf, SubTitle } from '../../components/Type'
+import { OfferCards, OfferText, OfferTitle } from '../angebot'
+import { Timeline } from '../../components/Timeline'
 
 export default () => (
   <Layout>
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>
-        <div className={css(tw`px-1x`)}>
-          <h1 className={css(tw`pt-1x m-0 leading-3`)}>
-            Angebot kleine Webseite
-          </h1>
-          <p className={css(tw`py-1x m-0`)}>
+        <OfferText>
+          <OfferTitle className={css(tw`pt-1x md:pt-2 pb-1x m-0 leading-3x`)}>
+            Amplify
+          </OfferTitle>
+          <Graf>
             Ein Paket für klare und zielgerichtete Kommunikation. Hier sind nur
             die Features dabei, die man wirklich braucht: Einige wenige Seiten,
             auf denen man sich und sein Produkt vorstellen und Kontaktdaten
             hinterlassen kann.
-          </p>
-          <p className={css(tw`pb-1x m-0`)}>
+          </Graf>
+          <Graf>
             Dazu kommen eine flexible Anzahl von Beiträgen. Beiträge sind
             Inhalte ein bisschen wie Blogeinträge, aber speziell den
             Bedürfnissen des Kunden angepasst, wodurch sie extrem flexibel
@@ -31,8 +33,8 @@ export default () => (
             kommunizieren. Ein Restaurant kann stets sein aktuelles Menü
             präsentieren (Beiträge wären hier einzelne Gerichte), ein_e
             Künstler_in neue Werke ins Showcase aufnehmen.
-          </p>
-          <p className={css(tw`pb-1x m-0`)}>
+          </Graf>
+          <Graf>
             Dieses Angebot ist aber auch der optimale erste Trittstein für
             grössere Aufgaben. Die geringe Entwicklungszeit ermöglicht es,
             extrem einen ersten Eindruck zu vermitteln (auch grossartig für
@@ -41,36 +43,53 @@ export default () => (
             Technologien mühelos für komplexeste Webapps verwendet werden. So
             ist ein sukzessiver Aufbau möglich, was die Entwicklung von Apps
             äusserst kostengünstig macht.
-          </p>
-
-          <h2 className={css(tw`leading-3x`)}>Ablauf</h2>
-          <div>
-            <h3 className={css(tw`m-0`)}>Kontaktaufnahme</h3>
-            <span>
-              Nehmen sie unverbindlich mit uns Kontakt auf, zum Beispiel über
-              das Formular oder den Email-Link unten.
-            </span>
-          </div>
-          <ChevronsDown />
-          <div>
-            <h3 className={css(tw`m-0`)}>Inhaltskonzept</h3>
-            <span>
-              Bei einem unverbindnlichen Treffen können wir Ihre Bedürfnisse
-              klären und ein einfaches inhaltliches Konzept erstellen
-            </span>
-          </div>
-          <ChevronsDown />
-          <div>
-            <h3 className={css(tw`m-0`)}>Designvorschläge</h3>
-            <span>Wir erstellen zwei Designskonzepte </span>
-          </div>
-          <ChevronsDown />
-          <div>
-            <h3 className={css(tw`m-0`)}>Prototypen</h3>
-            <span>Wir erstellen zwei Designskonzepte </span>
-          </div>
-          <ChevronsDown />
-        </div>
+          </Graf>
+        </OfferText>
+        <OfferCards>
+          <SubTitle className={css(tw`text-center`)}>Dienste</SubTitle>
+          <Timeline>
+            <section>
+              <h3>
+                Content-Strategien
+              </h3>
+              <div>
+                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre Ziele zu erreichen.
+              </div>
+            </section>
+            <section>
+              <h3>
+                SEO-Konzepte
+              </h3>
+              <div>
+                Wir erstellen detaillierte Konzepte, um ihre Seite für Suchmaschinen fit zu machen.
+              </div>
+            </section>
+            <section>
+              <h3>
+                Design-Umsetzung
+              </h3>
+              <div>
+                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell ausgewählten Technologien.
+              </div>
+            </section>
+            <section>
+              <h3>
+                Web-Apps
+              </h3>
+              <div>
+                Wir designen und entwickeln komplexe Applikationen basierend auf ihren APIs und Backends.
+              </div>
+            </section>
+            <section>
+              <h3>
+                Maintenance
+              </h3>
+              <div>
+                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen Service-Level-Agreements.
+              </div>
+            </section>
+          </Timeline>
+        </OfferCards>
       </Container>
     </div>
   </Layout>
