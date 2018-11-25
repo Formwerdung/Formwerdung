@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://formwerdung.ch',
   },
   plugins: [
+    'gatsby-plugin-flow',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

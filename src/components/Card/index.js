@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'react-emotion'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
@@ -19,7 +20,11 @@ export const CardWrapper = styled('div')`
   ${tw`p-1x`};
 `
 
-export const CardConverter = ({ children }) => (
+type Props = {
+  children?: React.Node,
+};
+
+export const CardConverter = ({ children }: Props) => (
   <CardWrapper className={css(tw`block flex`, borderLeft)}>
     <span
       className={css(tw`pr-half`, `a:hover & { color: ${config.colors['blue']} }`)}
@@ -34,3 +39,5 @@ export const CardConverter = ({ children }) => (
     />
   </CardWrapper>
 )
+
+
