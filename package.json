@@ -36,7 +36,14 @@
     "react-obfuscate": "^2.1.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.9",
+    "@storybook/addon-links": "^4.0.9",
+    "@storybook/addons": "^4.0.9",
+    "@storybook/react": "^4.0.9",
+    "babel-loader": "^8.0.4",
     "babel-plugin-emotion": "^9.2.11",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
@@ -56,6 +63,8 @@
     "serve": "gatsby serve",
     "predevelop": "postcss tailwind.css -o tailwind.custom.css",
     "prebuild": "postcss tailwind.css -o tailwind.custom.css",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
