@@ -21,7 +21,7 @@ const Hero = ({ fluid }) => (
             tw`pb-1x text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md`
           )}
         >
-          Formwerdung gestaltet und entwickelt exklusiv für das World Wide Web.
+          Formwerdung gestaltet und entwickelt exklusiv Webseiten und –apps.
           Wir sind auf <em>responsive Design</em> spezialisiert, das auch bei
           komplexen Interfaces keine Abstriche machen muss.
         </p>
