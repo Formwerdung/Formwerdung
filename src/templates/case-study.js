@@ -7,7 +7,6 @@ import { get } from 'lodash'
 import Layout from '../components/Layout'
 import Container, { containerStyleString } from '../components/Container'
 import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
-import { HeroTitle } from '../components/Hero'
 
 
 const paragraph = css`
@@ -56,7 +55,7 @@ export default ({ data }) => {
       <Container>
         <div
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          className={css(tw`p-1x`, paragraph)}
+          className={css(tw`p-1x mb-8x`, paragraph)}
         />
       </Container>
     </Layout>

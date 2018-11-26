@@ -5,7 +5,7 @@ import tw from 'tailwind.macro'
 import Img from 'gatsby-image'
 
 import config from '../../../tailwind'
-import { deviceLeft, deviceRight, mq, screenImage } from '../../utils/style'
+import { deviceLeft, deviceRight, mq, screenImage, transition } from '../../utils/style'
 import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card'
 
 const CaseCard = ({ props, first, latest, order }) => (
@@ -22,8 +22,8 @@ const CaseCard = ({ props, first, latest, order }) => (
     <Link
       to={`${props.fields.collection}${props.fields.slug}`}
       className={css(
-        tw`text-black block hover:opacity-75 transition relative pb-8x h-full`
-      )}
+        tw`text-black block hover:opacity-75 relative pb-8x h-full`
+      , transition)}
     >
       <div
         className={css(

@@ -6,7 +6,7 @@ import tw from 'tailwind.macro'
 
 import Container from '../components/Container'
 import Layout from '../components/Layout'
-import { borderTop, deviceLeft, deviceRight, mq, screenImage } from '../utils/style'
+import { borderTop, deviceLeft, deviceRight, mq, screenImage, transition } from '../utils/style'
 import { HeroTitle } from '../components/Hero'
 import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
 import { Graf, TextContainer } from '../components/Type';
@@ -74,7 +74,8 @@ const PortfolioCard = ({ order, props }) => (
   )}>
     <a href={props.frontmatter.url}
        target={"_blank"}
-       rel={"noopener, noreferrer"}>
+       rel={"noopener, noreferrer"}
+       className={css(tw`hover:opacity-75 block`, transition)}>
       <section>
         <div className={css(tw`mx-auto max-w-card`)}>
           <div className={order % 2 ? deviceLeft : deviceRight}>

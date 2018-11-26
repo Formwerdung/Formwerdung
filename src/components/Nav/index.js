@@ -5,9 +5,10 @@ import { css } from 'emotion'
 import styled from 'react-emotion'
 import tw from 'tailwind.macro'
 import config from '../../../tailwind'
+import { transition } from '../../utils/style'
 
 const AnchorLinkStyled = styled(AnchorLink)`
-  ${tw`leading-3x text-black hover:text-blue-dark transition-color`};
+  ${tw`leading-3x text-black hover:text-blue-dark`};
 `
 
 const AnchorListItem = styled('li')`
@@ -16,7 +17,7 @@ const AnchorListItem = styled('li')`
 
 export const AnchorItem = props => (
   <AnchorListItem>
-    <AnchorLinkStyled href="#contact">{props.children}</AnchorLinkStyled>
+    <AnchorLinkStyled className={css(transition)} href="#contact">{props.children}</AnchorLinkStyled>
   </AnchorListItem>
 )
 
@@ -27,12 +28,13 @@ const NavListItem = styled('li')`
 `
 
 const NavLink = styled(Link)`
-  ${tw`leading-3x no-underline text-black hover:text-blue-dark transition-color`};
+  ${tw`leading-3x no-underline text-black hover:text-blue-dark`};
 `
 
 export const NavItem = ({ border, children, exact, to }) => (
   <NavListItem className={css(border ? navItemBorder : {})}>
     <NavLink
+      className={css(transition)}
       to={to}
       activeStyle={{
         color: config.colors['blue-dark'],

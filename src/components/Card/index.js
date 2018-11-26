@@ -6,7 +6,7 @@ import tw from 'tailwind.macro'
 
 import config from '../../../tailwind'
 import { ArrowRightCircle } from 'react-feather'
-import { borderLeft } from '../../utils/style'
+import { borderLeft, transition } from '../../utils/style'
 
 export const CardFooter = styled('div')`
   ${tw`w-full flex justify-end pin-b pin-l absolute`},;
@@ -33,8 +33,9 @@ export const CardConverter = ({ children }: Props) => (
     </span>
     <ArrowRightCircle
       className={css(
-        tw`h-2x stroke-current hover:text-blue relative z-10 transition-all`,
-        `a:hover & { color: ${config.colors['blue']} }`
+        tw`h-2x stroke-current hover:text-blue relative z-10`,
+        `a:hover & { color: ${config.colors['blue']} }`,
+        transition
       )}
     />
   </CardWrapper>

@@ -839,9 +839,10 @@ module.exports = {
 
   plugins: [
     require('tailwindcss-transition')({
-      standard: 'all .15s ease',
+      standard: 'all .5s ease',
       transitions: {
         'color': 'color .15s ease',
+        'slow': 'all 2s ease',
       }
     })
   ],

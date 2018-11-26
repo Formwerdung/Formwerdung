@@ -4,7 +4,7 @@ import { css } from 'emotion'
 import styled from 'react-emotion'
 import tw from 'tailwind.macro'
 
-import { mq } from '../../utils/style'
+import { mq, transition } from '../../utils/style'
 import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card'
 
 const listItemStyles = tw`sm:w-1/2 lg:w-1/3 border-grey-light border-solid border-t border-r-0 border-l-0 border-b-0 sm:border-r`
@@ -42,7 +42,7 @@ const fourthStylingSection = {
   },
 }
 
-const linkStyles = tw`text-black block hover:opacity-75 transition relative pb-4x h-full`
+const linkStyles = tw`text-black block hover:opacity-75 relative pb-4x h-full`
 
 const ProductCardSection = styled('section')`
   ${tw`md:rounded overflow-hidden p-0`};
@@ -68,6 +68,7 @@ export default props => (
   <li
     className={css(
       listItemStyles,
+      transition,
       props.index === 'even' ? evenStyling : {},
       props.number === 'second' ? secondStyling : {},
       props.number === 'third' ? thirdStyling : {},

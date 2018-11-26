@@ -5,6 +5,7 @@ import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import { Image } from '../Images'
+import { transition } from '../../utils/style'
 
 const offerNavItemStyle = {
   'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
@@ -31,8 +32,9 @@ const OfferNavItem = props => (
       }}
       exact={props.exact}
       className={css(
-        tw`no-underline text-white hover:text-blue transition-color p-1x rounded rounded-bl-none rounded-br-none block`,
-        offerNavItemStyle
+        tw`no-underline text-white hover:text-blue p-1x rounded rounded-bl-none rounded-br-none block`,
+        offerNavItemStyle,
+        transition,
       )}
     >
       {props.children}

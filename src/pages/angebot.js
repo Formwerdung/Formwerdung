@@ -48,7 +48,7 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle className={css(tw`text-center`)}>Dienste</SubTitle>
+          <SubTitle className={css(tw`sm:text-center`)}>Dienste</SubTitle>
           <Timeline>
             <section>
               <h3>

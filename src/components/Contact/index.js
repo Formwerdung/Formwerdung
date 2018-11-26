@@ -16,20 +16,18 @@ const encode = data => {
     .join('&')
 }
 
-const dialogSection = css(tw`p-1 relative`)
+const dialogSection = css(tw`p-1x relative`)
 
-const dialogIcon = css(
-  tw`absolute pin-t pin-r p-1 w-4 h-4 cursor-pointer hover:text-white stroke-current transition`
-)
+const dialogIcon = tw`absolute pin-t pin-r p-1x w-4x h-4x cursor-pointer hover:text-white stroke-current`
 
 const DialogTitle = styled('h3')`
-  ${tw`m-0 leading-2`};
+  ${tw`m-0 leading-2x`};
 `
 
 const Dialog = ({ title, description, dismissHandler, bgColor }) => (
   <section className={css(dialogSection, { 'background-color': bgColor })}>
     <DialogTitle>{title}</DialogTitle>
-    <X onClick={dismissHandler} className={dialogIcon} />
+    <X onClick={dismissHandler} className={css(dialogIcon, transition)} />
     <p>{description}</p>
   </section>
 )
@@ -38,7 +36,7 @@ const contactInput = tw`hover:border-border focus:outline-none focus:border-blue
 
 const contactTextArea = tw`h-12x`
 
-const contactSubmit = tw`rounded bg-blue text-white p-1x text-md h-4x leading-none transition hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1x border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
+const contactSubmit = tw`rounded bg-blue text-white p-1x text-md h-4x leading-none hover:bg-blue-dark focus:bg-blue-dark focus:outline-none cursor-pointer mr-1x border-transparent border-blue border border-solid hover:border-blue-dark focus:border-blue-dark`
 
 const contactReset = tw`rounded bg-white p-1x h-4x text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
 
@@ -164,7 +162,7 @@ class Contact extends React.Component {
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              onSubmit={this.handleSubmit}
+              onSubmit={(e) => this.handleSubmit(e)}
               className={css(tw`p-1x`)}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -172,7 +170,7 @@ class Contact extends React.Component {
               <p hidden>
                 <label>
                   Don’t fill this out:{' '}
-                  <input name="bot-field" onChange={this.handleChange} />
+                  <input name="bot-field" onChange={(e) => this.handleChange(e)} />
                 </label>
               </p>
               <p>
@@ -182,7 +180,7 @@ class Contact extends React.Component {
                   <input
                     type="text"
                     name="name"
-                    onChange={this.handleChange}
+                    onChange={(e) => this.handleChange(e)}
                     className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
@@ -194,7 +192,7 @@ class Contact extends React.Component {
                   <input
                     type="email"
                     name="email"
-                    onChange={this.handleChange}
+                    onChange={(e) => this.handleChange(e)}
                     className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
@@ -206,7 +204,7 @@ class Contact extends React.Component {
                   <textarea
                     name="message"
                     id="message"
-                    onChange={this.handleChange}
+                    onChange={(e) => this.handleChange(e)}
                     className={css(textInput, contactInput, contactTextArea)}
                   />
                 </ContactLabel>
