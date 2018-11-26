@@ -3,7 +3,7 @@ title: Das Lamm
 callToAction: Ambitioniertes Design und WordPress als CMS für das nachhaltigste Magazin der Schweiz.
 order: 2
 image: '../portfolio/lamm.png'
-header: './sgv-header.png'
+header: './lamm-header.png'
 ---
 
 Kritische Fragen zu Nachhaltigkeitsthemen.
@@ -22,7 +22,16 @@ Workflow der Lämmer.
 
 Das Design von <a href="#" target="_blank" rel="noopener noreferrer">Simone Züger</a> sticht durch die
 Farbkodierung der einzelnen Dossiers und dem Lamm Regenbogen-Logo hervor. Wir finden es toll, dass die Seite sehr weit von den heute
-herrschenden Hang zum Minialismus weg ist, aber das bedingt auf der technischen ein kompromissloses
+herrschenden Hang zum Minialismus weg ist, aber das bedingt von der technischen Seite her kompromisslose Organisation.
+
+<figure>
+
+![Eine Master-Ansicht](./lamm-farben.png)
+
+<figcaption>
+Das Lamm verlässt sich in seiner Identität stark auf Farben
+</figcaption>
+</figure>
 
 Noch wichtiger: Kommunikation.
 

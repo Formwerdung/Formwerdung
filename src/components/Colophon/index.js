@@ -4,9 +4,11 @@ import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import { Nav, NavItem } from '../Nav'
+import { borderTop } from '../../utils/style'
+import { css } from 'emotion'
 
 const Colophon = styled('footer')`
-  ${tw`bg-grey-lighter h-3x overflow-hidden`};
+  ${tw`bg-white h-3x overflow-hidden`};
 `
 
 const ColophonWrapper = styled('div')`
@@ -18,7 +20,7 @@ const ColophonCopyright = styled('div')`
 `
 
 export default () => (
-  <Colophon>
+  <Colophon className={css(borderTop)}>
     <Container>
       <ColophonWrapper>
         <ColophonCopyright>&copy; 2018 Formwerdung</ColophonCopyright>
