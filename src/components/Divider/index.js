@@ -6,7 +6,8 @@ import tw from 'tailwind.macro'
 import { ArrowRightCircle } from 'react-feather'
 
 import config from '../../../tailwind'
-import Container, { ImageContainer, Image } from '../Container'
+import Container from '../Container'
+import { Image, ImageContainer } from '../Images'
 
 const linkStyles = css`
   &:hover {

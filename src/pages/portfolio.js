@@ -4,11 +4,11 @@ import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
-import Container, { Image, ImageContainer } from '../components/Container'
+import Container from '../components/Container'
 import Layout from '../components/Layout'
 import { borderTop, deviceLeft, deviceRight, mq, screenImage } from '../utils/style'
 import { HeroTitle } from '../components/Hero'
-import { ImageContentWrapper } from '../components/Images'
+import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
 import { Graf, TextContainer } from '../components/Type';
 import config from '../../tailwind';
 

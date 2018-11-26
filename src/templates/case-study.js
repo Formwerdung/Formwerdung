@@ -5,6 +5,8 @@ import tw from 'tailwind.macro'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container'
+import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
+import { HeroTitle } from '../components/Hero'
 
 const paragraph = css`
 
@@ -15,6 +17,12 @@ const paragraph = css`
 
 export default ({ data }) => (
   <Layout>
+    <figure className={css(tw`relative m-0`)}>
+      <div className={css(tw`pt-16x`)}/>
+      <ImageContainer>
+        <Image fluid={data.markdownRemark.frontmatter.header.childImageSharp.fluid} />
+      </ImageContainer>
+    </figure>
     <Container>
       <header className={css(tw`p-1x`)}>
         <p className={css(tw`mt-4x`)}>Case Study</p>
@@ -22,8 +30,6 @@ export default ({ data }) => (
           {data.markdownRemark.frontmatter.title}
         </h1>
       </header>
-    </Container>
-    <Container>
       <div
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         className={css(tw`p-1x pt-0 md:w-4/5 lg:w-3/5 xl:w-1/2`, paragraph)}
@@ -38,6 +44,14 @@ export const query = graphql`
       html
       frontmatter {
         title
+        header {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 1600) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

@@ -3,7 +3,8 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
-import Container, { Image } from '../Container'
+import Container from '../Container'
+import { Image } from '../Images'
 
 const offerNavItemStyle = {
   'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
