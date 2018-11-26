@@ -88,6 +88,9 @@ module.exports = {
         trackingId: "UA-83438388-1",
       },
     },
+    {
+      resolve: `gatsby-plugin-lodash`,
+    },
     /* {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
