@@ -14,17 +14,20 @@ const paragraph = css`
   p {
     ${tw`md:w-4/5 lg:w-3/5 xl:w-1/2 mb-1x ${containerStyleString}`}
   }
-  
+
   figure {
     ${tw`m-0 my-2x pt-2x px-2x bg-off-white border-border-light border border-solid`}
-    
   }
-  
+
+  .figure__small {
+    ${tw`md:w-4/5 lg:w-3/5 xl:w-1/2 md:ml-1/5 lg:ml-2/5 xl:pl-2x xl:ml-2x xl:mt-0 float-right`}
+  }
+
   figure p {
     width: auto;
     margin: 0;
   }
-  
+
   figcaption {
     ${tw`text-center italic py-1x`}
   }
