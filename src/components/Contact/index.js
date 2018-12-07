@@ -40,7 +40,7 @@ const contactSubmit = tw`rounded bg-blue text-white p-1x text-md h-4x leading-no
 
 const contactReset = tw`rounded bg-white p-1x h-4x text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
 
-const contactColophonObfuscate = css(tw`text-blue hover:text-black`)
+const contactColophonObfuscate = css(tw`text-blue-dark hover:text-black`, transition)
 
 const ContactWrapper = styled('div')`
   ${tw`max-w-contact`};

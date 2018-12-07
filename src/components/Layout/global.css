@@ -19,12 +19,8 @@ html {
 
 body {
   color: #080401;
-  background-image: linear-gradient(to top, #0ff 0, rgba(255,255,255,0) 1px);
-  background-repeat: repeat-y;
-  background-size: 100% 0.75rem;
   margin: 0;
   line-height: 1.5;
-  /* height: 100%; */
   background: #fffefc;
 }
 
@@ -35,6 +31,7 @@ body {
 a {
   text-decoration: none;
   color: #11519a;
+  transition: all 150ms ease;
 }
 
 a:hover {

@@ -26,18 +26,17 @@ herrschenden Hang zum Minialismus weg ist, aber das bedingt von der technischen 
 
 <figure>
 
-![Eine Master-Ansicht](./lamm-farben.png)
+![Hover-Farben bei das Lamm](./lamm-farben.png)
 
 <figcaption>
 Das Lamm verlässt sich in seiner Identität stark auf Farben
 </figcaption>
 </figure>
 
-Noch wichtiger: Kommunikation.
-
 Um die komplexe Struktur der Seite umzusetzen, haben wir uns schliesslich Dafür haben wir uns auf den Starter <a href="#" target="_blank" rel="noopener
 noreferrer">Sage</a> (8.x.x) ebenso wie auf <a href="#" target="_blank" rel="noopener noreferrer">
-Timber</a>, dass die Templating-Sprache _Twig_ für WordPress nutzbar macht.
+Timber</a>, dass die Templating-Sprache _Twig_ für WordPress nutzbar macht. Zusammen
+mit einer starken Caching-Strategie ist die Startseite des Lamms daher trotz der grossen Bilder konsistent nur um 1MB gross.
 
-Zusammen mit dem Lamm und Simone Züger haben eine nachhaltige (heh) Lösung geschaffen, die die Möglichkeiten von WordPress
+Zusammen mit dem Lamm und Simone Züger haben wir eine nachhaltige (heh) Lösung geschaffen, die die Möglichkeiten von WordPress
 als CMS zugleich ausschöpft und demonstriert.

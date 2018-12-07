@@ -25,6 +25,6 @@ Warum also eine Case Study schreiben?
 
 Weil wir der Auftrag *genau von der richtigen Grösse* war. Wir haben kein Interesse daran, möglichst alles selbst zu tun, um möglichst viele Stunden abrechnen 
 zu können. Wir machen nur das, was Sie wirklich brauchen und was Sie nicht selbst können – und das war in dem Fall ein paar wenige Features.
-Darum können Sie uns jederzeit auch für eine fixe Anzahl Stunden engagieren - wir nennen das *Code Consulting*.
+Darum können Sie uns jederzeit auch für eine fixe Anzahl Stunden engagieren.
 
 
