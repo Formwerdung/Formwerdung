@@ -8,7 +8,7 @@ import Contact from '../Contact'
 import Colophon from '../Colophon'
 
 const Layout = ({ children }) => (
-  <div className={css(tw`font-sans`)}>
+  <div className={css(tw`font-sans bg-white`)}>
     <Banner />
     <main className={css(tw` relative pb-8x`)}>
       <div className={css(tw`my-3x`)}>{children}</div>

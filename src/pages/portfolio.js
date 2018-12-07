@@ -152,7 +152,7 @@ export const query = graphql`
         }
       }
     }
-    hero: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+    hero: imageSharp(fluid: { originalName: { regex: "/schwarz2/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

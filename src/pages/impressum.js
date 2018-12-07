@@ -91,7 +91,7 @@ export default ({ data }) => (
           Aktua­li­sie­rung der Daten­schutz­er­klä­rung von Google, weisen wir
           hier auf die{' '}
           <OutboundLink href={'https://policies.google.com/privacy?hl=de'}>
-            aktu­ellste Version
+            aktuellste Version
           </OutboundLink>{' '}
           hin.
         </Graf>
@@ -113,7 +113,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   {
-    image: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+    image: imageSharp(fluid: { originalName: { regex: "/pulmano/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
