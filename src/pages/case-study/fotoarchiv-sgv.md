@@ -11,7 +11,7 @@ Für das Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde (SGV) durft
 
 <figure>
 
-![Eine Master-Ansicht](./header.png)
+![Eine Master-Ansicht](./sgv-master.png)
 
 <figcaption>
 Eine Übersichtsdarstellung von Bildern auf einem grossen Bildschirm
@@ -22,7 +22,7 @@ Das Fotoarchiv der Schweizerischen Gesellschaft für Volkskunde (SGV) hat in jah
 
 <figure>
 
-![Eine Detail-Ansicht](./detail-view.png)
+![Eine Detail-Ansicht](./sgv-detail.png)
 
 <figcaption>
 Detailansicht eines Bildes auf einem grossen Bildschirm
