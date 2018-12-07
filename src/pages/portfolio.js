@@ -106,7 +106,7 @@ const PortfolioPage = props => (
         </ImageContentWrapper>
       </Container>
       <ImageContainer>
-        <Image fluid={props.data.hero.fluid} />
+        <Image fluid={props.data.portfolio.fluid} />
       </ImageContainer>
     </figure>
     <Container>
@@ -152,7 +152,7 @@ export const query = graphql`
         }
       }
     }
-    hero: imageSharp(fluid: { originalName: { regex: "/schwarz2/" } }) {
+    portfolio: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

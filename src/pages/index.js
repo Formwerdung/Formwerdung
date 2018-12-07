@@ -47,12 +47,12 @@ export const query = graphql`
         ...GatsbyImageSharpFluid_withWebp
       }
     }
-    portfolio: imageSharp(fluid: { originalName: { regex: "/ricardo/" } }) {
+    portfolio: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
-    offer: imageSharp(fluid: { originalName: { regex: "/oscar/" } }) {
+    offer: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

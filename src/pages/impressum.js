@@ -113,7 +113,7 @@ export default ({ data }) => (
 
 export const query = graphql`
   {
-    image: imageSharp(fluid: { originalName: { regex: "/pulmano/" } }) {
+    image: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
