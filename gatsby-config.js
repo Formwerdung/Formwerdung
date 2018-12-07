@@ -92,11 +92,5 @@ module.exports = {
     {
       resolve: `gatsby-plugin-lodash`,
     },
-    /* {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: "GTM-MNG2RR9",
-      },
-    }, */
   ]
 };
