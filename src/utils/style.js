@@ -28,7 +28,7 @@ export const fullscreenImage = css`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+ 
   height: 100%;
   & img {
     font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; /* IE Polyfill */

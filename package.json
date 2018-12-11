@@ -5,7 +5,7 @@
   "dependencies": {
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
-    "gatsby": "^2.0.25",
+    "gatsby": "^2.0.65",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-canonical-urls": "^2.0.6",
     "gatsby-plugin-emotion": "^2.0.5",
@@ -39,7 +39,7 @@
     "react-obfuscate": "^2.1.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/core": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@storybook/addon-actions": "^4.0.9",

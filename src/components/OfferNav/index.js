@@ -46,7 +46,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       {
-        image: imageSharp(fluid: { originalName: { regex: "/hero/" } }) {
+        image: imageSharp(fluid: { originalName: { regex: "/offer/" } }) {
           fluid(maxWidth: 1920, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
