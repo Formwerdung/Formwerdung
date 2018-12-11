@@ -12,7 +12,7 @@ class IndexPage extends React.Component {
 
   render() {
     const heroFluid = this.props.data.hero.fluid
-    const portfolioFluid = get(this.props, 'data.portfolio.fluid', null)
+    const portfolioFluid = this.props.data.portfolio.fluid
     const offerFluid = this.props.data.offer.fluid
     const caseStudies = get(this, 'props.data.allMarkdownRemark.edges', [])
 
@@ -47,12 +47,12 @@ export const query = graphql`
         ...GatsbyImageSharpFluid_withWebp
       }
     }
-    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolioDivider/" } }) {
+    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolio-divider/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
-    offer: imageSharp(fluid: { originalName: { regex: "/offerDivider/" } }) {
+    offer: imageSharp(fluid: { originalName: { regex: "/offer-divider/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

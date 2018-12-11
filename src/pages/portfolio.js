@@ -152,7 +152,7 @@ export const query = graphql`
         }
       }
     }
-    portfolio: imageSharp(fluid: { originalName: { regex: "/claudio-schwarz1/" } }) {
+    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolio/" } }) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
