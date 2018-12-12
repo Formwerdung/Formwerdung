@@ -6,4 +6,4 @@ image: './schellenursli.png'
 url: 'http://schellenursli.com/'
 ---
 
-Offizielle Marketing-Seite für Xavier Koller's Verfilmung des *Schellenursli*.
+Offizielle Marketing-Seite für Xavier Koller's Verfilmung des _Schellenursli_.

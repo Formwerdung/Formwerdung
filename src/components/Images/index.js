@@ -11,5 +11,5 @@ export const ImageContainer = styled('div')`
   ${tw`absolute pin-t w-full h-full bg-black-transparent`};
 `
 export const Image = ({ fluid }) => (
-  <Img fluid={fluid} position="absolute" className={fullscreenImage}/>
+  <Img fluid={fluid} position="absolute" className={fullscreenImage} />
 )

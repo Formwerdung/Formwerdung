@@ -21,11 +21,11 @@ export default class Entry extends React.Component {
       padding-top: ${config.padding['4x']};
       background: ${config.colors['border-light']};
       margin: 0 auto 0 ${config.margin['1x']};
-    
+
       ${mq[0]} {
         margin: 0 auto ${config.margin['m3x']} auto;
       }
-    
+
       @media print {
         margin: 0px;
         width: 100%;
@@ -56,9 +56,7 @@ export default class Entry extends React.Component {
     return (
       <div className={stylesBase}>
         <div>
-          <Content {...props}>
-            {children}
-          </Content>
+          <Content {...props}>{children}</Content>
         </div>
         <span className={css(stylesCircle)}>
           <span className={css(stylesCircleInner)}>{icon}</span>
@@ -73,4 +71,3 @@ Entry.propTypes = {
   even: PropTypes.bool.isRequired,
   icon: PropTypes.node,
 }
-

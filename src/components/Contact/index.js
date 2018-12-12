@@ -40,7 +40,10 @@ const contactSubmit = tw`rounded bg-blue text-white p-1x text-md h-4x leading-no
 
 const contactReset = tw`rounded bg-white p-1x h-4x text-blue text-md leading-none border-blue border border-solid hover:border-blue-dark focus:border-blue-dark focus:outline-none cursor-pointer hover:text-blue-dark focus:text-blue-dark`
 
-const contactColophonObfuscate = css(tw`text-blue-dark hover:text-black`, transition)
+const contactColophonObfuscate = css(
+  tw`text-blue-dark hover:text-black`,
+  transition
+)
 
 const ContactWrapper = styled('div')`
   ${tw`max-w-contact`};
@@ -162,7 +165,7 @@ class Contact extends React.Component {
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              onSubmit={(e) => this.handleSubmit(e)}
+              onSubmit={e => this.handleSubmit(e)}
               className={css(tw`p-1x`)}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -170,7 +173,10 @@ class Contact extends React.Component {
               <p hidden>
                 <label>
                   Don’t fill this out:{' '}
-                  <input name="bot-field" onChange={(e) => this.handleChange(e)} />
+                  <input
+                    name="bot-field"
+                    onChange={e => this.handleChange(e)}
+                  />
                 </label>
               </p>
               <p>
@@ -180,7 +186,7 @@ class Contact extends React.Component {
                   <input
                     type="text"
                     name="name"
-                    onChange={(e) => this.handleChange(e)}
+                    onChange={e => this.handleChange(e)}
                     className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
@@ -192,7 +198,7 @@ class Contact extends React.Component {
                   <input
                     type="email"
                     name="email"
-                    onChange={(e) => this.handleChange(e)}
+                    onChange={e => this.handleChange(e)}
                     className={css(textInput, contactInput)}
                   />
                 </ContactLabel>
@@ -204,7 +210,7 @@ class Contact extends React.Component {
                   <textarea
                     name="message"
                     id="message"
-                    onChange={(e) => this.handleChange(e)}
+                    onChange={e => this.handleChange(e)}
                     className={css(textInput, contactInput, contactTextArea)}
                   />
                 </ContactLabel>

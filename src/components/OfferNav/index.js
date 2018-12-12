@@ -34,7 +34,7 @@ const OfferNavItem = props => (
       className={css(
         tw`no-underline text-white hover:text-blue p-1x rounded rounded-bl-none rounded-br-none block`,
         offerNavItemStyle,
-        transition,
+        transition
       )}
     >
       {props.children}
@@ -46,7 +46,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       {
-        image: imageSharp(fluid: { originalName: { regex: "/offer/" } }) {
+        image: imageSharp(fluid: { originalName: { regex: "/offer-main/" } }) {
           fluid(maxWidth: 1920, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }

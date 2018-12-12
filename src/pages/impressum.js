@@ -7,7 +7,11 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import { HeroTitle } from '../components/Hero'
-import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
+import {
+  Image,
+  ImageContainer,
+  ImageContentWrapper,
+} from '../components/Images'
 import { Graf, SubTitle, TextContainer } from '../components/Type'
 
 export default ({ data }) => (

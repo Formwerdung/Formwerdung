@@ -17,7 +17,7 @@ export default class Timeline extends React.Component {
     const styles = css`
       text-align: center;
       overflow: hidden;
-    
+
       ${mq[1]} {
         padding-bottom: 2.25rem;
       }
@@ -25,12 +25,11 @@ export default class Timeline extends React.Component {
 
     return (
       <div className={css(styles)}>
-        {React.Children.map(children, c =>
-          <Entry even={i++ % 2 === 0}
-            icon={c.props.icon}>
+        {React.Children.map(children, c => (
+          <Entry even={i++ % 2 === 0} icon={c.props.icon}>
             {c}
           </Entry>
-        )}
+        ))}
       </div>
     )
   }

@@ -27,7 +27,7 @@ const thirdStyling = {
   },
   [mq[2]]: {
     'border-right-width': '0',
-  }
+  },
 }
 
 const fourthStyling = {

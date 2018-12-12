@@ -6,11 +6,22 @@ import tw from 'tailwind.macro'
 
 import Container from '../components/Container'
 import Layout from '../components/Layout'
-import { borderTop, deviceLeft, deviceRight, mq, screenImage, transition } from '../utils/style'
+import {
+  borderTop,
+  deviceLeft,
+  deviceRight,
+  mq,
+  screenImage,
+  transition,
+} from '../utils/style'
 import { HeroTitle } from '../components/Hero'
-import { Image, ImageContainer, ImageContentWrapper } from '../components/Images'
-import { Graf, TextContainer } from '../components/Type';
-import config from '../../tailwind';
+import {
+  Image,
+  ImageContainer,
+  ImageContentWrapper,
+} from '../components/Images'
+import { Graf, TextContainer } from '../components/Type'
+import config from '../../tailwind'
 
 const sectionStyles = tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 py-1x`
 
@@ -18,64 +29,67 @@ const oddStyling = css`
   ${mq[0]} {
     border-bottom: 1px solid ${config.colors['grey-light']};
   }
-`;
+`
 
 const evenStyling = css`
   ${mq[0]} {
     border-right: 1px solid ${config.colors['grey-light']};
   }
-`;
+`
 
 const secondOfThreeStyling = css`
   ${mq[2]} {
     border-right: 1px solid ${config.colors['grey-light']};
   }
-`;
+`
 
 const thirdOfThreeStyling = css`
   ${mq[2]} {
     border-right: none;
   }
-`;
+`
 
 const lastStylingLG = css`
   ${mq[2]} {
     border-bottom: none;
   }
-`;
+`
 
 const borderWhenFourStyling = css`
   ${mq[3]} {
     border-right: 1px solid ${config.colors['grey-light']};
   }
-`;
+`
 
 const noBorderWhenFour = css`
   ${mq[3]} {
     border-right: none;
   }
-`;
-
+`
 
 const PortfolioCard = ({ order, props }) => (
-  <li className={css(
-    sectionStyles,
-    oddStyling,
-    order % 2 ? {} : evenStyling,
-    order % 3 === 0 ? secondOfThreeStyling : {},
-    order % 3 === 1 ? secondOfThreeStyling : {},
-    order % 3 === 2 ? thirdOfThreeStyling : {},
-    order % 4 === 0 ? borderWhenFourStyling : {},
-    order % 4 === 1 ? borderWhenFourStyling : {},
-    order % 4 === 2 ? borderWhenFourStyling : {},
-    order % 4 === 3 ? noBorderWhenFour : {},
-    order === 12 ? thirdOfThreeStyling : {},
-    order === 12 ? lastStylingLG : {},
-  )}>
-    <a href={props.frontmatter.url}
-       target={"_blank"}
-       rel={"noopener, noreferrer"}
-       className={css(tw`hover:opacity-75 block`, transition)}>
+  <li
+    className={css(
+      sectionStyles,
+      oddStyling,
+      order % 2 ? {} : evenStyling,
+      order % 3 === 0 ? secondOfThreeStyling : {},
+      order % 3 === 1 ? secondOfThreeStyling : {},
+      order % 3 === 2 ? thirdOfThreeStyling : {},
+      order % 4 === 0 ? borderWhenFourStyling : {},
+      order % 4 === 1 ? borderWhenFourStyling : {},
+      order % 4 === 2 ? borderWhenFourStyling : {},
+      order % 4 === 3 ? noBorderWhenFour : {},
+      order === 12 ? thirdOfThreeStyling : {},
+      order === 12 ? lastStylingLG : {}
+    )}
+  >
+    <a
+      href={props.frontmatter.url}
+      target={'_blank'}
+      rel={'noopener, noreferrer'}
+      className={css(tw`hover:opacity-75 block`, transition)}
+    >
       <section>
         <div className={css(tw`mx-auto max-w-card`)}>
           <div className={order % 2 ? deviceLeft : deviceRight}>
@@ -85,11 +99,17 @@ const PortfolioCard = ({ order, props }) => (
             />
           </div>
           <div className={css(tw`p-1x`)}>
-            <h2 className={css(tw`text-md leading-2x text-black hover:text-black`)}>
+            <h2
+              className={css(
+                tw`text-md leading-2x text-black hover:text-black`
+              )}
+            >
               {props.frontmatter.title}
             </h2>
-            <div className={css(tw`text-black hover:text-black`)}
-                 dangerouslySetInnerHTML={{ __html: props.html }} />
+            <div
+              className={css(tw`text-black hover:text-black`)}
+              dangerouslySetInnerHTML={{ __html: props.html }}
+            />
           </div>
         </div>
       </section>
@@ -111,7 +131,10 @@ const PortfolioPage = props => (
     </figure>
     <Container>
       <TextContainer>
-        <Graf>Schaffen Sie sich einen Überblick über unser Schaffen mit dieser breiten Auswahl von Arbeiten.</Graf>
+        <Graf>
+          Schaffen Sie sich einen Überblick über unser Schaffen mit dieser
+          breiten Auswahl von Arbeiten.
+        </Graf>
       </TextContainer>
       <div className={css(tw`pt-4x pb-8x`)}>
         <ul className={css(tw`list-reset sm:flex sm:flex-wrap m-0`)}>
@@ -152,7 +175,9 @@ export const query = graphql`
         }
       }
     }
-    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolio/" } }) {
+    portfolio: imageSharp(
+      fluid: { originalName: { regex: "/portfolio-main/" } }
+    ) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

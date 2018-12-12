@@ -22,12 +22,15 @@ export const CardWrapper = styled('div')`
 
 type Props = {
   children?: React.Node,
-};
+}
 
 export const CardConverter = ({ children }: Props) => (
   <CardWrapper className={css(tw`block flex`, borderLeft)}>
     <span
-      className={css(tw`pr-half`, `a:hover & { color: ${config.colors['blue']} }`)}
+      className={css(
+        tw`pr-half`,
+        `a:hover & { color: ${config.colors['blue']} }`
+      )}
     >
       {children}
     </span>
@@ -40,5 +43,3 @@ export const CardConverter = ({ children }: Props) => (
     />
   </CardWrapper>
 )
-
-

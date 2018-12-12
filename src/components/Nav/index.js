@@ -17,7 +17,9 @@ const AnchorListItem = styled('li')`
 
 export const AnchorItem = props => (
   <AnchorListItem>
-    <AnchorLinkStyled className={css(transition)} href="#contact">{props.children}</AnchorLinkStyled>
+    <AnchorLinkStyled className={css(transition)} href="#contact">
+      {props.children}
+    </AnchorLinkStyled>
   </AnchorListItem>
 )
 

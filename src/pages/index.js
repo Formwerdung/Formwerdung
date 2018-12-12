@@ -9,7 +9,6 @@ import Layout from '../components/Layout'
 import Products from '../components/Products'
 
 class IndexPage extends React.Component {
-
   render() {
     const heroFluid = this.props.data.hero.fluid
     const portfolioFluid = this.props.data.portfolio.fluid
@@ -47,7 +46,9 @@ export const query = graphql`
         ...GatsbyImageSharpFluid_withWebp
       }
     }
-    portfolio: imageSharp(fluid: { originalName: { regex: "/portfolio-divider/" } }) {
+    portfolio: imageSharp(
+      fluid: { originalName: { regex: "/portfolio-divider/" } }
+    ) {
       fluid(maxWidth: 1920, quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }

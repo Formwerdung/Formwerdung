@@ -15,9 +15,7 @@ export default () => (
       <OfferNav />
       <Container>
         <OfferText>
-          <OfferTitle>
-            Magazine
-          </OfferTitle>
+          <OfferTitle>Magazine</OfferTitle>
           <Graf>
             Hier finden sie eine Übersicht über unsere Services. Formwerdung
             bietet alle Dienstleistungen im Bereich Web an, die für die
@@ -39,43 +37,38 @@ export default () => (
           <SubTitle className={css(tw`text-center`)}>Dienste</SubTitle>
           <Timeline>
             <section>
-              <h3>
-                Content-Strategien
-              </h3>
+              <h3>Content-Strategien</h3>
               <div>
-                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre Ziele zu erreichen.
+                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre
+                Ziele zu erreichen.
               </div>
             </section>
             <section>
-              <h3>
-                SEO-Konzepte
-              </h3>
+              <h3>SEO-Konzepte</h3>
               <div>
-                Wir erstellen detaillierte Konzepte, um ihre Seite für Suchmaschinen fit zu machen.
+                Wir erstellen detaillierte Konzepte, um ihre Seite für
+                Suchmaschinen fit zu machen.
               </div>
             </section>
             <section>
-              <h3>
-                Design-Umsetzung
-              </h3>
+              <h3>Design-Umsetzung</h3>
               <div>
-                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell ausgewählten Technologien.
+                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell
+                ausgewählten Technologien.
               </div>
             </section>
             <section>
-              <h3>
-                Web-Apps
-              </h3>
+              <h3>Web-Apps</h3>
               <div>
-                Wir designen und entwickeln komplexe Applikationen basierend auf ihren APIs und Backends.
+                Wir designen und entwickeln komplexe Applikationen basierend auf
+                ihren APIs und Backends.
               </div>
             </section>
             <section>
-              <h3>
-                Maintenance
-              </h3>
+              <h3>Maintenance</h3>
               <div>
-                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen Service-Level-Agreements.
+                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen
+                Service-Level-Agreements.
               </div>
             </section>
           </Timeline>

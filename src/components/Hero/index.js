@@ -19,11 +19,12 @@ const Hero = ({ fluid }) => (
         <HeroTitle>Alles fürs Web</HeroTitle>
         <p
           className={css(
-            tw`pb-1x text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md`
+            tw`pb-1x text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md`,
+            textShadow
           )}
         >
-          Formwerdung gestaltet und entwickelt exklusiv Webseiten und –apps.
-          Wir sind auf <em>responsive Design</em> spezialisiert, das auch bei
+          Formwerdung gestaltet und entwickelt exklusiv Webseiten und –apps. Wir
+          sind auf <em>responsive Design</em> spezialisiert, das auch bei
           komplexen Interfaces keine Abstriche machen muss.
         </p>
       </ImageContentWrapper>

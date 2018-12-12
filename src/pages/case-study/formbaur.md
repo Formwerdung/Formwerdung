@@ -6,10 +6,10 @@ image: '../portfolio/formbaur.png'
 header: './bild_altenhof.jpg'
 ---
 
-*Veni Vidi Vici.*
+_Veni Vidi Vici._
 
 Unser Engagement beim Relaunch von Roman Baur's Büro für Gestaltung – neu als [FormBaur](https://www.formbaur.ch/) ist einer der kürzesten Aufträge, die wir je hatten.
-Wir haben die Hauptnavigation gebaut, die Binnennavigation innerhalb der Aufträge und das Scroll-to-top Feature. 
+Wir haben die Hauptnavigation gebaut, die Binnennavigation innerhalb der Aufträge und das Scroll-to-top Feature.
 Eigentlich nur ein bisschen Dynamik mit JavaScript. Nach zehn Stunden war der Einsatz vorbei.
 
 <figure>
@@ -23,8 +23,6 @@ Detail der Binnennavigation für Arbeiten.
 
 Warum also eine Case Study schreiben?
 
-Weil wir der Auftrag *genau von der richtigen Grösse* war. Wir haben kein Interesse daran, möglichst alles selbst zu tun, um möglichst viele Stunden abrechnen 
+Weil wir der Auftrag _genau von der richtigen Grösse_ war. Wir haben kein Interesse daran, möglichst alles selbst zu tun, um möglichst viele Stunden abrechnen
 zu können. Wir machen nur das, was Sie wirklich brauchen und was Sie nicht selbst können – und das war in dem Fall ein paar wenige Features.
 Darum können Sie uns jederzeit auch für eine fixe Anzahl Stunden engagieren.
-
-

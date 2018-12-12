@@ -8,4 +8,6 @@ export const TextContainer = styled('div')`
 export const SubTitle = styled('h2')`
   ${tw`leading-3 text-2xl`};
 `
-export const Graf = ({ children }) => <p className={css(tw`pb-1x m-0`)}>{children}</p>
+export const Graf = ({ children }) => (
+  <p className={css(tw`pb-1x m-0`)}>{children}</p>
+)
