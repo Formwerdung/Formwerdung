@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { css } from 'emotion'
 import styled from 'react-emotion'
 import tw from 'tailwind.macro'
 import { ArrowRightCircle } from 'react-feather'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import config from '../../../tailwind'
 import Container from '../Container'
 import { Image, ImageContainer } from '../Images'
 import { transition } from '../../utils/style'
+import { Link } from 'gatsby'
 
 const linkStyles = css`
   &:hover {
@@ -35,7 +34,7 @@ const dividerTextString = tw`px-1x py-2x md:py-4x text-white text-right font-sem
 const dividerIconString = tw`h-8x md:h-12x py-3x md:py-5x stroke-current text-white relative z-10`
 
 const Divider = ({ fluid, lineOne, lineTwo, route }) => (
-  <AniLink swipe to={route} duration={0.4} top="exit" className={linkStyles}>
+  <Link to={route} className={linkStyles}>
     <DividerWrapper>
       <Container>
         <DividerTextWrapper>
@@ -51,7 +50,7 @@ const Divider = ({ fluid, lineOne, lineTwo, route }) => (
         <Image fluid={fluid} />
       </ImageContainer>
     </DividerWrapper>
-  </AniLink>
+  </Link>
 )
 
 export default Divider

@@ -8,11 +8,16 @@ import OfferNav from '../../components/OfferNav'
 import { OfferCards, OfferText, OfferTitle } from '../angebot'
 import { Graf, SubTitle } from '../../components/Type'
 import { Timeline } from '../../components/Timeline'
+import SEO from '../../components/SEO'
 
 export default () => (
   <Layout>
-    <SEO title={'Bundle: Magazine | Formwerdung | Web Design aus der Schweiz'}
-         description={'Magazine - Unser Bundle für eine Vielzahl von Anwendungen im Bereich Blogs, Online-Journalismus und anderen Syndicated Content.'} />
+    <SEO
+      title={'Bundle: Magazine | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Magazine - Unser Bundle für eine Vielzahl von Anwendungen im Bereich Blogs, Online-Journalismus und anderen Syndicated Content.'
+      }
+    />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

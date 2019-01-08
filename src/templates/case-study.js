@@ -12,6 +12,8 @@ import {
   ImageContentWrapper,
 } from '../components/Images'
 import SEO from '../components/SEO'
+import { textShadow } from '../utils/style'
+import { HeroTitle } from '../components/Hero'
 
 const paragraph = css`
   p {
@@ -35,6 +37,8 @@ const paragraph = css`
     ${tw`text-center italic py-1x`}
   }
 `
+
+const caseStudyTitle = tw`text-5xl leading-4x pb-1x text-white relative z-10 m-0 pt-0`
 
 export default ({ data }) => {
   const fluid = get(
@@ -62,13 +66,7 @@ export default ({ data }) => {
               >
                 Case Study
               </p>
-              <h1
-                className={css(
-                  tw`text-5xl leading-4x pb-1x text-white text-shadow relative z-10 m-0 pt-0`
-                )}
-              >
-                {title}
-              </h1>
+              <h1 className={css(caseStudyTitle, textShadow)}>{title}</h1>
             </ImageContentWrapper>
           </header>
         </Container>

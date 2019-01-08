@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import OfferNav from '../components/OfferNav'
 import { Graf, SubTitle } from '../components/Type'
 import { Timeline } from '../components/Timeline'
+import SEO from '../components/SEO'
 
 export const OfferText = styled('section')`
   ${tw`px-2x md:w-3/5 xl:w-1/2`};
@@ -23,8 +24,12 @@ export const OfferCards = styled('section')`
 
 export default () => (
   <Layout>
-    <SEO title={'Angebot | Formwerdung | Web Design aus der Schweiz'}
-         description={'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'}
+    <SEO
+      title={'Angebot | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'
+      }
+    />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

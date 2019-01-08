@@ -8,11 +8,16 @@ import OfferNav from '../../components/OfferNav'
 import { OfferCards, OfferText, OfferTitle } from '../angebot'
 import { Graf, SubTitle } from '../../components/Type'
 import { Timeline } from '../../components/Timeline'
+import SEO from '../../components/SEO'
 
 export default () => (
   <Layout>
-    <SEO title={'Deluxe Hosting | Formwerdung | Web Design aus der Schweiz'}
-         description={'Unser rundum sorgenfrei Hosting-Angebot mit CDN, Continuous Integration und Administration.'} />
+    <SEO
+      title={'Deluxe Hosting | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Unser rundum sorgenfrei Hosting-Angebot mit CDN, Continuous Integration und Administration.'
+      }
+    />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

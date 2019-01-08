@@ -8,11 +8,16 @@ import OfferNav from '../../components/OfferNav'
 import { Graf, SubTitle } from '../../components/Type'
 import { OfferCards, OfferText, OfferTitle } from '../angebot'
 import { Timeline } from '../../components/Timeline'
+import SEO from '../../components/SEO'
 
 export default () => (
   <Layout>
-    <SEO title={'Bundle: Amplify | Formwerdung | Web Design aus der Schweiz'}
-         description={'Amplify - Unser Bundle für den schnellen Start zum Beispiel für Events, Restaurants, Startups, Kampagnen und Portfolios.'} />
+    <SEO
+      title={'Bundle: Amplify | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Amplify - Unser Bundle für den schnellen Start zum Beispiel für Events, Restaurants, Startups, Kampagnen und Portfolios.'
+      }
+    />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>
