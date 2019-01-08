@@ -8,6 +8,7 @@ import OfferNav from '../../components/OfferNav'
 import { Graf, SubTitle } from '../../components/Type'
 import { OfferCards, OfferText, OfferTitle } from '../angebot'
 import { Timeline } from '../../components/Timeline'
+import SEO from '../../components/SEO'
 
 export default () => (
   <Layout>

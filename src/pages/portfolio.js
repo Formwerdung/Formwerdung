@@ -22,6 +22,7 @@ import {
 } from '../components/Images'
 import { Graf, TextContainer } from '../components/Type'
 import config from '../../tailwind'
+import SEO from '../components/SEO'
 
 const sectionStyles = tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 py-1x`
 
@@ -120,7 +121,7 @@ const PortfolioCard = ({ order, props }) => (
 const PortfolioPage = props => (
   <Layout>
     <SEO title={'Portfolio | Formwerdung | Web Design aus der Schweiz'}
-         description={'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'}
+         description={'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'} />
     <figure className={css(tw`relative m-0`)}>
       <Container>
         <ImageContentWrapper>

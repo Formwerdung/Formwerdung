@@ -13,11 +13,12 @@ import {
   ImageContentWrapper,
 } from '../components/Images'
 import { Graf, SubTitle, TextContainer } from '../components/Type'
+import SEO from '../components/SEO'
 
 export default ({ data }) => (
   <Layout>
     <SEO title={'Impressum | Formwerdung | Web Design aus der Schweiz'}
-         description={'Haftungsinformationen und Privacy Policy unserer Website.'}
+         description={'Haftungsinformationen und Privacy Policy unserer Website.'} />
     <figure className={css(tw`relative m-0`)}>
       <Container>
         <ImageContentWrapper>
