@@ -5,9 +5,8 @@ import tw from 'tailwind.macro'
 import Container from '../../components/Container'
 import Layout from '../../components/Layout'
 import OfferNav from '../../components/OfferNav'
-import { OfferCards, OfferText, OfferTitle } from '../angebot'
-import { Graf, SubTitle } from '../../components/Type'
-import { Timeline } from '../../components/Timeline'
+import { OfferText, OfferTitle } from '../angebot'
+import { Graf } from '../../components/Type'
 import SEO from '../../components/SEO'
 
 export default () => (
@@ -24,62 +23,24 @@ export default () => (
         <OfferText>
           <OfferTitle>Hosting</OfferTitle>
           <Graf>
-            Hier finden sie eine Übersicht über unsere Services. Formwerdung
-            bietet alle Dienstleistungen im Bereich Web an, die für die
-            technische Umsetzung relevant sind. Dazu gehören inhaltliche
-            Konzepte (inklusive Optimierung für Suchmaschinen), Design und
-            Programmierung.
+            Unser neuestes Angebot ist ein rundum-sorglos, sie-müssen-nichts-machen
+            Hostingpaket, welches best-in-class Hosting für alle zugänglich machen
+            soll.
           </Graf>
           <Graf>
-            Gerne bieten wir unsere Leistungen auch modular an. Auf der Basis
-            eines unverbindlichen persönlichen Gesprächs können wir Ihnen
-            detaillierte Offerten für volle Kostenkontrolle bieten.
+            Die meisten Hosting-Plattformen in der Schweiz bieten sehr guten Service
+            an – ausser beim Aktualisieren ihrer Website. Software muss ständig
+            administriert werden. Mitunter können solche Arbeiten
+            auch teilweise automatisiert werden, was die Kosten deutlich senkt.
+            Mit dem nötigen Know-how kann man also günstig hosten wie die ganz Grossen!
           </Graf>
           <Graf>
-            Wir Für diese und weitere Services arbeiten wir gerne mit unserem
-            breiten Netzwerk von Partnern zusammen.
+            Genau das möchten wir Ihnen anbieten. Mit diesem Paket richten wir Ihnen
+            das beste Hosting ein, das wir kennen (so wie wir es für diese Seite verwenden)
+            und administrieren innerhalb eines fixen Zeitkontingents ihre Seite, so dass sie
+            immer sicher bleibt.
           </Graf>
         </OfferText>
-        <OfferCards>
-          <SubTitle className={css(tw`text-center`)}>Dienste</SubTitle>
-          <Timeline>
-            <section>
-              <h3>Content-Strategien</h3>
-              <div>
-                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre
-                Ziele zu erreichen.
-              </div>
-            </section>
-            <section>
-              <h3>SEO-Konzepte</h3>
-              <div>
-                Wir erstellen detaillierte Konzepte, um ihre Seite für
-                Suchmaschinen fit zu machen.
-              </div>
-            </section>
-            <section>
-              <h3>Design-Umsetzung</h3>
-              <div>
-                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell
-                ausgewählten Technologien.
-              </div>
-            </section>
-            <section>
-              <h3>Web-Apps</h3>
-              <div>
-                Wir designen und entwickeln komplexe Applikationen basierend auf
-                ihren APIs und Backends.
-              </div>
-            </section>
-            <section>
-              <h3>Maintenance</h3>
-              <div>
-                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen
-                Service-Level-Agreements.
-              </div>
-            </section>
-          </Timeline>
-        </OfferCards>
       </Container>
     </div>
   </Layout>

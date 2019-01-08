@@ -59,7 +59,7 @@ const Products = () => (
           type={'Pflege'}
           title={'Deluxe Hosting'}
           forWhom={
-            'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Sicherheitsupdates.'
+            'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Administration.'
           }
           features={[
             'Zwei preliminäre, individuelle Designs zur Auswahl',

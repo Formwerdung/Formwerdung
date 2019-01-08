@@ -53,41 +53,36 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle className={css(tw`text-center`)}>Dienste</SubTitle>
+          <SubTitle className={css(tw`text-center`)}>Ablauf</SubTitle>
           <Timeline>
             <section>
-              <h3>Content-Strategien</h3>
+              <h3>Content</h3>
               <div>
-                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre
-                Ziele zu erreichen.
+                Auf der Basis eines ausführlichen Gesprächs wird ein Content-Konzept erstellt.
               </div>
             </section>
             <section>
-              <h3>SEO-Konzepte</h3>
+              <h3>Designvorschläge</h3>
               <div>
-                Wir erstellen detaillierte Konzepte, um ihre Seite für
-                Suchmaschinen fit zu machen.
+                Wir erstellen zwei individuelle Designvorschläge zu ihrer Auswahl, die als Grundlage für die Website dienen.
               </div>
             </section>
             <section>
-              <h3>Design-Umsetzung</h3>
+              <h3>Umsetzung</h3>
               <div>
-                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell
-                ausgewählten Technologien.
+                Komplettummsetzung des Designs, Bugfixing und Testing.
               </div>
             </section>
             <section>
-              <h3>Web-Apps</h3>
+              <h3>Schulung</h3>
               <div>
-                Wir designen und entwickeln komplexe Applikationen basierend auf
-                ihren APIs und Backends.
+                Wir schulen Sie im Bearbeiten Ihrer Website direkt mit Ihrem Content.
               </div>
             </section>
             <section>
-              <h3>Maintenance</h3>
+              <h3>Hosting</h3>
               <div>
-                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen
-                Service-Level-Agreements.
+                Auf Wunsch hosten und administrieren wird ihre Website (extra).
               </div>
             </section>
           </Timeline>

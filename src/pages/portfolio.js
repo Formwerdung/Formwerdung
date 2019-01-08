@@ -120,8 +120,12 @@ const PortfolioCard = ({ order, props }) => (
 
 const PortfolioPage = props => (
   <Layout>
-    <SEO title={'Portfolio | Formwerdung | Web Design aus der Schweiz'}
-         description={'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'} />
+    <SEO
+      title={'Portfolio | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'
+      }
+    />
     <figure className={css(tw`relative m-0`)}>
       <Container>
         <ImageContentWrapper>

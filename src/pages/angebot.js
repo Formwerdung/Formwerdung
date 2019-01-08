@@ -24,8 +24,12 @@ export const OfferCards = styled('section')`
 
 export default () => (
   <Layout>
-    <SEO title={'Angebot | Formwerdung | Web Design aus der Schweiz'}
-         description={'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'} />
+    <SEO
+      title={'Angebot | Formwerdung | Web Design aus der Schweiz'}
+      description={
+        'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'
+      }
+    />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>
@@ -55,7 +59,8 @@ export default () => (
               <h3>Content-Strategien</h3>
               <div>
                 Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre
-                Ziele zu erreichen.
+                Ziele zu erreichen. Auf Wunsch bringen wir Texter_innen, Fotogaf_innen
+                oder Illustrator_innen mit an Bord.
               </div>
             </section>
             <section>
