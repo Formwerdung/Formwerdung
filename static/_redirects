@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://formwerdung.netlify.com/* https://formwerdung.ch/:splat 301!
