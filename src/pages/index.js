@@ -7,6 +7,7 @@ import Divider from '../components/Divider'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import Products from '../components/Products'
+import SEO from '../components/SEO'
 
 class IndexPage extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <SEO />
         <Hero fluid={heroFluid} />
         <Cases props={caseStudies} />
         <Divider
