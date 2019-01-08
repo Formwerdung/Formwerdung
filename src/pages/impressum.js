@@ -16,6 +16,8 @@ import { Graf, SubTitle, TextContainer } from '../components/Type'
 
 export default ({ data }) => (
   <Layout>
+    <SEO title={'Impressum | Formwerdung | Web Design aus der Schweiz'}
+         description={'Haftungsinformationen und Privacy Policy unserer Website.'}
     <figure className={css(tw`relative m-0`)}>
       <Container>
         <ImageContentWrapper>

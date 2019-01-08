@@ -11,6 +11,8 @@ import { Timeline } from '../../components/Timeline'
 
 export default () => (
   <Layout>
+    <SEO title={'Bundle: Amplify | Formwerdung | Web Design aus der Schweiz'}
+         description={'Amplify - Unser Bundle für den schnellen Start zum Beispiel für Events, Restaurants, Startups, Kampagnen und Portfolios.'} />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

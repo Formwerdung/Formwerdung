@@ -18,7 +18,7 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <SEO />
+        <SEO title={''} />
         <Hero fluid={heroFluid} />
         <Cases props={caseStudies} />
         <Divider

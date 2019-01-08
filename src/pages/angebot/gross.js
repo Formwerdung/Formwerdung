@@ -11,6 +11,8 @@ import { Timeline } from '../../components/Timeline'
 
 export default () => (
   <Layout>
+    <SEO title={'Bundle: Magazine | Formwerdung | Web Design aus der Schweiz'}
+         description={'Magazine - Unser Bundle für eine Vielzahl von Anwendungen im Bereich Blogs, Online-Journalismus und anderen Syndicated Content.'} />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

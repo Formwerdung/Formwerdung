@@ -11,6 +11,8 @@ import { Timeline } from '../../components/Timeline'
 
 export default () => (
   <Layout>
+    <SEO title={'Deluxe Hosting | Formwerdung | Web Design aus der Schweiz'}
+         description={'Unser rundum sorgenfrei Hosting-Angebot mit CDN, Continuous Integration und Administration.'} />
     <div className={css(tw`relative`)}>
       <OfferNav />
       <Container>

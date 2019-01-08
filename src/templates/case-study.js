@@ -11,6 +11,7 @@ import {
   ImageContainer,
   ImageContentWrapper,
 } from '../components/Images'
+import SEO from '../components/SEO'
 
 const paragraph = css`
   p {
@@ -41,9 +42,15 @@ export default ({ data }) => {
     'markdownRemark.frontmatter.header.childImageSharp.fluid',
     {}
   )
+  const description = `Webdesign Case Study von Formwerdung: ${
+    data.markdownRemark.frontmatter.callToAction
+  }`
+  const title = data.markdownRemark.frontmatter.title
+  const seoTitle = `${title} | Case Study | Formwerdung | Web Design aus der Schweiz`
 
   return (
     <Layout>
+      <SEO title={seoTitle} description={description} />
       <figure className={css(tw`relative m-0`)}>
         <Container>
           <header>
@@ -60,7 +67,7 @@ export default ({ data }) => {
                   tw`text-5xl leading-4x pb-1x text-white text-shadow relative z-10 m-0 pt-0`
                 )}
               >
-                {data.markdownRemark.frontmatter.title}
+                {title}
               </h1>
             </ImageContentWrapper>
           </header>
@@ -85,6 +92,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        callToAction
         header {
           publicURL
           childImageSharp {
