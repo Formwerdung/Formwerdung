@@ -28,12 +28,8 @@ const Products = () => (
           forWhom={
             'Ein Päckchen mit allem, was man wirklich braucht. Zum Beispiel für Restaurants, Startups, Marketingseiten oder kleine Portfolios.'
           }
-          features={[
-            'Zwei preliminäre, individuelle Designs zur Auswahl',
-            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
-          ]}
           link={'/angebot/klein/'}
-          price={'2400 CHF'}
+          price={'3000 CHF'}
           index={'first'}
         >
           <Package className={iconStyles} />
@@ -44,12 +40,8 @@ const Products = () => (
           forWhom={
             'Für Neugkeiten und regelmässiges Posting, wie man es von Blogs, Online-Journalismus oder grösseren Portfolios kennt.'
           }
-          features={[
-            'Zwei preliminäre, individuelle Designs zur Auswahl',
-            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
-          ]}
           link={'/angebot/gross/'}
-          price={'3600 CHF'}
+          price={'4500 CHF'}
           index={'even'}
           number={'second'}
         >
@@ -61,10 +53,6 @@ const Products = () => (
           forWhom={
             'Best-in-class Hosting für den Mittelstand! Zurücklehnen und geniessen. Mit CDN, Continuous Integration und Administration.'
           }
-          features={[
-            'Zwei preliminäre, individuelle Designs zur Auswahl',
-            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
-          ]}
           link={'/angebot/hosting/'}
           price={'1800 CHF / Jahr'}
           number={'third'}
@@ -78,10 +66,6 @@ const Products = () => (
             'Gerne bieten wir unsere Services auch massgeschneidert an. So können Sie uns für eine feste Anzahl von Stunden buchen, ' +
             'um ihr Projekt zu unterstützten. Für grössere Projekte bieten wir dabei gerne auch individuelle Offerten an.'
           }
-          features={[
-            'Zwei preliminäre, individuelle Designs zur Auswahl',
-            'Simple zeitabhängige Einträge für das Portfolio, Menükarten oder Produkte',
-          ]}
           link={'angebot'}
           price={'125 CHF / Stunde'}
           index={'even'}

@@ -23,7 +23,7 @@ export default () => (
   <Colophon className={css(borderTop)}>
     <Container>
       <ColophonWrapper>
-        <ColophonCopyright>&copy; 2018 Formwerdung</ColophonCopyright>
+        <ColophonCopyright>&copy; 2019 Formwerdung</ColophonCopyright>
         <div>
           <Nav>
             <NavItem to={'/impressum/'}>Impressum</NavItem>
