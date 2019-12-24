@@ -5,6 +5,7 @@ module.exports = {
   },
   "plugins": [
     "react",
+    "emotion"
   ],
   "globals": {
     "graphql": false,
@@ -15,5 +16,11 @@ module.exports = {
       "experimentalObjectRestSpread": true,
       "jsx": true,
     },
+  },
+  "rules": {
+    "emotion/jsx-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error"
   }
 }

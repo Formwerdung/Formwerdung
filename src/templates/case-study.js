@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
 import { graphql } from 'gatsby'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 import { get } from 'lodash'
 
@@ -55,18 +56,18 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={seoTitle} description={description} />
-      <figure className={css(tw`relative m-0`)}>
+      <figure css={tw`relative m-0`}>
         <Container>
           <header>
             <ImageContentWrapper>
               <p
-                className={css(
+                css={
                   tw`text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md pt-8x sm:pt-10x xl:pt-12x`
-                )}
+                }
               >
                 Case Study
               </p>
-              <h1 className={css(caseStudyTitle, textShadow)}>{title}</h1>
+              <h1 css={[caseStudyTitle, textShadow]}>{title}</h1>
             </ImageContentWrapper>
           </header>
         </Container>
@@ -77,7 +78,7 @@ export default ({ data }) => {
       <Container>
         <div
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          className={css(tw`p-1x mb-8x`, paragraph)}
+          css={[tw`p-1x mb-8x`, paragraph]}
         />
       </Container>
     </Layout>

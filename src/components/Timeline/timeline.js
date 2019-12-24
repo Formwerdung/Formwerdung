@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 
 import Entry from './entry'
 import { mq } from '../../utils/style'
@@ -24,7 +25,7 @@ export default class Timeline extends React.Component {
     `
 
     return (
-      <div className={css(styles)}>
+      <div css={styles}>
         {React.Children.map(children, c => (
           <Entry even={i++ % 2 === 0} icon={c.props.icon}>
             {c}

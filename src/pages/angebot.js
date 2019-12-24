@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
-import { css } from 'emotion'
-import styled from 'react-emotion'
+import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 import Container from '../components/Container'
@@ -30,7 +31,7 @@ export default () => (
         'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'
       }
     />
-    <div className={css(tw`relative`)}>
+    <div css={css(tw`relative`)}>
       <OfferNav />
       <Container>
         <OfferText>
@@ -53,7 +54,7 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle className={css(tw`sm:text-center`)}>Dienste</SubTitle>
+          <SubTitle css={css(tw`sm:text-center`)}>Dienste</SubTitle>
           <Timeline>
             <section>
               <h3>Content-Strategien</h3>

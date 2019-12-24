@@ -63,3 +63,4 @@ typings/
 .cache/
 public
 yarn-error.log
+storybook-static

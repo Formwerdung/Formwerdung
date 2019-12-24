@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 export const containerStyleString = `mx-auto max-w-md lg:max-w-lg xl:max-w-xl h-full`

@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 
-import config from '../../../tailwind'
+import config from '../../../tailwind.config'
 import Content from './content'
 import { mq } from '../../utils/style'
 
@@ -18,12 +19,12 @@ export default class Entry extends React.Component {
       list-style-type: none;
       position: relative;
       width: 1px;
-      padding-top: ${config.padding['4x']};
-      background: ${config.colors['border-light']};
-      margin: 0 auto 0 ${config.margin['1x']};
+      padding-top: ${config.theme.padding['4x']};
+      background: ${config.theme.colors['border-light']};
+      margin: 0 auto 0 ${config.theme.margin['1x']};
 
       ${mq[0]} {
-        margin: 0 auto ${config.margin['m3x']} auto;
+        margin: 0 auto ${config.theme.margin['m3x']} auto;
       }
 
       @media print {
@@ -35,14 +36,14 @@ export default class Entry extends React.Component {
 
     const stylesCircle = css`
       position: absolute;
-      bottom: ${config.width['2x']};
+      bottom: ${config.theme.width['2x']};
       transform: translateX(-50%);
-      width: ${config.width['2x']};
-      height: ${config.height['2x']};
+      width: ${config.theme.width['2x']};
+      height: ${config.theme.height['2x']};
       border-radius: 50%;
       z-index: 1;
       background: white;
-      border: 1px solid ${config.colors['border-light']};
+      border: 1px solid ${config.theme.colors['border-light']};
     `
 
     const stylesCircleInner = css`
@@ -54,12 +55,12 @@ export default class Entry extends React.Component {
     `
 
     return (
-      <div className={stylesBase}>
+      <div css={stylesBase}>
         <div>
           <Content {...props}>{children}</Content>
         </div>
-        <span className={css(stylesCircle)}>
-          <span className={css(stylesCircleInner)}>{icon}</span>
+        <span css={stylesCircle}>
+          <span css={stylesCircleInner}>{icon}</span>
         </span>
       </div>
     )

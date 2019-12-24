@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 import Container from '../Container'
@@ -9,7 +9,7 @@ import logoSmall from './formwerdung-logo-small.svg'
 import logoLarge from './formwerdung-logo-large.svg'
 
 const Banner = styled('header')`
-  ${tw`shadow w-full h-3x fixed pin-t z-20 bg-white`};
+  ${tw`shadow w-full h-3x fixed top-0 z-20 bg-white`};
 `
 const BannerWrapper = styled('div')`
   ${tw`h-full flex justify-between px-1x`};

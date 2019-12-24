@@ -1,11 +1,12 @@
+/** @jsx jsx */
 import React from 'react'
 import Obfuscate from 'react-obfuscate'
 import { X } from 'react-feather'
-import { css } from 'emotion'
-import styled from 'react-emotion'
+import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
-import config from '../../../tailwind'
+import config from '../../../tailwind.config'
 import Container from '../Container'
 import { textInput, transition } from '../../utils/style'
 import { SubTitle } from '../Type/index'
@@ -18,16 +19,16 @@ const encode = data => {
 
 const dialogSection = css(tw`p-1x relative`)
 
-const dialogIcon = tw`absolute pin-t pin-r p-1x w-4x h-4x cursor-pointer hover:text-white stroke-current`
+const dialogIcon = tw`absolute top-0 right-0 p-1x w-4x h-4x cursor-pointer hover:text-white stroke-current`
 
 const DialogTitle = styled('h3')`
   ${tw`m-0 leading-2x`};
 `
 
 const Dialog = ({ title, description, dismissHandler, bgColor }) => (
-  <section className={css(dialogSection, { 'background-color': bgColor })}>
+  <section css={[dialogSection, { 'background-color': bgColor }]}>
     <DialogTitle>{title}</DialogTitle>
-    <X onClick={dismissHandler} className={css(dialogIcon, transition)} />
+    <X onClick={dismissHandler} css={[dialogIcon, transition]} />
     <p>{description}</p>
   </section>
 )
@@ -147,7 +148,7 @@ class Contact extends React.Component {
                   'Vielen Dank für Ihre Kontaktaufnahme! Wir melden uns sobald wie möglich bei Ihnen.'
                 }
                 dismissHandler={() => this.dismiss('success')}
-                bgColor={config.colors.green}
+                bgColor={config.theme.colors.green}
               />
             )}
             {this.state.error && (
@@ -157,7 +158,7 @@ class Contact extends React.Component {
                   'Leider ist die Übermittlung des Formulars fehlgeschlagen. Versuchen Sie es doch bitte noch einmal.'
                 }
                 dismissHandler={() => this.dismiss('error')}
-                bgColor={config.colors.red}
+                bgColor={config.theme.colors.red}
               />
             )}
             <form
@@ -166,7 +167,7 @@ class Contact extends React.Component {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={e => this.handleSubmit(e)}
-              className={css(tw`p-1x`)}
+              css={tw`p-1x`}
             >
               {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
               <input type="hidden" name="form-name" value="contact" />
@@ -187,7 +188,7 @@ class Contact extends React.Component {
                     type="text"
                     name="name"
                     onChange={e => this.handleChange(e)}
-                    className={css(textInput, contactInput)}
+                    css={[textInput, contactInput]}
                   />
                 </ContactLabel>
               </p>
@@ -199,7 +200,7 @@ class Contact extends React.Component {
                     type="email"
                     name="email"
                     onChange={e => this.handleChange(e)}
-                    className={css(textInput, contactInput)}
+                    css={[textInput, contactInput]}
                   />
                 </ContactLabel>
               </ContactBox>
@@ -211,7 +212,7 @@ class Contact extends React.Component {
                     name="message"
                     id="message"
                     onChange={e => this.handleChange(e)}
-                    className={css(textInput, contactInput, contactTextArea)}
+                    css={[textInput, contactInput, contactTextArea]}
                   />
                 </ContactLabel>
               </ContactBox>
@@ -219,12 +220,12 @@ class Contact extends React.Component {
                 <input
                   type="submit"
                   value={'Senden'}
-                  className={css(contactSubmit, transition)}
+                  css={[contactSubmit, transition]}
                 />
                 <input
                   type="reset"
                   value="Löschen"
-                  className={css(contactReset, transition)}
+                  css={[contactReset, transition]}
                 />
               </ContactFlexBox>
             </form>
@@ -235,7 +236,7 @@ class Contact extends React.Component {
                 <Obfuscate
                   email="mail@formwerdung.ch"
                   headers={{ subject: 'Anfrage von formwerdung.ch' }}
-                  className={contactColophonObfuscate}
+                  css={contactColophonObfuscate}
                 />{' '}
                 senden.
               </ContactColophonGraf>

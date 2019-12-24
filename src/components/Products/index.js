@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
-import { css } from 'emotion'
-import styled from 'react-emotion'
+import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 import { HardDrive, Package, Scissors } from 'react-feather'
 
@@ -14,7 +15,7 @@ const ProductTitle = styled('h2')`
 `
 
 const ProductList = styled('ul')`
-  ${tw`list-reset m-0 p-0 sm:flex md:-mr-2x sm:flex-wrap`};
+  ${tw`list-none m-0 p-0 sm:flex md:-mr-2x sm:flex-wrap`};
 `
 
 const Products = () => (
@@ -32,7 +33,7 @@ const Products = () => (
           price={'3000 CHF'}
           index={'first'}
         >
-          <Package className={iconStyles} />
+          <Package css={iconStyles} />
         </ProductCard>
         <ProductCard
           type={'Package'}
@@ -45,7 +46,7 @@ const Products = () => (
           index={'even'}
           number={'second'}
         >
-          <Package className={iconStyles} />
+          <Package css={iconStyles} />
         </ProductCard>
         <ProductCard
           type={'Pflege'}
@@ -57,7 +58,7 @@ const Products = () => (
           price={'1800 CHF / Jahr'}
           number={'third'}
         >
-          <HardDrive className={iconStyles} />
+          <HardDrive css={iconStyles} />
         </ProductCard>
         <ProductCard
           type={'Cut and Paste'}
@@ -71,7 +72,7 @@ const Products = () => (
           index={'even'}
           number={'fourth'}
         >
-          <Scissors className={iconStyles} />
+          <Scissors css={iconStyles} />
         </ProductCard>
       </ProductList>
     </Container>

@@ -1,10 +1,11 @@
+/** @jsx jsx */
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Link } from 'gatsby'
-import { css } from 'emotion'
-import styled from 'react-emotion'
+import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import config from '../../../tailwind'
+import config from '../../../tailwind.config'
 import { transition } from '../../utils/style'
 
 const AnchorLinkStyled = styled(AnchorLink)`
@@ -17,7 +18,7 @@ const AnchorListItem = styled('li')`
 
 export const AnchorItem = props => (
   <AnchorListItem>
-    <AnchorLinkStyled className={css(transition)} href="#contact">
+    <AnchorLinkStyled css={transition} href="#contact">
       {props.children}
     </AnchorLinkStyled>
   </AnchorListItem>
@@ -34,12 +35,12 @@ const NavLink = styled(Link)`
 `
 
 export const NavItem = ({ border, children, exact, to }) => (
-  <NavListItem className={css(border ? navItemBorder : {})}>
+  <NavListItem css={border ? navItemBorder : {}}>
     <NavLink
-      className={css(transition)}
+      css={css(transition)}
       to={to}
       activeStyle={{
-        color: config.colors['blue-dark'],
+        color: config.theme.colors['blue-dark'],
       }}
       exact={exact}
     >
@@ -49,7 +50,7 @@ export const NavItem = ({ border, children, exact, to }) => (
 )
 
 export const Nav = ({ children }) => (
-  <nav className={css(tw`h-full`)}>
-    <ul className={css(tw`list-reset m-0 flex h-full`)}>{children}</ul>
+  <nav css={tw`h-full`}>
+    <ul css={tw`list-none p-0 m-0 flex h-full`}>{children}</ul>
   </nav>
 )

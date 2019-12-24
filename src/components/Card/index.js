@@ -1,15 +1,15 @@
-// @flow
+/** @jsx jsx */
 import * as React from 'react'
-import styled from 'react-emotion'
-import { css } from 'emotion'
+import styled from '@emotion/styled'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
-import config from '../../../tailwind'
+import config from '../../../tailwind.config'
 import { ArrowRightCircle } from 'react-feather'
 import { borderLeft, transition } from '../../utils/style'
 
 export const CardFooter = styled('div')`
-  ${tw`w-full flex justify-end pin-b pin-l absolute`},;
+  ${tw`w-full flex justify-end bottom-0 left-0 absolute`},;
 `
 
 export const CardType = styled('p')`
@@ -20,26 +20,22 @@ export const CardWrapper = styled('div')`
   ${tw`p-1x`};
 `
 
-type Props = {
-  children?: React.Node,
-}
-
-export const CardConverter = ({ children }: Props) => (
-  <CardWrapper className={css(tw`block flex`, borderLeft)}>
+export const CardConverter = ({ children }) => (
+  <CardWrapper css={[tw`block flex`, borderLeft]}>
     <span
-      className={css(
+      css={[
         tw`pr-half`,
-        `a:hover & { color: ${config.colors['blue']} }`
-      )}
+        `a:hover & { color: ${config.theme.colors['blue']} }`
+      ]}
     >
       {children}
     </span>
     <ArrowRightCircle
-      className={css(
+      css={[
         tw`h-2x stroke-current hover:text-blue relative z-10`,
-        `a:hover & { color: ${config.colors['blue']} }`,
+        `a:hover & { color: ${config.theme.colors['blue']} }`,
         transition
-      )}
+      ]}
     />
   </CardWrapper>
 )

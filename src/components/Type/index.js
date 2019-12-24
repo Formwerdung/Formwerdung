@@ -1,4 +1,7 @@
-import styled, { css } from 'react-emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import tw from 'tailwind.macro'
 import React from 'react'
 
@@ -9,5 +12,5 @@ export const SubTitle = styled('h2')`
   ${tw`leading-3 text-2xl`};
 `
 export const Graf = ({ children }) => (
-  <p className={css(tw`pb-1x m-0`)}>{children}</p>
+  <p css={tw`pb-1x m-0`}>{children}</p>
 )

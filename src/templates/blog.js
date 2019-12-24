@@ -1,13 +1,14 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
 import { graphql } from 'gatsby'
-import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
 import Layout from '../components/Layout'
 
 export default ({ data }) => (
   <Layout>
-    <p className={css(tw`mt-4x`)}>Blog Post</p>
+    <p css={tw`mt-4x`}>Blog Post</p>
     <h1>{data.markdownRemark.frontmatter.titel}</h1>
   </Layout>
 )

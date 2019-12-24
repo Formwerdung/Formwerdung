@@ -1,11 +1,13 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import styled from 'react-emotion'
+import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import { Nav, NavItem } from '../Nav'
 import { borderTop } from '../../utils/style'
-import { css } from 'emotion'
 
 const Colophon = styled('footer')`
   ${tw`bg-white h-3x overflow-hidden`};
@@ -20,7 +22,7 @@ const ColophonCopyright = styled('div')`
 `
 
 export default () => (
-  <Colophon className={css(borderTop)}>
+  <Colophon css={borderTop}>
     <Container>
       <ColophonWrapper>
         <ColophonCopyright>&copy; 2019 Formwerdung</ColophonCopyright>

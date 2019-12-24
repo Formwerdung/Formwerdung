@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from 'emotion'
-import styled from 'react-emotion'
+import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 import { mq, transition } from '../../utils/style'
@@ -11,22 +12,22 @@ const listItemStyles = tw`sm:w-1/2 lg:w-1/3 border-grey-light border-solid borde
 
 const evenStyling = {
   [mq[0]]: {
-    'border-right-width': '0',
+    borderRightWidth: '0',
   },
 }
 
 const secondStyling = {
   [mq[2]]: {
-    'border-right-width': '1px',
+    borderRightWidth: '1px',
   },
 }
 
 const thirdStyling = {
   [mq[1]]: {
-    'border-right-width': '1px',
+    borderRightWidth: '1px',
   },
   [mq[2]]: {
-    'border-right-width': '0',
+    borderRightWidth: '0',
   },
 }
 
@@ -66,21 +67,21 @@ const ProductCardColophon = styled('p')`
 
 export default props => (
   <li
-    className={css(
+    css={[
       listItemStyles,
       transition,
       props.index === 'even' ? evenStyling : {},
       props.number === 'second' ? secondStyling : {},
       props.number === 'third' ? thirdStyling : {},
       props.number === 'fourth' ? fourthStyling : {}
-    )}
+    ]}
   >
     <Link
       to={props.link}
-      className={css(
+      css={[
         linkStyles,
         props.number === 'fourth' ? fourthStylingSection : {}
-      )}
+      ]}
     >
       <ProductCardSection>
         <CardWrapper>

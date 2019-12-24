@@ -1,5 +1,7 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 
 import Container from '../../components/Container'
@@ -18,11 +20,11 @@ export default () => (
         'Amplify - Unser Bundle für den schnellen Start zum Beispiel für Events, Restaurants, Startups, Kampagnen und Portfolios.'
       }
     />
-    <div className={css(tw`relative`)}>
+    <div css={tw`relative`}>
       <OfferNav />
       <Container>
         <OfferText>
-          <OfferTitle className={css(tw`pt-1x md:pt-2 pb-1x m-0 leading-3x`)}>
+          <OfferTitle css={tw`pt-1x md:pt-2 pb-1x m-0 leading-3x`}>
             Amplify
           </OfferTitle>
           <Graf>
@@ -53,7 +55,7 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle className={css(tw`text-center`)}>Ablauf</SubTitle>
+          <SubTitle css={tw`text-center`}>Ablauf</SubTitle>
           <Timeline>
             <section>
               <h3>Content</h3>

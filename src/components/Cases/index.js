@@ -1,12 +1,12 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 
 import CaseCard from '../CaseCard'
 import Container from '../Container'
 
 const CaseList = styled('ul')`
-  ${tw`list-reset m-0 p-0 sm:flex sm:flex-wrap sm:justify-center`};
+  ${tw`m-0 p-0 sm:flex sm:flex-wrap sm:justify-center`};
 `
 
 export default ({ props }) => (

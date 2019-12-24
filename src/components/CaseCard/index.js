@@ -1,10 +1,11 @@
+/** @jsx jsx */
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 import Img from 'gatsby-image'
 
-import config from '../../../tailwind'
+import config from '../../../tailwind.config'
 import {
   deviceLeft,
   deviceRight,
@@ -16,44 +17,42 @@ import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card'
 
 const CaseCard = ({ props, first, latest, order }) => (
   <li
-    className={css(
-      tw`flex-1 lg:flex-none block sm:w-1/2 lg:w-1/3 text-center sm:text-left`,
+    css={[
       first ? firstLi : {},
       !(first || props.latest) ? middleLi : {},
+      tw`flex-1 lg:flex-none block text-center sm:text-left sm:w-1/2 lg:w-1/3 xl:w-1/3`,
       latest
         ? latestLi
-        : { 'border-bottom': `1px solid ${config.colors['grey-light']}` }
-    )}
+        : { borderBottom: `1px solid ${config.theme.colors['grey-light']}` },
+    ]}
   >
     <Link
       to={`${props.fields.collection}${props.fields.slug}`}
-      className={css(
+      css={[
         tw`text-black block hover:opacity-75 relative pb-8x h-full`,
-        transition
-      )}
+        transition,
+      ]}
     >
       <div
-        className={css(
+        css={[
           tw`mx-auto sm:ml-0 sm:flex sm:flex-wrap lg:static`,
           !(first || latest) ? middleContainer : {},
-          latest ? latestContainer : { 'max-width': '320px' }
-        )}
+          latest ? latestContainer : { maxWidth: '320px' },
+        ]}
       >
-        <div className={css(tw`flex-1`)}>
+        <div css={tw`flex-1`}>
           <CardWrapper>
             <CardType>Fallstudie</CardType>
-            <h2 className={css(tw`m-0 leading-none`)}>
-              {props.frontmatter.title}
-            </h2>
+            <h2 css={tw`m-0 leading-none`}>{props.frontmatter.title}</h2>
           </CardWrapper>
-          <div className={order % 2 ? deviceLeft : deviceRight}>
+          <div css={order % 2 ? deviceLeft : deviceRight}>
             <Img
               fluid={props.frontmatter.image.childImageSharp.fluid}
-              className={screenImage}
+              css={screenImage}
             />
           </div>
         </div>
-        <CardWrapper className={css(latest ? latestBlurb : {})}>
+        <CardWrapper css={latest ? latestBlurb : {}}>
           {props.frontmatter.callToAction}
         </CardWrapper>
         <CardFooter>
@@ -68,7 +67,7 @@ export default CaseCard
 
 const firstLi = {
   [mq[0]]: {
-    'border-right': `1px solid ${config.colors['grey-light']}`,
+    borderRight: `1px solid ${config.theme.colors['grey-light']}`,
   },
   [mq[2]]: {
     width: 'calc(33.333333% - ((33.333333% - 320px) / 4))',
@@ -77,58 +76,58 @@ const firstLi = {
 
 const middleLi = {
   [mq[0]]: {
-    'text-align': 'right',
+    textAlign: 'right',
   },
   [mq[2]]: {
-    'text-align': 'center',
-    'border-right': `1px solid ${config.colors['grey-light']}`,
+    textAlign: 'center',
+    borderRight: `1px solid ${config.theme.colors['grey-light']}`,
     width: 'calc(33.333333% + ((33.333333% - 320px) / 2))',
   },
 }
 
 const latestLi = {
   [mq[0]]: {
-    'padding-bottom': '0.75rem',
+    paddingBottom: '0.75rem',
   },
   [mq[2]]: {
-    'padding-bottom': '0',
+    paddingBottom: '0',
     width: 'calc(33.333333% - ((33.333333% - 320px) / 4))',
-    'border-right': 'none',
+    borderRight: 'none',
   },
 }
 
 const middleContainer = {
   [mq[0]]: {
-    'margin-right': '0',
-    'margin-left': 'auto',
+    marginRight: '0',
+    marginLeft: 'auto',
   },
   [mq[2]]: {
-    'margin-right': 'auto',
+    marginRight: 'auto',
   },
 }
 
 const latestContainer = {
-  'max-width': '320px',
+  maxWidth: '320px',
   [mq[0]]: {
-    'max-width': '640px',
+    maxWidth: '640px',
   },
   [mq[2]]: {
-    'text-align': 'right',
-    'max-width': '320px',
-    'margin-right': '0',
-    'margin-left': 'auto',
+    textAlign: 'right',
+    maxWidth: '320px',
+    marginRight: '0',
+    marginLeft: 'auto',
   },
 }
 
 const latestBlurb = {
   [mq[0]]: {
-    'max-width': '320px',
-    'margin-top': '3.75rem',
-    'margin-left': '48px', // magic number to evade screen gfx
+    maxWidth: '320px',
+    marginTop: '3.75rem',
+    marginLeft: '48px', // magic number to evade screen gfx
   },
   [mq[2]]: {
-    'max-width': 'auto',
-    'margin-top': '0',
-    'margin-left': '0',
+    maxWidth: 'auto',
+    marginTop: '0',
+    marginLeft: '0',
   },
 }

@@ -1,5 +1,7 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 
 import Container from '../../components/Container'
@@ -17,7 +19,7 @@ export default () => (
         'Unser rundum sorgenfrei Hosting-Angebot mit CDN, Continuous Integration und Administration.'
       }
     />
-    <div className={css(tw`relative`)}>
+    <div css={tw`relative`}>
       <OfferNav />
       <Container>
         <OfferText>

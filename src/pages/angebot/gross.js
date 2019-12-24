@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import React from 'react'
-import { css } from 'emotion'
 import tw from 'tailwind.macro'
 
 import Container from '../../components/Container'
@@ -18,7 +19,7 @@ export default () => (
         'Magazine - Unser Bundle für eine Vielzahl von Anwendungen im Bereich Blogs, Online-Journalismus und anderen Syndicated Content.'
       }
     />
-    <div className={css(tw`relative`)}>
+    <div css={tw`relative`}>
       <OfferNav />
       <Container>
         <OfferText>
@@ -39,7 +40,7 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle className={css(tw`text-center`)}>Ablauf</SubTitle>
+          <SubTitle css={tw`text-center`}>Ablauf</SubTitle>
           <Timeline>
             <section>
               <h3>Content</h3>

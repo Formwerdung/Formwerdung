@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from 'react'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
 import Container from '../components/Container'
@@ -21,26 +22,26 @@ import {
   ImageContentWrapper,
 } from '../components/Images'
 import { Graf, TextContainer } from '../components/Type'
-import config from '../../tailwind'
+import config from '../../tailwind.config'
 import SEO from '../components/SEO'
 
 const sectionStyles = tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 py-1x`
 
 const oddStyling = css`
   ${mq[0]} {
-    border-bottom: 1px solid ${config.colors['grey-light']};
+    border-bottom: 1px solid ${config.theme.colors['grey-light']};
   }
 `
 
 const evenStyling = css`
   ${mq[0]} {
-    border-right: 1px solid ${config.colors['grey-light']};
+    border-right: 1px solid ${config.theme.colors['grey-light']};
   }
 `
 
 const secondOfThreeStyling = css`
   ${mq[2]} {
-    border-right: 1px solid ${config.colors['grey-light']};
+    border-right: 1px solid ${config.theme.colors['grey-light']};
   }
 `
 
@@ -58,7 +59,7 @@ const lastStylingLG = css`
 
 const borderWhenFourStyling = css`
   ${mq[3]} {
-    border-right: 1px solid ${config.colors['grey-light']};
+    border-right: 1px solid ${config.theme.colors['grey-light']};
   }
 `
 
@@ -70,7 +71,7 @@ const noBorderWhenFour = css`
 
 const PortfolioCard = ({ order, props }) => (
   <li
-    className={css(
+    css={css(
       sectionStyles,
       oddStyling,
       order % 2 ? {} : evenStyling,
@@ -89,26 +90,22 @@ const PortfolioCard = ({ order, props }) => (
       href={props.frontmatter.url}
       target={'_blank'}
       rel={'noopener, noreferrer'}
-      className={css(tw`hover:opacity-75 block`, transition)}
+      css={[tw`hover:opacity-75 block`, transition]}
     >
       <section>
-        <div className={css(tw`mx-auto max-w-card`)}>
-          <div className={order % 2 ? deviceLeft : deviceRight}>
+        <div css={tw`mx-auto max-w-card`}>
+          <div css={order % 2 ? deviceLeft : deviceRight}>
             <Img
               fluid={props.frontmatter.image.childImageSharp.fluid}
-              className={screenImage}
+              css={screenImage}
             />
           </div>
-          <div className={css(tw`p-1x`)}>
-            <h2
-              className={css(
-                tw`text-md leading-2x text-black hover:text-black`
-              )}
-            >
+          <div css={tw`p-1x`}>
+            <h2 css={tw`text-md leading-2x text-black hover:text-black`}>
               {props.frontmatter.title}
             </h2>
             <div
-              className={css(tw`text-black hover:text-black`)}
+              css={tw`text-black hover:text-black`}
               dangerouslySetInnerHTML={{ __html: props.html }}
             />
           </div>
@@ -126,7 +123,7 @@ const PortfolioPage = props => (
         'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'
       }
     />
-    <figure className={css(tw`relative m-0`)}>
+    <figure css={tw`relative m-0`}>
       <Container>
         <ImageContentWrapper>
           <HeroTitle>Portfolio</HeroTitle>
@@ -143,8 +140,8 @@ const PortfolioPage = props => (
           breiten Auswahl von Arbeiten.
         </Graf>
       </TextContainer>
-      <div className={css(tw`pt-4x pb-8x`)}>
-        <ul className={css(tw`list-reset sm:flex sm:flex-wrap m-0`)}>
+      <div css={tw`pt-4x pb-8x`}>
+        <ul css={tw`sm:flex sm:flex-wrap m-0`}>
           {props.data.allMarkdownRemark.edges.map((edge, i) => (
             <PortfolioCard key={i} props={edge.node} order={i} />
           ))}

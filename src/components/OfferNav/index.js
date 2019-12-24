@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 
 import Container from '../Container'
@@ -15,11 +17,7 @@ const offerNavItemStyle = {
 }
 
 const OfferNavItem = props => (
-  <li
-    className={css(
-      tw`my-auto flex-shrink max-w-tab sm:max-w-reset overflow-hidden`
-    )}
-  >
+  <li css={tw`my-auto flex-shrink max-w-tab sm:max-w-reset overflow-hidden`}>
     <Link
       to={props.to}
       activeStyle={{
@@ -31,11 +29,11 @@ const OfferNavItem = props => (
         textShadow: 'none',
       }}
       exact={props.exact}
-      className={css(
+      css={[
         tw`no-underline text-white hover:text-blue p-1x rounded rounded-bl-none rounded-br-none block`,
         offerNavItemStyle,
-        transition
-      )}
+        transition,
+      ]}
     >
       {props.children}
     </Link>
@@ -54,13 +52,11 @@ export default () => (
       }
     `}
     render={data => (
-      <div className={css(tw`relative`)}>
-        <nav className={css(tw`h-full relative z-10`)}>
+      <div css={tw`relative`}>
+        <nav css={tw`h-full relative z-10`}>
           <Container>
             <ul
-              className={css(
-                tw`list-reset m-0 flex h-full justify-start pt-8x sm:pt-10x xl:pt-12x px-1x`
-              )}
+              css={tw`m-0 flex h-full justify-start pt-8x sm:pt-10x xl:pt-12x px-1x`}
             >
               <OfferNavItem exact={'true'} to={'/angebot/'}>
                 Übersicht
@@ -72,9 +68,7 @@ export default () => (
           </Container>
         </nav>
         <div
-          className={css(
-            tw`absolute pin-t w-full h-full shadow-inner bg-black-transparent`
-          )}
+          css={tw`absolute top-0 w-full h-full shadow-inner bg-black-transparent`}
         >
           <Image fluid={data.image.fluid} />
         </div>

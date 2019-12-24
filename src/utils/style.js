@@ -1,27 +1,31 @@
+/** @jsx jsx */
 import { values } from 'lodash'
-import config from '../../tailwind'
-import { css } from 'emotion'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
+
+import config from '../../tailwind.config'
 
 export const transition = { transition: 'all .15s ease' }
 
 export const transitionColor = { transition: 'color .15s ease' }
 
 export const borderLeft = {
-  'border-left': `1px solid ${config.colors['grey-light']}`,
+  borderLeft: `1px solid ${config.theme.colors['grey-light']}`,
 }
 
 export const borderTop = {
-  'border-top': `1px solid ${config.colors['grey-light']}`,
+  borderTop: `1px solid ${config.theme.colors['grey-light']}`,
 }
 
 export const textShadow = {
-  'text-shadow': '0 4px 4px rgba(0,0,0,0.5)',
+  textShadow: '0 4px 4px rgba(0,0,0,0.5)',
 }
 
 export const textInput = tw`px-1x py-1x h-4x text-md leading-none w-full appearance-none rounded border border-border-light border-solid bg-off-white`
 
-export const mq = values(config.screens).map(bp => `@media (min-width: ${bp})`)
+export const mq = values(config.theme.screens).map(
+  bp => `@media (min-width: ${bp})`
+)
 
 export const fullscreenImage = css`
   position: absolute !important;
