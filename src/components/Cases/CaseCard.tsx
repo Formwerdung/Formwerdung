@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
@@ -14,12 +14,28 @@ import {
   transition,
 } from '../../utils/style'
 import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card'
+import { ImageSharpFluid } from '../../../graphql-types'
+import GatsbyImage from 'gatsby-image'
 
-const CaseCard = ({ props, first, latest, order }) => (
+export interface CaseStudy {
+  url: string
+  title: string
+  callToAction: string
+  fluidImage: ImageSharpFluid
+}
+
+interface Props {
+  caseStudy: CaseStudy
+  first: boolean
+  latest: boolean
+  order: number
+}
+
+const CaseCard: FunctionComponent<Props> = ({ caseStudy: beep, first, latest, order }) => (
   <li
     css={[
       first ? firstLi : {},
-      !(first || props.latest) ? middleLi : {},
+      !(first || latest) ? middleLi : {},
       tw`flex-1 lg:flex-none block text-center sm:text-left sm:w-1/2 lg:w-1/3 xl:w-1/3`,
       latest
         ? latestLi
@@ -27,7 +43,7 @@ const CaseCard = ({ props, first, latest, order }) => (
     ]}
   >
     <Link
-      to={`${props.fields.collection}${props.fields.slug}`}
+      to={beep.url}
       css={[
         tw`text-black block hover:opacity-75 relative pb-8x h-full`,
         transition,
@@ -43,17 +59,17 @@ const CaseCard = ({ props, first, latest, order }) => (
         <div css={tw`flex-1`}>
           <CardWrapper>
             <CardType>Fallstudie</CardType>
-            <h2 css={tw`m-0 leading-none`}>{props.frontmatter.title}</h2>
+            <h2 css={tw`m-0 leading-none`}>{beep.title}</h2>
           </CardWrapper>
           <div css={order % 2 ? deviceLeft : deviceRight}>
             <Img
-              fluid={props.frontmatter.image.childImageSharp.fluid}
+              fluid={beep.fluidImage}
               css={screenImage}
             />
           </div>
         </div>
         <CardWrapper css={latest ? latestBlurb : {}}>
-          {props.frontmatter.callToAction}
+          {beep.callToAction}
         </CardWrapper>
         <CardFooter>
           <CardConverter>Lesen</CardConverter>

@@ -1,40 +1,8 @@
-/*
-
-Tailwind - The Utility-First CSS Framework
-
-A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
-David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
-
-Welcome to the Tailwind config file. This is where you can customize
-Tailwind specifically for your project. Don't be intimidated by the
-length of this file. It's really just a big JavaScript object and
-we've done our very best to explain each section.
-
-View the full documentation at https://tailwindcss.com.
-
-*/
 const merge = require('lodash').merge
-
-/*
-|-------------------------------------------------------------------------------
-| The default config
-|-------------------------------------------------------------------------------
-|
-| This variable contains the default Tailwind config. You don't have
-| to use it, but it can sometimes be helpful to have available. For
-| example, you may choose to merge your custom configuration
-| values with some of the Tailwind defaults.
-|
-*/
-// const defaultConfig = require('tailwindcss/defaultConfig')();
-
-// function lineHeightCorrection(fontSize = 1, lineHeight = 1.5) {
-//   return ((fontSize * lineHeight) - fontSize) / 2;
-// }
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const leadingBase = 1.5
-// const fontBase = 1;
-const rhythmUnit = 0.75 // leadingBase / 2;
+const rhythmUnit = 0.75
 
 const multiply = (i = 1) => `${i * rhythmUnit}rem`
 
@@ -60,116 +28,45 @@ const gridContainers = {
   xl: '1310px',
 }
 
-const colors = {
-  black: '#080401',
-  white: '#fffefc',
-  blue: '#1565c0', // '#1e456e'
-  'blue-dark': '#11519a',
-  green: '#3cec96',
-  red: '#e2252a',
-
-  // separators
-  'grey-light': '#dae4e9',
-
-  // form borders
-  'border-light': 'rgba(8,4,1,.2)',
-  // hover
-  border: 'rgba(2,1,0,.36)',
-
-  'black-transparent': 'rgba(0, 0, 0, .6)',
-
-  // form fill
-  'off-white': '#fafaf9',
-
-  grey: '#9babb4',
-  'grey-lighter': '#f3f7f9',
-
-  'my-custom-color': '#D4AF37',
-
-  transparent: 'transparent',
-
-  'grey-darkest': '#364349',
-  'grey-darker': '#596a73',
-  'grey-dark': '#70818a',
-
-  'grey-lightest': '#fafcfc',
-
-  'red-darkest': '#420806',
-  'red-darker': '#6a1b19',
-  'red-dark': '#cc1f1a',
-
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
-
-  'orange-darkest': '#542605',
-  'orange-darker': '#7f4012',
-  'orange-dark': '#de751f',
-  orange: '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  yellow: '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
-
-  'green-darkest': '#032d19',
-  'green-darker': '#0b4228',
-  'green-dark': '#1f9d55',
-
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#174e4b',
-  'teal-dark': '#38a89d',
-  teal: '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#05233b',
-  'blue-darker': '#103d60',
-
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  indigo: '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#1f133f',
-  'purple-darker': '#352465',
-  'purple-dark': '#794acf',
-  purple: '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#45051e',
-  'pink-darker': '#72173a',
-  'pink-dark': '#eb5286',
-  pink: '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
-}
+console.log(defaultTheme)
 
 module.exports = {
   important: true,
   theme: {
-    colors: colors,
+    colors: merge(defaultTheme.colors, {
+      black: '#080401',
+      white: '#fffefc',
+      blue: '#1565c0', // '#1e456e'
+      'blue-dark': '#11519a',
+      green: '#3cec96',
+      red: '#e2252a',
+
+      // separators
+      'grey-light': '#dae4e9',
+
+      // form borders
+      'border-light': 'rgba(8,4,1,.2)',
+      // hover
+      border: 'rgba(2,1,0,.36)',
+
+      'black-transparent': 'rgba(0, 0, 0, .6)',
+
+      // form fill
+      'off-white': '#fafaf9',
+
+      grey: '#9babb4',
+      'grey-lighter': '#f3f7f9',
+
+      'my-custom-color': '#D4AF37',
+
+      transparent: 'transparent',
+
+      'grey-darkest': '#364349',
+      'grey-darker': '#596a73',
+      'grey-dark': '#70818a',
+
+      'grey-lightest': '#fafcfc',
+    }),
     fontSize: {
       xs: '.75rem', // 12px
       sm: '.875rem', // 14px
@@ -195,22 +92,12 @@ module.exports = {
       normal: '0',
       wide: '0.05em',
     },
-    textColor: colors,
-    backgroundColor: colors,
     borderWidths: {
       default: '1px',
       '0': '0',
       '2': '2px',
       '4': '4px',
       '8': '8px',
-    },
-    borderColor: Object.assign({ default: colors['grey-light'] }, colors),
-    borderRadius: {
-      none: '0',
-      sm: '.125rem',
-      default: '.25rem',
-      lg: '.5rem',
-      full: '9999px',
     },
     width: merge(gridContainers, verticalRhythms, {
       auto: 'auto',
@@ -236,7 +123,9 @@ module.exports = {
       '2x': `${2 * rhythmUnit}rem`,
       '3x': `${3 * rhythmUnit}rem`,
       '4x': `${4 * rhythmUnit}rem`,
+      '5x': `${5 * rhythmUnit}rem`,
       '6x': `${6 * rhythmUnit}rem`,
+      '7x': `${7 * rhythmUnit}rem`,
       '8x': `${8 * rhythmUnit}rem`,
       '10x': `${10 * rhythmUnit}rem`,
       '12x': `${12 * rhythmUnit}rem`,
@@ -314,35 +203,6 @@ module.exports = {
       '-6': '-1.5rem',
       '-8': '-2rem',
     }),
-    boxShadow: {
-      default: '0 2px 4px 0 rgba(0,0,0,0.10)',
-      md: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-      lg: '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
-      inner: 'inset 0 0px 6px 0 rgba(0,0,0,0.06)',
-      none: 'none',
-    },
-    zIndex: {
-      auto: 'auto',
-      '0': 0,
-      '10': 10,
-      '20': 20,
-      '30': 30,
-      '40': 40,
-      '50': 50,
-    },
-    opacity: {
-      '0': '0',
-      '25': '.25',
-      '50': '.5',
-      '75': '.75',
-      '100': '1',
-    },
-    fill: {
-      current: 'currentColor',
-    },
-    stroke: {
-      current: 'currentColor',
-    },
   },
   corePlugins: {
     container: false,

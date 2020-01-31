@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://formwerdung.ch',
   },
   plugins: [
+    `gatsby-plugin-preact`,
     'gatsby-plugin-flow',
     {
       resolve: 'gatsby-source-filesystem',
@@ -54,7 +55,6 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
-
         ],
       },
     },
@@ -87,11 +87,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-83438388-1",
+        trackingId: 'UA-83438388-1',
       },
     },
     {
       resolve: `gatsby-plugin-lodash`,
     },
-  ]
-};
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-astroturf',
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-generate-typings`,
+  ],
+}

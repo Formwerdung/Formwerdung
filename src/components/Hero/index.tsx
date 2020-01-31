@@ -1,12 +1,16 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import React from 'react'
-import { css } from '@emotion/core'
+import React, { FunctionComponent } from 'react'
+import { css, jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
+import { GatsbyImageSharpFluid_WithWebpFragment } from '../../../graphql-types'
 import Container from '../Container'
 import { textShadow } from '../../utils/style'
 import { Image, ImageContainer, ImageContentWrapper } from '../Images'
+
+interface Props {
+  fluid: GatsbyImageSharpFluid_WithWebpFragment
+}
 
 export const heroTitle = tw`text-3xl leading-4x pt-8x sm:pt-10x xl:pt-12x text-white text-shadow relative z-10 m-0`
 
@@ -14,7 +18,7 @@ export const HeroTitle = ({ children }) => (
   <h1 css={css(heroTitle, textShadow)}>{children}</h1>
 )
 
-const Hero = ({ fluid }) => (
+export const Hero: FunctionComponent<Props> = ({ fluid }) => (
   <section css={tw`relative`}>
     <Container>
       <ImageContentWrapper>
@@ -36,5 +40,3 @@ const Hero = ({ fluid }) => (
     </ImageContainer>
   </section>
 )
-
-export default Hero
