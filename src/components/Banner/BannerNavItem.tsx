@@ -1,8 +1,7 @@
-/** @jsx jsx */
 import React, { FunctionComponent } from 'react'
-import { css, jsx } from '@emotion/core'
+
 import { Link, GatsbyLinkProps } from 'gatsby'
-import tw from 'tailwind.macro'
+import { css } from 'astroturf'
 
 const BannerNavItem: FunctionComponent<GatsbyLinkProps<any>> = ({
   children,
@@ -10,8 +9,10 @@ const BannerNavItem: FunctionComponent<GatsbyLinkProps<any>> = ({
 }) => (
   <li>
     <Link
-      css={tw`text-white hover:text-gray-400 leading-3x no-underline transition block mr-2x`}
-      activeStyle={tw`text-gray-400`}
+      css={css`
+        @apply text-white text-gray-400 leading-3x no-underline transition block mr-2x;
+      `}
+      activeClassName={`text-gray-400`}
       {...rest}
     >
       {children}

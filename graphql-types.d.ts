@@ -2479,6 +2479,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___siteUrl' |
   'pluginCreator___pluginOptions___trackingId' |
+  'pluginCreator___pluginOptions___enableCssProp' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2688,6 +2689,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___icon' |
   'pluginOptions___siteUrl' |
   'pluginOptions___trackingId' |
+  'pluginOptions___enableCssProp' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2817,6 +2819,7 @@ export type SitePluginPluginOptions = {
   icon?: Maybe<Scalars['String']>,
   siteUrl?: Maybe<Scalars['String']>,
   trackingId?: Maybe<Scalars['String']>,
+  enableCssProp?: Maybe<Scalars['Boolean']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2834,6 +2837,7 @@ export type SitePluginPluginOptionsFilterInput = {
   icon?: Maybe<StringQueryOperatorInput>,
   siteUrl?: Maybe<StringQueryOperatorInput>,
   trackingId?: Maybe<StringQueryOperatorInput>,
+  enableCssProp?: Maybe<BooleanQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 

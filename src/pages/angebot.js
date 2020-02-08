@@ -1,26 +1,22 @@
-/** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import styled, { css } from 'astroturf'
 
 import Container from '../components/Container'
 import Layout from '../components/Layout'
 import OfferNav from '../components/OfferNav'
-import { Graf, SubTitle } from '../components/Type'
-import { Timeline } from '../components/Timeline'
 import SEO from '../components/SEO'
+import { Graf, SubTitle } from '../components/Type'
 
 export const OfferText = styled('section')`
-  ${tw`px-2x md:w-3/5 xl:w-1/2`};
+  @apply px-2x w-3/5 w-1/2;
 `
 
 export const OfferTitle = styled('h1')`
-  ${tw`pt-1x md:pt-2 pb-1x m-0 leading-3x text-3xl`};
+  @apply pt-1x pt-2 pb-1x m-0 leading-3x text-3xl;
 `
 
 export const OfferCards = styled('section')`
-  ${tw`py-4x px-1x lg:w-4/5 lg:ml-1/5 xl:w-3/5 xl:ml-2/5`};
+  @apply py-4x px-1x w-4/5 ml-1/5 w-3/5 ml-2/5;
 `
 
 export default () => (
@@ -31,7 +27,11 @@ export default () => (
         'Eine Übersicht über unsere Services. Formwerdung bietet alle Dienstleistungen im Bereich Web an, die für die technische Umsetzung relevant sind.'
       }
     />
-    <div css={css(tw`relative`)}>
+    <div
+      css={css`
+        @apply relative;
+      `}
+    >
       <OfferNav />
       <Container>
         <OfferText>
@@ -54,45 +54,13 @@ export default () => (
           </Graf>
         </OfferText>
         <OfferCards>
-          <SubTitle css={css(tw`sm:text-center`)}>Dienste</SubTitle>
-          <Timeline>
-            <section>
-              <h3>Content-Strategien</h3>
-              <div>
-                Wir machen ausführliche Empfehlungen für Ihre Inhalte, um Ihre
-                Ziele zu erreichen. Auf Wunsch bringen wir Texter_innen, Fotogaf_innen
-                oder Illustrator_innen mit an Bord.
-              </div>
-            </section>
-            <section>
-              <h3>SEO-Konzepte</h3>
-              <div>
-                Wir erstellen detaillierte Konzepte, um ihre Seite für
-                Suchmaschinen fit zu machen.
-              </div>
-            </section>
-            <section>
-              <h3>Design-Umsetzung</h3>
-              <div>
-                Wir bauen die Designs Ihrer Grafiker mit optimalen, individuell
-                ausgewählten Technologien.
-              </div>
-            </section>
-            <section>
-              <h3>Web-Apps</h3>
-              <div>
-                Wir designen und entwickeln komplexe Applikationen basierend auf
-                ihren APIs und Backends.
-              </div>
-            </section>
-            <section>
-              <h3>Maintenance</h3>
-              <div>
-                Wir pflegen und bieten ihre Webseite im Rahmen von individuellen
-                Service-Level-Agreements.
-              </div>
-            </section>
-          </Timeline>
+          <SubTitle
+            css={css`
+              @apply text-center;
+            `}
+          >
+            Dienste
+          </SubTitle>
         </OfferCards>
       </Container>
     </div>

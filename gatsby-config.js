@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-preact`,
-    'gatsby-plugin-flow',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -60,7 +59,6 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
@@ -93,9 +91,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-lodash`,
     },
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-astroturf',
     `gatsby-plugin-typescript`,
+    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-astroturf',
+      options: {
+        enableCssProp: true,
+      },
+    },
+
     `gatsby-plugin-generate-typings`,
   ],
 }

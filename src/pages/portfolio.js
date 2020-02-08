@@ -1,111 +1,58 @@
-/** @jsx jsx */
-import React from 'react'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import { css, jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import Img from 'gatsby-image'
+import React from 'react'
+import { css } from 'astroturf'
 
 import Container from '../components/Container'
-import Layout from '../components/Layout'
-import {
-  borderTop,
-  deviceLeft,
-  deviceRight,
-  mq,
-  screenImage,
-  transition,
-} from '../utils/style'
 import { HeroTitle } from '../components/Hero'
 import {
   Image,
   ImageContainer,
   ImageContentWrapper,
 } from '../components/Images'
-import { Graf, TextContainer } from '../components/Type'
-import config from '../../tailwind.config'
+import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import { Graf, TextContainer } from '../components/Type'
+import { screenImage } from '../utils/style'
 
-const sectionStyles = tw`sm:w-1/2 lg:w-1/3 xl:w-1/4 py-1x`
-
-const oddStyling = css`
-  ${mq[0]} {
-    border-bottom: 1px solid ${config.theme.colors['grey-light']};
-  }
-`
-
-const evenStyling = css`
-  ${mq[0]} {
-    border-right: 1px solid ${config.theme.colors['grey-light']};
-  }
-`
-
-const secondOfThreeStyling = css`
-  ${mq[2]} {
-    border-right: 1px solid ${config.theme.colors['grey-light']};
-  }
-`
-
-const thirdOfThreeStyling = css`
-  ${mq[2]} {
-    border-right: none;
-  }
-`
-
-const lastStylingLG = css`
-  ${mq[2]} {
-    border-bottom: none;
-  }
-`
-
-const borderWhenFourStyling = css`
-  ${mq[3]} {
-    border-right: 1px solid ${config.theme.colors['grey-light']};
-  }
-`
-
-const noBorderWhenFour = css`
-  ${mq[3]} {
-    border-right: none;
-  }
-`
-
-const PortfolioCard = ({ order, props }) => (
-  <li
-    css={css(
-      sectionStyles,
-      oddStyling,
-      order % 2 ? {} : evenStyling,
-      order % 3 === 0 ? secondOfThreeStyling : {},
-      order % 3 === 1 ? secondOfThreeStyling : {},
-      order % 3 === 2 ? thirdOfThreeStyling : {},
-      order % 4 === 0 ? borderWhenFourStyling : {},
-      order % 4 === 1 ? borderWhenFourStyling : {},
-      order % 4 === 2 ? borderWhenFourStyling : {},
-      order % 4 === 3 ? noBorderWhenFour : {},
-      order === 12 ? thirdOfThreeStyling : {},
-      order === 12 ? lastStylingLG : {}
-    )}
-  >
+const PortfolioCard = ({ props }) => (
+  <li>
     <a
       href={props.frontmatter.url}
       target={'_blank'}
       rel={'noopener, noreferrer'}
-      css={[tw`hover:opacity-75 block`, transition]}
+      css={css`
+        @apply opacity-75 block;
+      `}
     >
       <section>
-        <div css={tw`mx-auto max-w-card`}>
-          <div css={order % 2 ? deviceLeft : deviceRight}>
+        <div
+          css={css`
+            @apply mx-auto max-w-card;
+          `}
+        >
+          <div>
             <Img
               fluid={props.frontmatter.image.childImageSharp.fluid}
               css={screenImage}
             />
           </div>
-          <div css={tw`p-1x`}>
-            <h2 css={tw`text-md leading-2x text-black hover:text-black`}>
+          <div
+            css={css`
+              @apply p-1x;
+            `}
+          >
+            <h2
+              css={css`
+                @apply text-md leading-2x text-black text-black;
+              `}
+            >
               {props.frontmatter.title}
             </h2>
             <div
-              css={tw`text-black hover:text-black`}
+              css={css`
+                @apply text-black text-black;
+              `}
               dangerouslySetInnerHTML={{ __html: props.html }}
             />
           </div>
@@ -123,7 +70,11 @@ const PortfolioPage = props => (
         'Ein ausführlicher Überblick über unser Schaffen: Unser Portfolio mit einer breiten Auswahl von Arbeiten.'
       }
     />
-    <figure css={tw`relative m-0`}>
+    <figure
+      css={css`
+        @apply relative m-0;
+      `}
+    >
       <Container>
         <ImageContentWrapper>
           <HeroTitle>Portfolio</HeroTitle>
@@ -140,8 +91,16 @@ const PortfolioPage = props => (
           breiten Auswahl von Arbeiten.
         </Graf>
       </TextContainer>
-      <div css={tw`pt-4x pb-8x`}>
-        <ul css={tw`sm:flex sm:flex-wrap m-0`}>
+      <div
+        css={css`
+          @apply pt-4x pb-8x;
+        `}
+      >
+        <ul
+          css={css`
+            @apply flex flex-wrap m-0;
+          `}
+        >
           {props.data.allMarkdownRemark.edges.map((edge, i) => (
             <PortfolioCard key={i} props={edge.node} order={i} />
           ))}

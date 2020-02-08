@@ -1,24 +1,22 @@
-/** @jsx jsx */
 import { jsx } from '@emotion/core'
 import React from 'react'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import styled from 'astroturf'
 
 import Container from '../Container'
 import { Nav, NavItem } from '../Nav'
 import { borderTop } from '../../utils/style'
 
 const Colophon = styled('footer')`
-  ${tw`bg-white h-3x overflow-hidden`};
+  @apply bg-white h-3x overflow-hidden;
 `
 
 const ColophonWrapper = styled('div')`
-  ${tw`md:flex md:justify-between px-1x`};
+  @apply flex justify-between px-1x;
 `
 
 const ColophonCopyright = styled('div')`
-  ${tw`leading-3x`};
+  @apply leading-3x;
 `
 
 export default () => (

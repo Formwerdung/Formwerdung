@@ -1,8 +1,6 @@
-/** @jsx jsx */
 import React from 'react'
 import { graphql } from 'gatsby'
-import { css, jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { css } from 'astroturf'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Layout from '../components/Layout'
@@ -22,7 +20,11 @@ export default ({ data }) => (
       title={'Impressum | Formwerdung | Web Design aus der Schweiz'}
       description={'Haftungsinformationen und Privacy Policy unserer Website.'}
     />
-    <figure css={tw`relative m-0`}>
+    <figure
+      css={`
+        @apply relative m-0;
+      `}
+    >
       <Container>
         <ImageContentWrapper>
           <HeroTitle>Impressum</HeroTitle>
@@ -36,7 +38,11 @@ export default ({ data }) => (
       <TextContainer>
         <SubTitle>Kontakt</SubTitle>
         <Graf>
-          <address css={tw`pb-1x`}>
+          <address
+            css={`
+              @apply pb-1x;
+            `}
+          >
             Formwerdung
             <br />
             Marin Aeschbach
@@ -50,7 +56,11 @@ export default ({ data }) => (
         </Graf>
         <Graf>Das Formwerdung Logo wurde designed von Zoé Blanc.</Graf>
 
-        <SubTitle css={tw`pt-2x`}>
+        <SubTitle
+          css={`
+            @apply pt-2x;
+          `}
+        >
           Haftungsausschluss und Copyright
         </SubTitle>
         <Graf>
@@ -62,7 +72,13 @@ export default ({ data }) => (
           vorherige schriftliche Zustimmung ist nicht gestattet.
         </Graf>
 
-        <SubTitle css={css(tw`pt-2x`)}>Datenschutz</SubTitle>
+        <SubTitle
+          css={css`
+            @apply pt-2x;
+          `}
+        >
+          Datenschutz
+        </SubTitle>
         <Graf>
           Diese Webseite verwendet Cookies. Das sind winzige
           Text­in­for­ma­tionen, die über den Browser als Datei gespei­chert

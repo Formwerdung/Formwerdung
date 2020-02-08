@@ -1,21 +1,22 @@
-/** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+
+import styled from 'astroturf'
+
 import { HardDrive, Package, Scissors } from 'react-feather'
 
 import Container from '../Container'
 import ProductCard from '../ProductCard'
 
-const iconStyles = css`w-2 h-2`
+const iconStyles = css`
+  @apply w-2 h-2;
+`
 
 const ProductTitle = styled('h2')`
-  ${tw`m-0 p-1x pt-3x`};
+  @apply m-0 p-1x pt-3x;
 `
 
 const ProductList = styled('ul')`
-  ${tw`list-none m-0 p-0 sm:flex md:-mr-2x sm:flex-wrap`};
+  @apply list-none m-0 p-0 flex -mr-2x flex-wrap;
 `
 
 const Products = () => (

@@ -1,56 +1,52 @@
-/** @jsx jsx */
+import styled from 'astroturf'
+import { Link } from 'gatsby'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { Link } from 'gatsby'
-import { css, jsx } from '@emotion/core'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+
 import config from '../../../tailwind.config'
-import { transition } from '../../utils/style'
 
 const AnchorLinkStyled = styled(AnchorLink)`
-  ${tw`leading-3x text-black hover:text-blue-dark`};
+  @apply leading-3x text-black text-blue-dark;
 `
 
 const AnchorListItem = styled('li')`
-  ${tw`h-full pl-1x my-auto`};
+  @apply h-full pl-1x my-auto;
 `
 
 export const AnchorItem = props => (
   <AnchorListItem>
-    <AnchorLinkStyled css={transition} href="#contact">
-      {props.children}
-    </AnchorLinkStyled>
+    <AnchorLinkStyled href="#contact">{props.children}</AnchorLinkStyled>
   </AnchorListItem>
 )
 
-const navItemBorder = tw`border-grey-light border border-l-0 border-t-0 border-b-0 border-solid`
-
 const NavListItem = styled('li')`
-  ${tw`h-full px-1x`};
+  @apply h-full px-1x;
 `
 
 const NavLink = styled(Link)`
-  ${tw`leading-3x no-underline text-black hover:text-blue-dark`};
+  @apply leading-3x no-underline text-black text-blue-dark;
 `
 
-export const NavItem = ({ border, children, exact, to }) => (
-  <NavListItem css={border ? navItemBorder : {}}>
-    <NavLink
-      css={css(transition)}
-      to={to}
-      activeStyle={{
-        color: config.theme.colors['blue-dark'],
-      }}
-      exact={exact}
-    >
+export const NavItem = ({ children, exact, to }) => (
+  <NavListItem>
+    <NavLink to={to} exact={exact}>
       {children}
     </NavLink>
   </NavListItem>
 )
 
 export const Nav = ({ children }) => (
-  <nav css={tw`h-full`}>
-    <ul css={tw`list-none p-0 m-0 flex h-full`}>{children}</ul>
+  <nav
+    css={`
+      @apply h-full;
+    `}
+  >
+    <ul
+      css={`
+        @apply list-none p-0 m-0 flex h-full;
+      `}
+    >
+      {children}
+    </ul>
   </nav>
 )

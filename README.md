@@ -37,19 +37,19 @@ With styled components, we can add Tailwind classes directly to a React componen
 
 ```jsx
 /* global tw */
-import React from 'react';
-import styled from 'react-emotion';
+import React from 'react'
+import styled from 'react-emotion'
 
 const Heading = styled('h1')`
   ${tw('my-0 text-xl leading-tight')};
-`;
+`
 
-export default () => <Heading>This is some text!</Heading>;
+export default () => <Heading>This is some text!</Heading>
 ```
 
 To see the CSS approach in this demo, start the app with `yarn develop`, then navigate to <http://localhost:8000>.
 
-> **NOTE:** The Babel plugin will automatically process the `tw()` function, which means we don’t actually need to import it. ESLint will complain about this, however, so we need to add `tw` as a global variable.
+> **NOTE:** The Babel plugin will automatically process the `tw()` function, which means we don’t actually need to import it. ESLint will complain about this, however, so we need to add ``@apply as a global variable.
 
 ### CSS Function
 
@@ -59,12 +59,12 @@ Using Emotion’s `css` function, we would do something like this:
 
 ```jsx
 /* global tw */
-import React from 'react';
-import { css } from 'emotion';
+import React from 'react'
+import { css } from 'emotion'
 
-const heading = css(tw('my-0 text-xl leading-tight'));
+const heading = css(tw('my-0 text-xl leading-tight'))
 
-export default () => <h1 className={heading}>This is some text!</h1>;
+export default () => <h1 className={heading}>This is some text!</h1>
 ```
 
 To see the CSS approach in this demo, start the app with `yarn develop`, then navigate to <http://localhost:8000/css>.

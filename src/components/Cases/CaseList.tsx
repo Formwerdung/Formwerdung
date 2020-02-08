@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
+import styled from 'astroturf'
 
-import CaseCard, { Case as CaseStudy } from './CaseCard'
+import CaseCard, { CaseStudy } from './CaseCard'
 import Container from '../Container'
 
 interface Props {
@@ -12,7 +11,11 @@ interface Props {
 export const CaseList: FunctionComponent<Props> = ({ caseStudies }) => (
   <section>
     <Container>
-      <ul css={tw`m-0 p-0 sm:flex sm:flex-wrap sm:justify-center`}>
+      <ul
+        css={`
+          @apply m-0 p-0 flex flex-wrap justify-center;
+        `}
+      >
         {caseStudies.map((entity: CaseStudy, i: number) => (
           <CaseCard
             key={i}

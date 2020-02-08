@@ -1,88 +1,35 @@
-/** @jsx jsx */
 import React from 'react'
 import { Link } from 'gatsby'
-import { css, jsx } from '@emotion/core'
-import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
 
-import { mq, transition } from '../../utils/style'
+import styled from 'astroturf'
+
 import { CardConverter, CardFooter, CardType, CardWrapper } from '../Card'
 
-const listItemStyles = tw`sm:w-1/2 lg:w-1/3 border-grey-light border-solid border-t border-r-0 border-l-0 border-b-0 sm:border-r`
-
-const evenStyling = {
-  [mq[0]]: {
-    borderRightWidth: '0',
-  },
-}
-
-const secondStyling = {
-  [mq[2]]: {
-    borderRightWidth: '1px',
-  },
-}
-
-const thirdStyling = {
-  [mq[1]]: {
-    borderRightWidth: '1px',
-  },
-  [mq[2]]: {
-    borderRightWidth: '0',
-  },
-}
-
-const fourthStyling = {
-  [mq[2]]: {
-    flex: '1',
-  },
-}
-
-const fourthStylingSection = {
-  [mq[2]]: {
-    width: '33.3333333333%',
-  },
-}
-
-const linkStyles = tw`text-black block hover:opacity-75 relative pb-4x h-full`
+const linkStyles = `@apply text-black block opacity-75 relative pb-4x h-full`
 
 const ProductCardSection = styled('section')`
-  ${tw`md:rounded overflow-hidden p-0`};
+  @apply rounded overflow-hidden p-0;
 `
 
 const ProductCardType = styled(CardType)`
-  ${tw`flex justify-between`};
+  @apply flex justify-between;
 `
 
 const ProductCardTitle = styled('h3')`
-  ${tw`m-0 leading-2`};
+  @apply m-0 leading-2;
 `
 
 const ProductCardGraf = styled('p')`
-  ${tw`pt-0 max-w-hero`};
+  @apply pt-0 max-w-hero;
 `
 
 const ProductCardColophon = styled('p')`
-  ${tw`m-0 p-1x font-semibold text-right`};
+  @apply m-0 p-1x font-semibold text-right;
 `
 
 export default props => (
-  <li
-    css={[
-      listItemStyles,
-      transition,
-      props.index === 'even' ? evenStyling : {},
-      props.number === 'second' ? secondStyling : {},
-      props.number === 'third' ? thirdStyling : {},
-      props.number === 'fourth' ? fourthStyling : {}
-    ]}
-  >
-    <Link
-      to={props.link}
-      css={[
-        linkStyles,
-        props.number === 'fourth' ? fourthStylingSection : {}
-      ]}
-    >
+  <li>
+    <Link to={props.link}>
       <ProductCardSection>
         <CardWrapper>
           <ProductCardType>

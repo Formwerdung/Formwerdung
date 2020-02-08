@@ -1,12 +1,12 @@
-/** @jsx jsx */
 import React, { FunctionComponent } from 'react'
 import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
 
 export const BannerLogo: FunctionComponent = () => {
   return (
     <svg
-      css={tw`w-full h-full`}
+      css={`
+        @apply w-full h-full;
+      `}
       role="img"
       aria-labelledby="bannerLogoTitle"
       width="891"

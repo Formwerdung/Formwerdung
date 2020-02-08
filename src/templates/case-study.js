@@ -1,8 +1,6 @@
-/** @jsx jsx */
 import React from 'react'
 import { graphql } from 'gatsby'
-import { css, jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import { get } from 'lodash'
 
 import Layout from '../components/Layout'
@@ -16,30 +14,7 @@ import SEO from '../components/SEO'
 import { textShadow } from '../utils/style'
 import { HeroTitle } from '../components/Hero'
 
-const paragraph = css`
-  p {
-    ${tw`md:w-4/5 lg:w-3/5 xl:w-1/2 mb-1x ${containerStyleString}`}
-  }
-
-  figure {
-    ${tw`m-0 my-2x pt-2x px-2x bg-off-white border-border-light border border-solid`}
-  }
-
-  .figure__small {
-    ${tw`md:w-4/5 lg:w-3/5 xl:w-1/2 md:ml-1/5 lg:ml-2/5 xl:pl-2x xl:ml-2x xl:mt-0 float-right`}
-  }
-
-  figure p {
-    width: auto;
-    margin: 0;
-  }
-
-  figcaption {
-    ${tw`text-center italic py-1x`}
-  }
-`
-
-const caseStudyTitle = tw`text-5xl leading-4x pb-1x text-white relative z-10 m-0 pt-0`
+const caseStudyTitle = `@apply text-5xl leading-4x pb-1x text-white relative z-10 m-0 pt-0`
 
 export default ({ data }) => {
   const fluid = get(
@@ -47,27 +22,29 @@ export default ({ data }) => {
     'markdownRemark.frontmatter.header.childImageSharp.fluid',
     {}
   )
-  const description = `Webdesign Case Study von Formwerdung: ${
-    data.markdownRemark.frontmatter.callToAction
-  }`
+  const description = `Webdesign Case Study von Formwerdung: ${data.markdownRemark.frontmatter.callToAction}`
   const title = data.markdownRemark.frontmatter.title
   const seoTitle = `${title} | Case Study | Formwerdung | Web Design aus der Schweiz`
 
   return (
     <Layout>
       <SEO title={seoTitle} description={description} />
-      <figure css={tw`relative m-0`}>
+      <figure
+        css={`
+          @apply relative m-0;
+        `}
+      >
         <Container>
           <header>
             <ImageContentWrapper>
               <p
-                css={
-                  tw`text-white text-shadow relative z-10 m-0 max-w-hero md:max-w-hero-md pt-8x sm:pt-10x xl:pt-12x`
-                }
+                css={`
+                  @apply text-white relative z-10 m-0 max-w-hero max-w-hero-md pt-8x pt-10x pt-12x;
+                `}
               >
                 Case Study
               </p>
-              <h1 css={[caseStudyTitle, textShadow]}>{title}</h1>
+              <h1>{title}</h1>
             </ImageContentWrapper>
           </header>
         </Container>
@@ -78,7 +55,9 @@ export default ({ data }) => {
       <Container>
         <div
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          css={[tw`p-1x mb-8x`, paragraph]}
+          css={css`
+            @apply p-1x mb-8x;
+          `}
         />
       </Container>
     </Layout>
