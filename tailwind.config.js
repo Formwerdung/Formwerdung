@@ -32,12 +32,17 @@ const gridContainers = {
 module.exports = {
   important: true,
   theme: {
+    zIndex: {
+      '1': 1,
+      '2': 2,
+      '3': 3,
+    },
     extend: {
-      colors: merge(defaultTheme.colors, {
+      colors: {
         black: '#080401',
         white: '#fffefc',
-        blue: '#1565c0', // '#1e456e'
-        'blue-dark': '#11519a',
+        // blue: '#1565c0', // '#1e456e'
+        // 'blue-dark': '#11519a',
         green: '#3cec96',
         red: '#e2252a',
 
@@ -66,7 +71,7 @@ module.exports = {
         'grey-dark': '#70818a',
 
         'grey-lightest': '#fafcfc',
-      }),
+      },
       fontSize: {
         xs: '.75rem', // 12px
         sm: '.875rem', // 14px
@@ -81,19 +86,7 @@ module.exports = {
         baseMD: '1.15em',
         baseLG: '1.3em',
       },
-      lineHeight: merge(verticalRhythms, {
-        none: 1,
-        tight: 1.25,
-        normal: leadingBase,
-        loose: 2,
-        2: '1. 5rem',
-        3: '2.25rem',
-      }),
-      letterSpacing: {
-        tight: '-0.05em',
-        normal: '0',
-        wide: '0.05em',
-      },
+      lineHeight: theme => theme('spacing'),
       borderWidths: {
         default: '1px',
         '0': '0',
@@ -210,13 +203,4 @@ module.exports = {
   corePlugins: {
     container: false,
   },
-  plugins: [
-    require('tailwindcss-transition')({
-      standard: 'all .5s ease',
-      transitions: {
-        color: 'color .15s ease',
-        slow: 'all 2s ease',
-      },
-    }),
-  ],
 }

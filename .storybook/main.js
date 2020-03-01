@@ -1,23 +1,19 @@
 const path = require('path')
 
-// Export a function. Accept the base config as the only param.
 module.exports = {
-  stories: ['../stories/**/*.stories.js'],
-  addons: ['@storybook/addon-actions'],
-  webpackFinal: async (config, { configType }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
-
-    // Log config
-    console.dir(config)
-
-    // Remove the existing css rule
+  stories: ['../stories/**/*.stories.(js|tsx)'],
+  addons: [
+    '@storybook/addon-actions',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-knobs',
+    '@storybook/addon-a11y',
+    '@storybook/addon-viewport',
+  ],
+  webpackFinal: async config => {
     config.module.rules = config.module.rules
       .filter(f => f.test.toString() !== '/\\.css$/')
       .filter(f => f.test.toString() !== '/\\.(mjs|jsx?)$/')
 
-    // Make whatever fine-grained changes you need
     config.module.rules.push({
       test: /\.css$/,
       use: [
@@ -36,38 +32,34 @@ module.exports = {
     })
 
     config.module.rules.push({
-      test: /\.(mjs|jsx?)$/,
+      test: /\.(mjs|jsx?|tsx?)$/,
       use: [
         {
           loader: 'babel-loader',
           options: {
-            cacheDirectory:
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/.cache/storybook',
+            cacheDirectory: 'node_modules/.cache/storybook',
             presets: [
               [
-                '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@babel/preset-env/lib/index.js',
+                '@babel/preset-env',
                 {
                   shippedProposals: true,
                   useBuiltIns: 'usage',
                   corejs: '3',
                 },
               ],
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@babel/preset-react/lib/index.js',
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@babel/preset-flow/lib/index.js',
+              '@babel/preset-react',
+              '@babel/preset-flow',
+              '@babel/typescript',
             ],
             plugins: [
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@storybook/core/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js',
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@storybook/core/node_modules/@babel/plugin-proposal-class-properties/lib/index.js',
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@babel/plugin-syntax-dynamic-import/lib/index.js',
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-syntax-dynamic-import',
+              'babel-plugin-macros',
+              '@babel/plugin-transform-react-constant-elements',
+              'babel-plugin-add-react-displayname',
               [
-                '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@storybook/core/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.js',
-                { sourceMap: true, autoLabel: true },
-              ],
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@storybook/core/node_modules/babel-plugin-macros/dist/index.js',
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/@storybook/react/node_modules/@babel/plugin-transform-react-constant-elements/lib/index.js',
-              '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/babel-plugin-add-react-displayname/index.js',
-              [
-                '/Users/marin/Development/formwerdung/formwerdung-site/node_modules/babel-plugin-react-docgen/lib/index.js',
+                'babel-plugin-react-docgen',
                 {
                   DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES',
                 },
@@ -83,12 +75,12 @@ module.exports = {
         },
       ],
       include: ['/Users/marin/Development/formwerdung/formwerdung-site'],
-      exclude: [
-        '/Users/marin/Development/formwerdung/formwerdung-site/node_modules',
-      ],
     })
 
-    // Return the altered config
+    config.resolve.extensions.push('.ts', '.tsx')
+
+    console.dir(config, { depth: null })
+
     return config
   },
 }

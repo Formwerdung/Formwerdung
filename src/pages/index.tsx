@@ -1,15 +1,29 @@
-import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
-
+import Img, { FluidObject } from 'gatsby-image'
 import { get } from 'lodash'
+import React, { FunctionComponent } from 'react'
+
+import './global.css'
 
 import { ImageSharpFluid, IndexPageQuery } from '../../graphql-types'
-import { CaseList } from '../components/Cases/CaseList'
-import Divider from '../components/Divider'
-import { Hero } from '../components/Hero'
-import Layout from '../components/Layout'
-import Products from '../components/Products'
-import SEO from '../components/SEO'
+import BannerLogoSmall from '../components/Banner/BannerLogoSmall'
+import { Image } from '../components/Images'
+import {
+  Card,
+  Device,
+  Heading,
+  Imposter,
+  ImposterWrapper,
+  Stack,
+  Text,
+  Nav,
+  NavItem,
+  Grid,
+  Lead,
+  Shifter,
+  Box,
+} from '../ui'
+import { Header } from '../components/Header'
 
 interface Props {
   data: IndexPageQuery
@@ -31,24 +45,70 @@ const IndexPage: FunctionComponent<Props> = ({ data }) => {
   }))
 
   return (
-    <Layout>
-      <SEO title={''} />
-      <Hero fluid={heroFluid} />
-      <CaseList caseStudies={caseStudies} />
-      <Divider
-        fluid={portfolioFluid}
-        lineOne={'Mehr Arbeiten sehen?'}
-        lineTwo={'Zum Portfolio.'}
-        route={'/portfolio/'}
-      />
-      <Products />
-      <Divider
-        fluid={offerFluid}
-        lineOne={'Mehr Infos zum Angebot?'}
-        lineTwo={'Zur Übersicht.'}
-        route={'/angebot/'}
-      />
-    </Layout>
+    <div className="bg-gray-400">
+      <Stack size="none">
+        <Header headerImage={heroFluid as FluidObject}>
+          <div
+            css={`
+              @apply pb-24 relative z-1 m-6;
+            `}
+          >
+            <Heading level={1} mode="dark">
+              Formwerdung <em>ist Performance</em>
+            </Heading>
+            <Lead>
+              Formwerdung meistert mit Ihnen komplexe ästhetische und technische
+              Probleme auf dem Weg zum erfolgreichen Webauftritt.
+            </Lead>
+          </div>
+        </Header>
+        <Shifter>
+          <Box>
+            <Grid>
+              <Card>
+                <Stack size="small">
+                  <Heading component="h2">WordPress</Heading>
+                  <Text>WordPress is a very nice CMS.</Text>
+                </Stack>
+              </Card>
+              <Card>
+                <Heading component="h2">WordPress</Heading>
+                <Text>WordPress is a very nice CMS.</Text>
+              </Card>
+              <Card>
+                <Heading component="h2">WordPress</Heading>
+                <Text>WordPress is a very nice CMS.</Text>
+              </Card>
+              <Card>
+                <Heading component="h2">WordPress</Heading>
+                <Text>WordPress is a very nice CMS.</Text>
+              </Card>
+              <Card>
+                <Heading component="h2">WordPress</Heading>
+                <Text>WordPress is a very nice CMS.</Text>
+              </Card>
+              <Card>
+                <Heading component="h2">WordPress</Heading>
+                <Text>WordPress is a very nice CMS.</Text>
+              </Card>
+            </Grid>
+          </Box>
+        </Shifter>
+        <div>
+          <ImposterWrapper>
+            <p className="text-white block py-8 z-1 relative">This is a link</p>
+            <Imposter variant="full">
+              <Image fluid={portfolioFluid as FluidObject} />
+            </Imposter>
+          </ImposterWrapper>
+        </div>
+        <Device fluidImage={caseStudies[0].fluidImage}></Device>
+        <Device
+          fluidImage={caseStudies[0].fluidImage}
+          orientation="left"
+        ></Device>
+      </Stack>
+    </div>
   )
 }
 

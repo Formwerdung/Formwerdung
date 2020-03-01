@@ -7,9 +7,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   // Ensures we are processing only markdown files
   if (_.get(node, 'internal.type') === `MarkdownRemark`) {
-
     // Get the parent node
-    const parent = getNode(_.get(node, "parent"))
+    const parent = getNode(_.get(node, 'parent'))
 
     // Create a field on this node for the "collection" of the parent
     // NOTE: This is necessary so we can filter `allMarkdownRemark` by
@@ -18,7 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: 'collection',
-      value: _.get(parent, "sourceInstanceName")
+      value: _.get(parent, 'sourceInstanceName'),
     })
 
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -47,17 +46,18 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `
-    ).then(result => {
+    `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-
         if (node.fields.collection !== 'portfolio') {
           createPage({
             path: `${node.fields.collection}${node.fields.slug}`,
-            component: path.resolve(`./src/templates/${node.fields.collection}.js`),
+            component: path.resolve(
+              `./src/templates/${node.fields.collection}.tsx`
+            ),
             context: {
               // Data passed to context is available
               // in page queries as GraphQL variables.
+              collection: node.fields.collection,
               slug: node.fields.slug,
             },
           })
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     node: {
-      fs: 'empty'
-    }
+      fs: 'empty',
+    },
   })
 }

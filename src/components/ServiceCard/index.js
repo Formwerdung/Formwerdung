@@ -16,14 +16,14 @@ export default props => (
     >
       <h3
         css={`
-          @apply m-0 text-sm leading-2x text-center;
+          @apply m-0 text-sm  text-center;
         `}
       >
         {props.title}
       </h3>
       <div
         css={`
-          @apply text-sm leading-2x text-center;
+          @apply text-sm  text-center;
         `}
       >
         {props.description}

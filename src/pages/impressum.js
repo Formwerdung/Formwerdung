@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { css } from 'astroturf'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-import Layout from '../components/Layout'
 import Container from '../components/Container'
 import { HeroTitle } from '../components/Hero'
 import {
@@ -15,7 +14,7 @@ import { Graf, SubTitle, TextContainer } from '../components/Type'
 import SEO from '../components/SEO'
 
 export default ({ data }) => (
-  <Layout>
+  <div>
     <SEO
       title={'Impressum | Formwerdung | Web Design aus der Schweiz'}
       description={'Haftungsinformationen und Privacy Policy unserer Website.'}
@@ -134,7 +133,7 @@ export default ({ data }) => (
         </Graf>
       </TextContainer>
     </Container>
-  </Layout>
+  </div>
 )
 
 export const query = graphql`

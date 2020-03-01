@@ -1,20 +1,17 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-
 import { get } from 'lodash'
+import React from 'react'
 
-import Layout from '../components/Layout'
-import Container, { containerStyleString } from '../components/Container'
+import Container from '../components/Container'
 import {
   Image,
   ImageContainer,
   ImageContentWrapper,
 } from '../components/Images'
-import SEO from '../components/SEO'
-import { textShadow } from '../utils/style'
-import { HeroTitle } from '../components/Hero'
 
-const caseStudyTitle = `@apply text-5xl leading-4x pb-1x text-white relative z-10 m-0 pt-0`
+import SEO from '../components/SEO'
+
+const caseStudyTitle = `@apply text-5xl leading-4x pb-1x text-white relative z-1 m-0 pt-0`
 
 export default ({ data }) => {
   const fluid = get(
@@ -27,7 +24,7 @@ export default ({ data }) => {
   const seoTitle = `${title} | Case Study | Formwerdung | Web Design aus der Schweiz`
 
   return (
-    <Layout>
+    <div>
       <SEO title={seoTitle} description={description} />
       <figure
         css={`
@@ -39,7 +36,7 @@ export default ({ data }) => {
             <ImageContentWrapper>
               <p
                 css={`
-                  @apply text-white relative z-10 m-0 max-w-hero max-w-hero-md pt-8x pt-10x pt-12x;
+                  @apply text-white relative z-1 m-0 max-w-hero max-w-hero-md pt-8x pt-10x pt-12x;
                 `}
               >
                 Case Study
@@ -55,12 +52,12 @@ export default ({ data }) => {
       <Container>
         <div
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-          css={css`
+          css={`
             @apply p-1x mb-8x;
           `}
         />
       </Container>
-    </Layout>
+    </div>
   )
 }
 

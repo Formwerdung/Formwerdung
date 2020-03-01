@@ -10,10 +10,8 @@ import {
   ImageContainer,
   ImageContentWrapper,
 } from '../components/Images'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Graf, TextContainer } from '../components/Type'
-import { screenImage } from '../utils/style'
 
 const PortfolioCard = ({ props }) => (
   <li>
@@ -32,10 +30,7 @@ const PortfolioCard = ({ props }) => (
           `}
         >
           <div>
-            <Img
-              fluid={props.frontmatter.image.childImageSharp.fluid}
-              css={screenImage}
-            />
+            <Img fluid={props.frontmatter.image.childImageSharp.fluid} />
           </div>
           <div
             css={css`
@@ -44,7 +39,7 @@ const PortfolioCard = ({ props }) => (
           >
             <h2
               css={css`
-                @apply text-md leading-2x text-black text-black;
+                @apply text-md  text-black text-black;
               `}
             >
               {props.frontmatter.title}
@@ -63,7 +58,7 @@ const PortfolioCard = ({ props }) => (
 )
 
 const PortfolioPage = props => (
-  <Layout>
+  <div>
     <SEO
       title={'Portfolio | Formwerdung | Web Design aus der Schweiz'}
       description={
@@ -107,7 +102,7 @@ const PortfolioPage = props => (
         </ul>
       </div>
     </Container>
-  </Layout>
+  </div>
 )
 
 export default PortfolioPage

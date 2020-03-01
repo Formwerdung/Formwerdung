@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 html {
-  font-size: 1em;
+  font-size: calc(1rem + 0.5vw);
+  font-family: 'IBM Plex Mono', Courier, monospace;
   /* height: 100%; */
 }
 
 body {
-  font-size: calc(1rem + 0.5vw);
+  font-size: 1rem;
   color: #080401;
   margin: 0;
   line-height: 1.5;
-  background: #fffefc;
+  /* background: #fffefc; */
 }
 
 * {
@@ -22,7 +23,6 @@ body {
 a {
   text-decoration: none;
   color: #11519a;
-  transition: all 150ms ease;
 }
 
 a:hover {
@@ -37,4 +37,8 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+p {
+  margin-bottom: 1.5rem;
 }

@@ -4,13 +4,14 @@ import React, { FunctionComponent } from 'react'
 import { GatsbyImageSharpFluid_WithWebpFragment } from '../../../graphql-types'
 import Container from '../Container'
 import { Image, ImageContainer, ImageContentWrapper } from '../Images'
+import { FluidObject } from 'gatsby-image'
 
 interface Props {
-  fluid: GatsbyImageSharpFluid_WithWebpFragment
+  fluid: FluidObject
 }
 
 export const heroTitle = css`
-  @apply text-3xl leading-4x pt-8x pt-10x pt-12x text-white relative z-10 m-0;
+  @apply text-3xl leading-4x pt-8x pt-10x pt-12x text-white relative z-1 m-0;
 `
 
 export const HeroTitle = ({ children }) => <h1>{children}</h1>
@@ -26,7 +27,7 @@ export const Hero: FunctionComponent<Props> = ({ fluid }) => (
         <HeroTitle>Alles fürs Web</HeroTitle>
         <p
           css={css`
-            @apply pb-1x text-white relative z-10 m-0 max-w-hero max-w-hero-md;
+            @apply pb-1x text-white relative z-1 m-0 max-w-hero max-w-hero-md;
           `}
         >
           Formwerdung gestaltet und entwickelt exklusiv Webseiten und –apps. Wir

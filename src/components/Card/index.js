@@ -17,6 +17,5 @@ export const CardWrapper = styled('div')`
 export const CardConverter = ({ children }) => (
   <CardWrapper>
     <span>{children}</span>
-    <ArrowRightCircle />
   </CardWrapper>
 )

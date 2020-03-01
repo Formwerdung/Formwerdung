@@ -21,13 +21,13 @@ module.exports = {
         path: `${__dirname}/src/pages/case-study`,
       },
     },
-    /*{
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
         path: `${__dirname}/src/pages/blog`,
       },
-    },*/
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,8 +62,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-transition-link`,
-    /* `gatsby-plugin-feed`, */
+    // `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -99,7 +98,6 @@ module.exports = {
         enableCssProp: true,
       },
     },
-
-    `gatsby-plugin-generate-typings`,
+    'gatsby-plugin-no-javascript',
   ],
 }

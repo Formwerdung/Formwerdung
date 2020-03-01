@@ -55,7 +55,7 @@ const CaseCard: FunctionComponent<Props> = ({
             </h2>
           </CardWrapper>
           <div>
-            <Img fluid={beep.fluidImage} css={screenImage} />
+            <Img fluid={beep.fluidImage as any} css={screenImage} />
           </div>
         </div>
         <CardWrapper>{beep.callToAction}</CardWrapper>

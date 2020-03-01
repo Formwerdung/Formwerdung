@@ -1,10 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
-
 export default ({ data }) => (
-  <Layout>
+  <div
+    css={`
+      max-width: 60ch;
+      margin: 0 auto;
+    `}
+  >
     <p
       css={`
         @apply mt-4x;
@@ -12,8 +15,9 @@ export default ({ data }) => (
     >
       Blog Post
     </p>
-    <h1>{data.markdownRemark.frontmatter.titel}</h1>
-  </Layout>
+    <h1>{data.markdownRemark.frontmatter.title}</h1>
+    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+  </div>
 )
 
 export const query = graphql`

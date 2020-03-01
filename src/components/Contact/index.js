@@ -14,7 +14,7 @@ const encode = data => {
 }
 
 const DialogTitle = styled('h3')`
-  @apply m-0 leading-2x;
+  @apply m-0;
 `
 
 const Dialog = ({ title, description, dismissHandler, bgColor }) => (
