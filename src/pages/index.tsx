@@ -6,7 +6,7 @@ import React, { FunctionComponent } from 'react'
 import './global.css'
 
 import { ImageSharpFluid, IndexPageQuery } from '../../graphql-types'
-import BannerLogoSmall from '../components/Banner/BannerLogoSmall'
+import BannerLogoSmall from '../components/Logo'
 import { Image } from '../components/Images'
 import {
   Card,
@@ -22,8 +22,10 @@ import {
   Lead,
   Shifter,
   Box,
+  Container,
 } from '../ui'
 import { Header } from '../components/Header'
+import { Layout } from '../components/Layout'
 
 interface Props {
   data: IndexPageQuery
@@ -45,54 +47,167 @@ const IndexPage: FunctionComponent<Props> = ({ data }) => {
   }))
 
   return (
-    <div className="bg-gray-400">
+    <Layout>
       <Stack size="none">
         <Header headerImage={heroFluid as FluidObject}>
-          <div
+          <Container
             css={`
-              @apply pb-24 relative z-1 m-6;
+              @apply pb-24 relative z-1 mx-6 mt-24 mb-12;
             `}
+            size="small"
           >
-            <Heading level={1} mode="dark">
-              Formwerdung <em>ist Performance</em>
-            </Heading>
+            <div
+              css={`
+                @apply mb-3;
+              `}
+            >
+              <Heading level={1} mode="dark">
+                <em>Web design and development</em>
+              </Heading>
+            </div>
             <Lead>
               Formwerdung meistert mit Ihnen komplexe ästhetische und technische
               Probleme auf dem Weg zum erfolgreichen Webauftritt.
             </Lead>
-          </div>
+          </Container>
         </Header>
         <Shifter>
-          <Box>
-            <Grid>
-              <Card>
+          <div
+            css={`
+              @apply flex px-6;
+            `}
+          >
+            <div
+              css={`
+                @apply pt-12 pr-6 w-small flex-shrink-0;
+              `}
+            >
+              <Stack>
+                <Heading level={2}>Projects</Heading>
+                <Text>The fol</Text>
+              </Stack>
+            </div>
+            <ul
+              css={`
+                @apply flex overflow-x-auto p-6 -mx-6 pb-3;
+
+                & > * + * {
+                  margin-left: 1.5rem;
+                }
+              `}
+            >
+              <Card as="li">
                 <Stack size="small">
-                  <Heading component="h2">WordPress</Heading>
-                  <Text>WordPress is a very nice CMS.</Text>
+                  <Heading component="h2" level={2}>
+                    WordPress
+                  </Heading>
+                  <Text>
+                    I design and develop custom themes for ecommerce and
+                    magazines.
+                  </Text>
                 </Stack>
               </Card>
               <Card>
-                <Heading component="h2">WordPress</Heading>
-                <Text>WordPress is a very nice CMS.</Text>
+                <Stack size="small">
+                  <Heading component="h2" level={2}>
+                    Responsive Design
+                  </Heading>
+                  <Text>
+                    Accessible mobile-first design for your website that focuses
+                    on ease of use. Or let me review your design as regards
+                    responsiveness. Your choice.
+                  </Text>
+                </Stack>
               </Card>
-              <Card>
-                <Heading component="h2">WordPress</Heading>
-                <Text>WordPress is a very nice CMS.</Text>
+              <div
+                css={`
+                  @apply pr-6;
+                `}
+              >
+                <Card>
+                  <Stack size="small">
+                    <Heading component="h2" level={2}>
+                      Smaller Homepages
+                    </Heading>
+                    <Text>
+                      I will help you get started on the web by developing your
+                      blog, portfolio or any other microsite – focusing on the
+                      minimal viable solution so you get the most bang for your
+                      buck.
+                    </Text>
+                  </Stack>
+                </Card>
+              </div>
+            </ul>
+          </div>
+          <div
+            css={`
+              @apply flex;
+            `}
+          >
+            <ul
+              css={`
+                @apply flex overflow-x-auto p-6 pt-3;
+
+                & > * + * {
+                  margin-left: 1.5rem;
+                }
+              `}
+            >
+              <Card as="li" mode="dark">
+                <Stack size="small">
+                  <Heading component="h2" level={2}>
+                    WordPress
+                  </Heading>
+                  <Text>
+                    I design and develop custom themes for ecommerce and
+                    magazines.
+                  </Text>
+                </Stack>
               </Card>
-              <Card>
-                <Heading component="h2">WordPress</Heading>
-                <Text>WordPress is a very nice CMS.</Text>
+              <Card mode="dark">
+                <Stack size="small">
+                  <Heading component="h2" level={2}>
+                    Responsive Design
+                  </Heading>
+                  <Text>
+                    Accessible mobile-first design for your website that focuses
+                    on ease of use. Or let me review your design as regards
+                    responsiveness. Your choice.
+                  </Text>
+                </Stack>
               </Card>
-              <Card>
-                <Heading component="h2">WordPress</Heading>
-                <Text>WordPress is a very nice CMS.</Text>
-              </Card>
-              <Card>
-                <Heading component="h2">WordPress</Heading>
-                <Text>WordPress is a very nice CMS.</Text>
-              </Card>
-            </Grid>
-          </Box>
+              <div
+                css={`
+                  @apply pr-6;
+                `}
+              >
+                <Card mode="dark">
+                  <Stack size="small">
+                    <Heading component="h2" level={2}>
+                      Smaller Homepages
+                    </Heading>
+                    <Text>
+                      I will help you get started on the web by developing your
+                      blog, portfolio or any other microsite – focusing on the
+                      minimal viable solution so you get the most bang for your
+                      buck.
+                    </Text>
+                  </Stack>
+                </Card>
+              </div>
+            </ul>
+            <div
+              css={`
+                @apply pt-9 pl-6 w-small flex-shrink-0;
+              `}
+            >
+              <Stack>
+                <Heading level={2}>Projects</Heading>
+                <Text>The fol</Text>
+              </Stack>
+            </div>
+          </div>
         </Shifter>
         <div>
           <ImposterWrapper>
@@ -108,7 +223,7 @@ const IndexPage: FunctionComponent<Props> = ({ data }) => {
           orientation="left"
         ></Device>
       </Stack>
-    </div>
+    </Layout>
   )
 }
 

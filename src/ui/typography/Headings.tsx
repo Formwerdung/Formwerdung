@@ -8,12 +8,29 @@ interface HeadingProps {
 }
 
 const HeadingBase = styled('h1')`
+  &:before {
+    content: '';
+    margin-top: -0.42rem;
+    height: 0;
+    display: block;
+  }
+
   &.level-1 {
     @apply text-3xl font-bold leading-9;
+
+    font-size: 2rem;
+
+    &:before {
+      margin-top: -0.42rem;
+    }
   }
 
   &.level-2 {
     @apply text-xl font-bold leading-6;
+
+    &:before {
+      margin-top: -0.26rem;
+    }
   }
 
   &.mode-light {

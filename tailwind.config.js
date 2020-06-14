@@ -43,11 +43,10 @@ module.exports = {
         white: '#fffefc',
         // blue: '#1565c0', // '#1e456e'
         // 'blue-dark': '#11519a',
-        green: '#3cec96',
-        red: '#e2252a',
+        // green: '#3cec96',
+        // red: '#e2252a',
 
         // separators
-        'grey-light': '#dae4e9',
 
         // form borders
         'border-light': 'rgba(8,4,1,.2)',
@@ -59,18 +58,9 @@ module.exports = {
         // form fill
         'off-white': '#fafaf9',
 
-        grey: '#9babb4',
-        'grey-lighter': '#f3f7f9',
-
         'my-custom-color': '#D4AF37',
 
         transparent: 'transparent',
-
-        'grey-darkest': '#364349',
-        'grey-darker': '#596a73',
-        'grey-dark': '#70818a',
-
-        'grey-lightest': '#fafcfc',
       },
       fontSize: {
         xs: '.75rem', // 12px
@@ -94,6 +84,9 @@ module.exports = {
         '4': '4px',
         '8': '8px',
       },
+      spacing: {
+        '9': '2.25rem',
+      },
       width: merge(gridContainers, verticalRhythms, {
         auto: 'auto',
         px: '1px',
@@ -110,6 +103,8 @@ module.exports = {
         '5/6': '83.33333%',
         full: '100%',
         screen: '100vw',
+        small: '15ch',
+        medium: '25ch',
       }),
       height: {
         m3x: `-${3 * rhythmUnit}rem`,
@@ -198,6 +193,10 @@ module.exports = {
         '-6': '-1.5rem',
         '-8': '-2rem',
       }),
+      fontFamily: {
+        sans: 'IBM Plex Sans, Helvetica, sans-serif',
+        serif: 'IBM Plex Serif, serif',
+      },
     },
   },
   corePlugins: {

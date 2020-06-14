@@ -2,7 +2,8 @@ import React, { FunctionComponent } from 'react'
 import GatsbyImage, { FluidObject } from 'gatsby-image'
 
 import { Imposter, ImposterWrapper, Nav, NavItem, Heading, Lead } from '../ui'
-import BannerLogoSmall from './Banner/BannerLogoSmall'
+import BannerLogoSmall from './Logo'
+import { Link } from 'gatsby'
 
 interface HeaderProps {
   headerImage: FluidObject
@@ -18,14 +19,16 @@ export const Header: FunctionComponent<HeaderProps> = ({
         <div
           css={`
             &:before {
+              @apply w-0 h-0 absolute z-1;
+
               content: '';
-              border-bottom: 10vw solid #cbd5e0;
+              border-bottom: 4.5rem solid #f7fafc;
               border-right: 50vw solid transparent;
               width: 0;
               height: 0;
               position: absolute;
               z-index: 1;
-              bottom: 0;
+              bottom: -1px;
               left: 0;
             }
 
@@ -33,11 +36,11 @@ export const Header: FunctionComponent<HeaderProps> = ({
               content: '';
               width: 0;
               height: 0;
-              border-bottom: 10vw solid #cbd5e0;
+              border-bottom: 4.5rem solid #f7fafc;
               border-left: 50vw solid transparent;
               position: absolute;
               z-index: 1;
-              bottom: 0;
+              bottom: -1px;
               left: 50vw;
             }
 
@@ -53,10 +56,11 @@ export const Header: FunctionComponent<HeaderProps> = ({
       <div className="z-1 relative">
         <div
           css={`
-            @apply flex justify-between items-start;
+            @apply flex justify-between items-start flex-wrap;
           `}
         >
-          <div
+          <Link
+            to="/"
             css={`
               flex: 0 0 7rem;
 
@@ -64,7 +68,7 @@ export const Header: FunctionComponent<HeaderProps> = ({
             `}
           >
             <BannerLogoSmall />
-          </div>
+          </Link>
           <div
             css={`
               @apply mt-6 mr-6 ml-6;

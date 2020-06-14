@@ -1,13 +1,19 @@
 import React, { FunctionComponent } from 'react'
 import { Link, GatsbyLinkProps } from 'gatsby'
 import { Box } from '..'
+import styled from 'astroturf'
 
-export const Card: FunctionComponent<GatsbyLinkProps<null>> = ({
+interface CardProps extends Omit<GatsbyLinkProps<null>, 'to'> {
+  to?: string
+  mode?: 'default' | 'dark'
+}
+
+export const Card: FunctionComponent<CardProps> = ({
   children,
   to,
+  mode,
   ...rest
 }) => {
-  console.log(to)
   if (to) {
     return (
       <Link
@@ -25,11 +31,20 @@ export const Card: FunctionComponent<GatsbyLinkProps<null>> = ({
       </Link>
     )
   } else {
-    return (
+    return mode === 'dark' ? (
       <Box
         as="article"
         css={`
-          @apply shadow-lg bg-white;
+          @apply shadow-lg bg-gray-200 w-medium flex-shrink-0;
+        `}
+      >
+        {children}
+      </Box>
+    ) : (
+      <Box
+        as="article"
+        css={`
+          @apply shadow-lg bg-white w-medium flex-shrink-0;
         `}
       >
         {children}

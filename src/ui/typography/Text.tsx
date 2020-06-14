@@ -4,7 +4,7 @@ export const Text: FunctionComponent = ({ children }) => {
   return (
     <p
       css={`
-        @apply leading-6 mb-0 text-black;
+        @apply font-sans text-sm leading-6 mb-0 text-black;
       `}
     >
       {children}

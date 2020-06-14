@@ -3,8 +3,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import objectFitImages from 'object-fit-images';
+import objectFitImages from 'object-fit-images'
+require('prismjs/themes/prism-okaidia.css')
 
 export const onInitialClientRender = () => {
-  objectFitImages();
-};
+  objectFitImages()
+}
